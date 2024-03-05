@@ -1,0 +1,87 @@
+{
+    "type": "containerSimple",
+    "prps": {
+        "height": "100%",
+        "width": "100%",
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "padding": true,
+                "width": "70%",
+                "paddingSize": "giantPadding",
+                "margin": "padding"
+            },
+            "wgts": [
+                {
+                    "type": "containerSimple",
+                    "prps": {},
+                    "wgts": [
+                        {
+                            "traits": [
+                                {
+                                    "trait": "./visual/infoSection",
+                                    "traitPrps": {
+                                        "headerCpt": "Meet the Team",
+                                        "headerCptSize": "38px",
+                                        "infoCpt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+                                        "infoCptSize": "18px"
+                                    }
+                                }
+                            ],
+                            "prps": {
+                                "marginTop": "smallPadding"
+                            }
+                        },
+                        {
+                            "traits": [
+                                {
+                                    "trait": "./visual/infoSection",
+                                    "traitPrps": {
+                                        "headerCpt": "Opus Core",
+                                        "headerCptSize": "28px",
+                                        "infoCpt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                                        "infoCptSize": "18px"
+                                    }
+                                }
+                            ],
+                            "prps": {
+                                "marginTop": "smallPadding"
+                            }
+                        },
+                        {
+                            "traits": [
+                                {
+                                    "trait": "./visual/infoSection",
+                                    "traitPrps": {
+                                        "infoCpt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry orem Ipsum has been the industry's standa.",
+                                        "infoCptSize": "18px"
+                                    }
+                                }
+                            ],
+                            "prps": {
+                                "marginTop": "mediumPadding"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "traits": [
+                        {
+                            "trait": "./visual/teamMembers/index"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/footer/index"
+                }
+            ]
+        }
+    ]
+}

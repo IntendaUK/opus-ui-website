@@ -1,0 +1,49 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./visual/featuresMenu"
+                }
+            ],
+            "prps": {
+                "width": "25%"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/pricingMenu"
+                }
+            ],
+            "prps": {
+                "width": "25%"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/documentationMenu"
+                }
+            ],
+            "prps": {
+                "width": "25%"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/contactUsMenu"
+                }
+            ],
+            "prps": {
+                "width": "25%"
+            }
+        }
+    ]
+}

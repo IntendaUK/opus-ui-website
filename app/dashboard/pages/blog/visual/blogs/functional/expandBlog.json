@@ -1,0 +1,24 @@
+{
+    "acceptPrps": {
+        "rowData": {
+            "type": "object",
+            "desc": "data to be used to set the state of the selected blog"
+        },
+        "blogIndex": {
+            "type": "integer",
+            "desc": "The index of the blog post in the blog posts array"
+        }
+    },
+    "prps": {
+        "fireScript": {
+            "actions": [
+                {
+                    "type": "setState",
+                    "target": "||router||",
+                    "key": "tPerformRoute",
+                    "value": "blogPost?postId=%blogIndex%"
+                }
+            ]
+        }
+    }
+}

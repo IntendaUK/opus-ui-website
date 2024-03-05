@@ -1,0 +1,19 @@
+{
+	"accepptPrps": {},
+	"traits": [
+		{
+			"trait": "./purpose",
+			"traitPrps": {
+				"type": "component",
+				"flows": [
+					{
+						"from": "||docs||",
+						"fromKey": "selectedDocData",
+						"fromSubKey": "description",
+						"toKey": "cpt"
+					}
+				]
+			}
+		}
+	]
+}

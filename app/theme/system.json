@@ -1,0 +1,13 @@
+{
+  "themeConfig": {
+    "isStyleTheme": false
+  },
+  "mdaLocation": "http://localhost:3000",
+  "andrewClark": "{theme.system.mdaLocation}/images/andrewClark.jpg",
+  "andreyLunyov": "{theme.system.mdaLocation}/images/andreyLunyov.jpg",
+  "danAbramov": "{theme.system.mdaLocation}/images/danAbramov.jpg",
+  "logo120px": "{theme.system.mdaLocation}/images/Opus_logo_white_120px.png",
+  "xLogo": "{theme.system.mdaLocation}/images/socialmedia/X.svg",
+  "facebookLogo": "{theme.system.mdaLocation}/images/socialmedia/Facebook.svg",
+  "feedLogo": "{theme.system.mdaLocation}/images/socialmedia/Feed.svg"
+}

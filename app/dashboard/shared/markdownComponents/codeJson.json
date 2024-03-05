@@ -1,0 +1,28 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "object"
+		},
+		"flows": {
+			"type": "array",
+			"dft": []
+		}
+	},
+	"type": "containerSimple",
+	"prps": {
+		"backgroundColor": "secondaryBackground",
+		"border": "2px solid {theme.colors.menuHighlighOutline}",
+		"borderRadius": "6px ",
+		"padding": true,
+		"paddingSize": "mediumPadding"
+	},
+	"wgts": [
+		{
+			"type": "codeEditor",
+			"prps": {
+				"valueObj": "$value$",
+				"flows": "$flows$"
+			}
+		}
+	]
+}

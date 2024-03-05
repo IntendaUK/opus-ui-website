@@ -1,0 +1,22 @@
+{
+	"scope": "main",
+	"type": "containerSimple",
+	"prps": {
+		"textForLabel": "New Text"
+	},
+	"wgts": [
+		{
+			"type": "label",
+			"prps": {
+				"color": "#ff0000",
+				"flows": [
+					{
+						"from": "||main||",
+						"fromKey": "textForLabel",
+						"toKey": "cpt"
+					}
+				]
+			}
+		}
+	]
+}

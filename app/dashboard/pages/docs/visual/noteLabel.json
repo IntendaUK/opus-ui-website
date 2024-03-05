@@ -1,0 +1,32 @@
+{
+    "acceptPrps": {
+        "text": {
+            "type": "string",
+            "dft": "title here"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "type": "image",
+            "prps": {
+                "value": "{theme.system.mdaLocation}/images/note.svg",
+                "imageWidth": "auto",
+                "imageHeight": "42px"
+            }
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "%text%",
+                "color": "#ffffff",
+                "fontSize": "42px",
+                "marginLeft": "mediumPadding"
+            }
+        }
+    ]
+}

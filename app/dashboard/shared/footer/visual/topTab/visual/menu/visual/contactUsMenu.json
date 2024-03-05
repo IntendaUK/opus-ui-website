@@ -1,0 +1,58 @@
+{
+    "type": "containerSimple",
+    "prps": {
+        "gap": "32px"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Contact Us",
+                        "labelColor": "primaryOpusBlue"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Sales"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Careers"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Social Media"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        }
+    ]
+}

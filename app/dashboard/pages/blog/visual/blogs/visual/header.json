@@ -1,0 +1,43 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {},
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "dir": "horizontal"
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "images/note.svg",
+                        "imageWidth": "auto",
+                        "imageHeight": "42px"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Opus Blog",
+                        "fontSize": "35px",
+                        "fontWeight": "800",
+                        "color": "text",
+                        "marginLeft": "mediumPadding"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "Here, you will find all official updates concerning Opus UI directly from the core development team. Posts may encompass a variety of topics, including breaking news and significant release notes.",
+                "marginTop": "mediumPadding",
+                "fontSize": "20px",
+                "color": "text",
+                "lineHeight": "30px"
+            }
+        }
+    ]
+}

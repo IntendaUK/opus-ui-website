@@ -1,0 +1,53 @@
+{
+	"acceptPrps": {},
+	"scope": "treeview",
+	"type": "treeview",
+	"traits": [
+		{
+			"trait": "./functional/staticData"
+		}
+	],
+	"prps": {
+		"dtaAtr": "id",
+		"disAtr": "name",
+		"childAtr": "children",
+		"hideRootNode": true,
+		"autoExpand": true,
+		"renderExpander": false,
+		"autoExpandChildNodes": true,
+		"noPad": true,
+		"mdaLabel": {
+			"id": "((rowData.id))label",
+			"type": "container",
+			"traits": [
+				{
+					"trait": "./functional/handleBackgroundColorBehaviour",
+					"traitPrps": {
+						"rowData": "{{rowData}}"
+					}
+				},
+				{
+					"trait": "./functional/handleDropDownBehaviour",
+					"traitPrps": {
+						"rowData": "{{rowData}}"
+					}
+				}
+			],
+			"prps": {
+				"canClick": true
+			},
+			"wgts": [
+				{
+					"traits": [
+						{
+							"trait": "./visual/iconAndLabel",
+							"traitPrps": {
+								"rowData": "{{rowData}}"
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}

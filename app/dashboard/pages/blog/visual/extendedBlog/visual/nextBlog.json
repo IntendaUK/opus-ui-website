@@ -1,0 +1,87 @@
+{
+    "acceptPrps": {},
+    "type": "container",
+    "prps": {
+        "canHover": true,
+        "canClick": true,
+        "dir": "horizontal",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "mainAxisAlign": "center",
+        "crossAxisAlign": "center",
+        "gap": "10px",
+        "marginLeft": "auto",
+        "hoverPrps": {
+            "on": {
+                "backgroundColor": "primarySearch"
+            },
+            "off": {
+                "backgroundColor": "transparent"
+            }
+        },
+        "fireScript": {
+            "actions": [
+                {
+                    "type": "setState",
+                    "target": "||router||",
+                    "key": "tPerformRoute",
+                    "value": "{{eval.`blogPost?postId=${((state.||extendBlog||.selectedIndex)) + 1}`}}"
+                },
+                {
+                    "type": "setState",
+                    "target": "||extendBlog||",
+                    "key": "tReloadFromUrl",
+                    "value": true
+                }
+            ]
+        },
+        "flows": [
+            {
+                "from": "||extendBlog||",
+                "fromKey": "nextBlog",
+                "toKey": "vis",
+                "mapFunctionString": "v => v.goto !== null"
+            }
+        ]
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "gap": "5px",
+                "crossAxisAlign": "end"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "NEXT"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "",
+                        "color": "primaryOpusBlue",
+                        "underline": true,
+                        "flows": [
+                            {
+                                "from": "||extendBlog||",
+                                "fromKey": "nextBlog",
+                                "fromSubKey": "title",
+                                "toKey": "cpt"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "type": "icon",
+            "prps": {
+                "value": "arrow_forward_ios",
+                "color": "grey"
+            }
+        }
+    ]
+}

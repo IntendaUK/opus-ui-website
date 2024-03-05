@@ -1,0 +1,39 @@
+{
+    "acceptPrps":{},
+    "type": "container",
+    "prps": {
+        "backgroundColor": "mediumGrey",
+        "borderRadius": "6px",
+        "padding": true,
+        "paddingSize": "5px mediumPadding",
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "width": "100%",
+        "hoverPrps": {
+            "on": {
+                "border": "1px solid grey"
+            },
+            "off": {
+                "border": "1px solid transparent"
+            }
+        }
+    },
+    "wgts": [
+        {
+            "type": "icon",
+            "prps": {
+                "value": "search",
+                "color": "grey",
+                "marginRight": "5px"
+            }
+        },
+        {
+            "type": "input",
+            "prps": {
+                "placeholder": "Search",
+                "color": "grey",
+                "width": "80%"
+            }
+        }
+    ]
+}

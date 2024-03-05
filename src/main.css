@@ -1,0 +1,68 @@
+@font-face {
+	font-family: "Century Gothic";
+	src: url("/fonts/CenturyGothic.ttf") format("truetype");
+}
+
+.cpnCodeEditor {
+
+	pre,
+	textarea {
+		tab-size: 40px !important;
+	}
+
+	textarea {
+		caret-color: white;
+	}
+
+	pre {
+		color: #e7efff !important;
+	}
+
+	.token {
+
+		&.punctuation,
+		&.operator,
+		&.constant {
+			color: #e7efff !important;
+			background: none;
+		}
+
+		&.property {
+			color: #6E9BEA !important;
+		}
+
+		&.keyword {
+			color: #6fc1f0 !important;
+		}
+
+		&.string {
+			color: #BC9758 !important;
+		}
+
+		&.boolean {
+			color: #6EEA9B !important;
+		}
+
+		&.number {
+			color: #6EEA9B !important;
+		}
+
+		&.attr-name {
+			color: #97BC58;
+		}
+
+		&.function {
+			color: #BC5897;
+		}
+
+		&.class-name {
+			color: #6E9BEA !important;
+		}
+
+		&.tag {
+			color: #97BC58;
+		}
+
+	}
+
+}

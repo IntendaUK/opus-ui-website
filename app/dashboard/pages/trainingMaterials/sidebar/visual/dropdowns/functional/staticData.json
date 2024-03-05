@@ -1,0 +1,162 @@
+{
+    "acceptPrps": {},
+    "prps": {
+        "staticData": [
+            {
+                "id": "lesson3",
+                "name": "Lesson 3: Setting up opus and the training app",
+                "dataFile": "3"
+            },
+            {
+                "id": "lesson4",
+                "name": "Lesson 4: Anatomy of an application",
+                "dataFile": "4"
+            },
+            {
+                "id": "lesson5",
+                "name": "Lesson 5: Opening the first exercise",
+                "dataFile": "5"
+            },
+            {
+                "id": "lesson6",
+                "name": "Lesson 6: Anatomy of an Opus JSON file",
+                "dataFile": "6"
+            },
+            {
+                "id": "lesson7",
+                "name": "Lesson 7: Your first dashboard",
+                "dataFile": "7"
+            },
+            {
+                "id": "lesson8",
+                "name": "Lesson 8: More component types",
+                "dataFile": "8"
+            },
+            {
+                "id": "lesson9",
+                "name": "Lesson 9: Basic flows",
+                "dataFile": "9"
+            },
+            {
+                "id": "lesson10",
+                "name": "Lesson 10: System properties vs custom properties",
+                "dataFile": "10"
+            },
+            {
+                "id": "lesson11",
+                "name": "Lesson 11: Layout direction",
+                "dataFile": "11"
+            },
+            {
+                "id": "lesson12",
+                "name": "Lesson 12: Building complex layouts",
+                "dataFile": "12"
+            },
+            {
+                "id": "lesson13",
+                "name": "Lesson 13: Component size, scrolling and flexing",
+                "dataFile": "13"
+            },
+            {
+                "id": "lesson14",
+                "name": "Lesson 14: Padding and margins",
+                "dataFile": "14"
+            },
+            {
+                "id": "lesson15",
+                "name": "Lesson 15: Using theme values in components",
+                "dataFile": "15"
+            },
+            {
+                "id": "lesson16",
+                "name": "Lesson 16: Building themes",
+                "dataFile": "16"
+            },
+            {
+                "id": "lesson17",
+                "name": "Lesson 17: Dropdowns",
+                "dataFile": "17"
+            },
+            {
+                "id": "lesson18",
+                "name": "Lesson 18: Basic scripts",
+                "dataFile": "18"
+            },
+            {
+                "id": "lesson19",
+                "name": "Lesson 19: Navigation",
+                "dataFile": "19"
+            },
+            {
+                "id": "lesson20",
+                "name": "Lesson 20: Folder and file name conventions",
+                "dataFile": "20"
+            },
+            {
+                "id": "lesson21",
+                "name": "Lesson 21: Scoped id's",
+                "dataFile": "21"
+            },
+            {
+                "id": "lesson22a",
+                "name": "Lesson 22a: Trait basics",
+                "dataFile": "22a"
+            },
+            {
+                "id": "lesson22b",
+                "name": "Lesson 22b: More on traits",
+                "dataFile": "22b"
+            },
+            {
+                "id": "lesson23",
+                "name": "Lesson 23: Static vs relative paths",
+                "dataFile": "23"
+            },
+            {
+                "id": "lesson24",
+                "name": "Lesson 24: Click interactions",
+                "dataFile": "24"
+            },
+            {
+                "id": "lesson25",
+                "name": "Lesson 25: Hover interactions",
+                "dataFile": "25"
+            },
+            {
+                "id": "lesson26",
+                "name": "Lesson 26: Notifications",
+                "dataFile": "26"
+            },
+            {
+                "id": "lesson27",
+                "name": "Lesson 27: Modals",
+                "dataFile": "27"
+            },
+            {
+                "id": "lesson28",
+                "name": "Lesson 28: Adding conditions to scripts",
+                "dataFile": "28"
+            },
+            {
+                "id": "lesson29",
+                "name": "Lesson 29: Variables and arrays in scripts",
+                "dataFile": "29"
+            },
+            {
+                "id": "lesson30",
+                "name": "Lesson 30: Generating components",
+                "dataFile": "30"
+            },
+            {
+                "id": "lesson31",
+                "name": "Lesson 31: Script accessor scope",
+                "dataFile": "31"
+            },
+            {
+                "id": "lesson32",
+                "name": "Lesson 32: The queryUrl action",
+                "dataFile": "32"
+            }
+        ]
+    }
+}

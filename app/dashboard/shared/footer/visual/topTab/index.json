@@ -1,0 +1,39 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "mainAxisAlign": "space-between"
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "width": "30%",
+                "mainAxisAlign": "center",
+                "crossAxisAlign": "center"
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/hero.svg",
+                        "imageHeight": "200",
+                        "imageWidth": "200px"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/menu/index",
+                    "traitPrps": {}
+                }
+            ],
+            "prps": {
+                "width": "70%"
+            }
+        }
+    ]
+}

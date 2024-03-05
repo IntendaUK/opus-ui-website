@@ -1,0 +1,14 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "string"
+		}
+	},
+	"type": "markdownLabel",
+	"prps": {
+		"cpt": "%value%",
+		"assignIdsToHeadingTypes": [
+			"h1"
+		]
+	}
+}

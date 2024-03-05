@@ -1,0 +1,59 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "gap": "32px"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Pricing",
+                        "labelColor": "primaryOpusBlue"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Free"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Basic"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Premium"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        }
+    ]
+}

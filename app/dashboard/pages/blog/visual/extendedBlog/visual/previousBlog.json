@@ -1,0 +1,97 @@
+{
+    "acceptPrps": {},
+    "type": "container",
+    "prps": {
+        "canHover": true,
+        "canClick": true,
+        "dir": "horizontal",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "mainAxisAlign": "center",
+        "crossAxisAlign": "center",
+        "gap": "10px",
+        "hoverPrps": {
+            "on": {
+                "backgroundColor": "primarySearch"
+            },
+            "off": {
+                "backgroundColor": "transparent"
+            }
+        },
+        "fireScript": {
+            "actions": [
+                {
+                    "type": "applyComparison",
+                    "operator": "isEqual",
+                    "value": "{{state.||extendBlog||.previousBlog.goto}}",
+                    "compareValue": "blog",
+                    "branch": {
+                        "true": [
+                            {
+                                "type": "setState",
+                                "target": "||router||",
+                                "key": "tPerformRoute",
+                                "value": "blog"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "setState",
+                                "target": "||router||",
+                                "key": "tPerformRoute",
+                                "value": "{{eval.`blogPost?postId=${((state.||extendBlog||.selectedIndex)) - 1}`}}"
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||extendBlog||",
+                                "key": "tReloadFromUrl",
+                                "value": true
+                            }
+                        ]
+                    }
+                    
+                }
+            ]
+        }
+    },
+    "wgts": [
+        {
+            "type": "icon",
+            "prps": {
+                "value": "arrow_back_ios",
+                "color": "grey"
+            }
+        },
+        {
+            "type": "containerSimple",
+            "prps": {
+                "gap": "5px",
+                "crossAxisAlign": "start"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "PREVIOUS"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "",
+                        "color": "primaryOpusBlue",
+                        "underline": true,
+                        "flows": [
+                            {
+                                "from": "||extendBlog||",
+                                "fromKey": "previousBlog",
+                                "fromSubKey": "title",
+                                "toKey": "cpt"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,202 @@
+{
+    "scope": "home",
+    "type": "containerSimple",
+    "prps": {
+        "singlePage": true,
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "relId": "codeModal",
+            "traits": [
+                {
+                    "trait": "./visual/codeModal",
+                    "traitPrps": {}
+                }
+            ]
+        },
+        {
+            "type": "containerSimple",
+            "prps": {
+                "padding": true,
+                "paddingSize": "90px 0px",
+                "width": "100%"
+            },
+            "wgts": [
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "height": "273px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "height": "152px",
+                                "mainAxisAlign": "space-between",
+                                "opacity": 0.8
+                            },
+                            "wgts": [
+                                {
+                                    "type": "containerSimple",
+                                    "prps": {
+                                        "width": "100%",
+                                        "height": "2px",
+                                        "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B5388 50%, #2E3B5300 80%)"
+                                    }
+                                },
+                                {
+                                    "type": "containerSimple",
+                                    "prps": {
+                                        "width": "100%",
+                                        "height": "2px",
+                                        "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B53FF 50%, #2E3B5300 80%)"
+                                    }
+                                },
+                                {
+                                    "type": "containerSimple",
+                                    "prps": {
+                                        "width": "100%",
+                                        "height": "2px",
+                                        "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B5388 50%, #2E3B5300 80%)"
+                                    }
+                                },
+                                {
+                                    "type": "containerSimple",
+                                    "prps": {
+                                        "width": "100%",
+                                        "height": "2px",
+                                        "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B53FF 50%, #2E3B5300 80%)"
+                                    }
+                                },
+                                {
+                                    "type": "containerSimple",
+                                    "prps": {
+                                        "width": "100%",
+                                        "height": "2px",
+                                        "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B5388 50%, #2E3B5300 80%)"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "prps": {
+                                "value": "{theme.system.mdaLocation}/images/hero.svg",
+                                "imageHeight": "235px",
+                                "imageWidth": "auto",
+                                "position": "absolute",
+                                "left": "50%",
+                                "top": "50%",
+                                "transform": "translate(-50%, -50%)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "containerSimple",
+            "prps": {
+                "padding": true,
+                "paddingSize": "padding",
+                "backgroundColor": "#191D23",
+                "crossAxisAlign": "center",
+                "width": "100%"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "From JSON to Jazz",
+                        "fontSize": "fontSizeGiant"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Opus weaves melodies between the power of traditional code and the simplicity of low-code. Define simple components and interactions through JSON and watch as Opus breathes harmony into everything in between.",
+                        "fontSize": "fontSizeBig",
+                        "marginTop": "mediumPadding",
+                        "width": "850px",
+                        "textOverflow": "wrap",
+                        "justify": "center",
+                        "lineHeight": "28px"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/section",
+                    "traitPrps": {
+                        "title": "What is Opus?",
+                        "subTitle": "Hit the perfect pitch between traditional development and low-code",
+                        "body": "Opus allows developers to rapidly build user interfaces no matter the complexity of the design.",
+                        "details": [
+                            "Build components and interactions through JSON",
+                            "Flow states between components and watch them perform in unison",
+                            "Centralize themes",
+                            "Re-use components and behaviour"
+                        ],
+                        "code": {
+                            "type": "containerSimple",
+                            "prps": {
+                                "backgroundColor": "#6E9BEA",
+                                "padding": true,
+                                "paddingSize": "4px 8px",
+                                "borderRadius": "4px"
+                            },
+                            "wgts": [
+                                {
+                                    "type": "label",
+                                    "prps": {
+                                        "cpt": "Hello world!",
+                                        "color": "black"
+                                    }
+                                }
+                            ]
+                        },
+                        "examples": [
+                            "1_hello_world",
+                            "2_flowing_states"
+                        ]
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "140px"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/section",
+                    "traitPrps": {
+                        "title": "Why use Opus?",
+                        "subTitle": "Rapid development, without restrictions",
+                        "body": "Opus provides you with the toolset to develop the way you want. No matter how simple or dynamic your needs, Opus empowers all genres.",
+                        "details": [
+                            "Unlike low-code platforms, Opus doesn't dictate how you should design or build",
+                            "Seamlessly blend Opus and React",
+                            "Opus takes care of all your state management"
+                        ],
+                        "reverse": true
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "120px",
+                "marginBottom": "90px"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/footer/index"
+                }
+            ]
+        }
+    ]
+}

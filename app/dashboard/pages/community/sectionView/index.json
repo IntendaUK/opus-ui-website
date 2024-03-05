@@ -1,0 +1,115 @@
+{
+	"acceptPrps": {},
+	"scope": "sectionView",
+	"type": "containerSimple",
+	"prps": {
+		"dir": "horizontal",
+		"flex": true,
+		"overflow": "show",
+		"scps": [
+			{
+				"id": "sL",
+				"triggers": [
+					{
+						"event": "onMount"
+					},
+					{
+						"event": "onStateChange",
+						"source": "||community||",
+						"key": "selectedSectionId"
+					}
+				],
+				"actions": [
+					{
+						"type": "convertMarkdownToComponents",
+						"value": "{{state.||community||.lessons.((state.||community||.selectedSectionId))}}",
+						"storeAsVariable": "lessonData"
+					},
+					{
+						"type": "setState",
+						"key": "data",
+						"value": "{{variable.lessonData}}"
+					}
+				]
+			}
+		]
+	},
+	"wgts": [
+		{
+			"relId": "contents",
+			"type": "container",
+			"prps": {
+				"flex": true,
+				"padding": true,
+				"paddingSize": "smallPadding bigPadding",
+				"height": "100%",
+				"overflow": "auto",
+				"scps": [
+					{
+						"id": "sLC",
+						"concurrency": {
+							"pool": "sLC",
+							"mode": "wait"
+						},
+						"triggers": [
+							{
+								"event": "onMount"
+							},
+							{
+								"event": "onStateChange",
+								"source": "||sectionView||",
+								"key": "data"
+							}
+						],
+						"actions": [
+							{
+								"type": "stopScript",
+								"condition": {
+									"operator": "isFalsy",
+									"value": "{{sLC.state.||sectionView||.data}}"
+								}
+							},
+							{
+								"type": "setState",
+								"key": "deleteKeys",
+								"value": [
+									{
+										"key": "extraWgts",
+										"value": {
+											"all": true
+										}
+									}
+								]
+							},
+							{
+								"type": "wait",
+								"duration": 1
+							},
+							{
+								"id": "sLCM",
+								"type": "mapArray",
+								"value": "{{state.||sectionView||.data.components}}",
+								"storeAsVariable": "extraWgts",
+								"mapTo": {
+									"traits": [
+										{
+											"trait": "shared/markdownComponents/((sLCM.variable.record.type))",
+											"traitPrps": {
+												"value": "{{sLCM.variable.record.value}}"
+											}
+										}
+									]
+								}
+							},
+							{
+								"type": "setState",
+								"key": "extraWgts",
+								"value": "{{variable.extraWgts}}"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+    "acceptPrps": {},
+    "scope": "gettingStarted",
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "flex": true,
+        "height": "100%",
+        "selectedLessonId": "1-1-gettingStarted",
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "type": "setState",
+                        "key": "lessons",
+                        "value": "{theme.freeText.gettingStarted}"
+                    }
+                ]
+            }
+        ]
+    },
+    "wgts": [
+        {
+            "relId": "sidebar",
+            "traits": [
+                {
+                    "trait": "./sidebar/index"
+                }
+            ],
+            "prps": {
+                "borderRight": "1px solid {theme.colors.menuHighlighOutline}"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./lessonView/index",
+                    "traitPrps": {}
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "acceptPrps": {
+        "text": {
+            "type": "string"
+        }
+    },
+    "scope": "discussed",
+    "type": "repeater",
+    "prps": {
+        "rowMda": {
+            "scope": "main",
+            "type": "containerSimple",
+            "prps": {
+                "dir": "horizontal",
+                "margin": "0px 0px 6px 0px",
+                "gap": "10px",
+                "text": "((rowData.line))",
+                "flows": [
+                    {
+                        "from": "||main||",
+                        "fromKey": "text",
+                        "toKey": "marginLeft",
+                        "mapFunctionString": "v => ['0px', 'smallPadding', 'mediumPadding', 'padding', 'bigPadding'][v.split('\\t').length]"
+                    }
+                ],
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "type": "setState",
+                                "key": "value",
+                                "value": "phone"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wgts": [
+                {
+                    "relId": "label",
+                    "type": "label",
+                    "prps": {
+                        "cpt": "((rowData.line))"
+                    }
+                }
+            ]
+        },
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "id": "sM",
+                        "type": "mapArray",
+                        "value": "$text$",
+                        "mapTo": {
+                            "line": "{{sM.variable.record}}"
+                        },
+                        "storeAsVariable": "lineItems"
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||discussed||",
+                        "key": "staticData",
+                        "value": "{{variable.lineItems}}"
+                    }
+                ]
+            }
+        ]
+    }
+}

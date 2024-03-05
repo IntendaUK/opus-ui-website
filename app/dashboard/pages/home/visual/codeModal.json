@@ -1,0 +1,348 @@
+{
+	"acceptPrps": {},
+	"scope": "codeModal",
+	"type": "container",
+	"container": "root",
+	"prps": {
+		"width": "100vw",
+		"height": "100vh",
+		"zIndex": 1,
+		"backgroundColor": "rgba(0, 0, 0, 0.7)",
+		"vis": false,
+		"position": "absolute",
+		"left": "0px",
+		"top": "0px",
+		"mainAxisAlign": "center",
+		"crossAxisAlign": "center",
+		"canClick": true,
+		"examples": null,
+		"exampleData": "{theme.freeText.examples}",
+		"selectedDataFile": null,
+		"fireScript": {
+			"actions": [
+				{
+					"type": "setState",
+					"key": "vis",
+					"value": false
+				}
+			]
+		},
+		"scps": [
+			{
+				"triggers": [
+					{
+						"event": "onGlobalKeyDown",
+						"consumeEventOnUse": true,
+						"match": [
+							{
+								"comparison": "isEqual",
+								"value": "((event.key))",
+								"compareValue": "Escape"
+							}
+						]
+					}
+				],
+				"actions": [
+					{
+						"type": "setState",
+						"key": "vis",
+						"value": false
+					}
+				]
+			}
+		]
+	},
+	"wgts": [
+		{
+			"type": "container",
+			"prps": {
+				"borderRadius": "4px",
+				"border": "1px solid {theme.colors.menuHighlighOutline}",
+				"backgroundColor": "#16171B",
+				"padding": true,
+				"paddingSize": "mediumPadding",
+				"dir": "horizontal",
+				"width": "80%",
+				"height": "80%",
+				"canClick": true
+			},
+			"wgts": [
+				{
+					"type": "containerSimple",
+					"prps": {
+						"paddingRight": "padding",
+						"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
+						"width": "20%"
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"cpt": "Examples",
+								"fontSize": "28px",
+								"marginBottom": "mediumPadding"
+							}
+						},
+						{
+							"type": "repeater",
+							"prps": {
+								"scps": [
+									{
+										"actions": [
+											{
+												"type": "setVariable",
+												"name": "exampleNames",
+												"value": "{theme.freeText.examples.exampleNames}"
+											},
+											{
+												"type": "setVariable",
+												"name": "staticData",
+												"value": [
+													"{{eval.",
+													"    const res = {{state.||codeModal||.examples}}.map(m => {",
+													"        return {",
+													"            name: JSON.parse({{variable.exampleNames}}).find(f => f.file === m).name,",
+													"            dataFile: m",
+													"        };",
+													"    });",
+													"    res;",
+													"}}"
+												],
+												"inlineKeys": [
+													"value"
+												]
+											},
+											{
+												"type": "setState",
+												"key": "staticData",
+												"value": "{{variable.staticData}}"
+											},
+											{
+												"type": "setState",
+												"target": "||codeModal||",
+												"key": "selectedDataFile",
+												"value": "((variable.staticData.0.dataFile))"
+											}
+										]
+									}
+								],
+								"rowMda": {
+									"type": "container",
+									"prps": {
+										"canClick": true,
+										"fireScript": {
+											"actions": [
+												{
+													"type": "setState",
+													"target": "||codeModal||",
+													"key": "selectedDataFile",
+													"value": "((rowData.dataFile))"
+												}
+											]
+										}
+									},
+									"wgts": [
+										{
+											"type": "label",
+											"prps": {
+												"cpt": "((rowData.name))",
+												"flows": [
+													{
+														"from": "||codeModal||",
+														"fromKey": "selectedDataFile",
+														"toKey": "color",
+														"mapFunctionString": "v => v === {{rowData.dataFile}} ? '#6E9BEA' : 'white'"
+													}
+												]
+											}
+										}
+									]
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "containerSimple",
+					"prps": {
+						"paddingLeft": "smallPadding",
+						"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
+						"width": "40%"
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"paddingSize": "tinyPadding smallPadding",
+								"cpt": "helloWorld.json"
+							}
+						},
+						{
+							"relId": "code",
+							"type": "codeEditor",
+							"prps": {
+								"paddingSize": "mediumPadding",
+								"fontSize": "24px",
+								"value": "",
+								"valueObj": {},
+								"language": "json",
+								"scps": [
+									{
+										"triggers": [
+											{
+												"event": "onStateChange",
+												"source": "||codeModal||",
+												"key": "selectedDataFile"
+											}
+										],
+										"actions": [
+											{
+												"type": "setState",
+												"key": "value",
+												"value": "{{state.||codeModal||.exampleData.((state.||codeModal||.selectedDataFile))}}"
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"type": "containerSimple",
+					"prps": {
+						"width": "40%"
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"paddingSize": "tinyPadding mediumPadding",
+								"cpt": "Preview"
+							}
+						},
+						{
+							"relId": "preview",
+							"type": "container",
+							"prps": {
+								"padding": true,
+								"paddingSize": "mediumPadding",
+								"width": "fit-content",
+								"scps": [
+									{
+										"id": "sP",
+										"concurrency": {
+											"pool": "preview"
+										},
+										"triggers": [
+											{
+												"event": "onStateChange",
+												"source": "||codeModal.code||",
+												"match": [
+													{
+														"operator": "isNotEqual",
+														"value": "{{state.||codeModal.code||.value}}",
+														"compareValue": "{}"
+													}
+												]
+											}
+										],
+										"actions": [
+											{
+												"type": "setVariable",
+												"name": "loadedObj",
+												"value": [
+													"{{eval.",
+													"    let res;",
+													"    try {",
+													"        res = JSON.parse({{state.((variable.triggeredFrom)).value}});",
+													"    } catch (e) {}",
+													"    res;",
+													"}}"
+												],
+												"inlineKeys": [
+													"value"
+												]
+											},
+											{
+												"type": "stopScript",
+												"condition": {
+													"operator": "isFalsy",
+													"value": "{{sP.variable.loadedObj}}"
+												}
+											},
+											{
+												"type": "setState",
+												"key": "deleteKeys",
+												"value": [
+													{
+														"key": "extraWgts",
+														"value": {
+															"all": true
+														}
+													}
+												]
+											},
+											{
+												"type": "wait",
+												"duration": 1
+											},
+											{
+												"type": "setState",
+												"key": "extraWgts",
+												"value": "{{variable.loadedObj}}"
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"scope": "closeButton",
+					"type": "container",
+					"prps": {
+						"canClick": true,
+						"canHover": true,
+						"position": "absolute",
+						"top": "mediumPadding",
+						"right": "mediumPadding",
+						"borderRadius": "50%",
+						"mainAxisAlign": "center",
+						"crossAxisAlign": "center",
+						"width": "28px",
+						"height": "28px",
+						"hoverPrps": {
+							"on": {
+								"backgroundColor": "primaryOpusBlue"
+							},
+							"off": {
+								"backgroundColor": "primarySearch"
+							}
+						},
+						"fireScript": {
+							"actions": [
+								{
+									"type": "setState",
+									"target": "||codeModal||",
+									"key": "vis",
+									"value": false
+								}
+							]
+						}
+					},
+					"wgts": [
+						{
+							"type": "icon",
+							"prps": {
+								"value": "close",
+								"color": "#ffffff"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,84 @@
+{
+    "acceptPrps": {
+        "rowData": {
+            "type": "object",
+            "desc": "used to flow data from staticData in index file"
+        }
+    },
+    "scope": "iconLabel",
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "mainAxisAlign": "space-between",
+        "overflow": "hidden",
+        "padding": true,
+        "paddingSize": "smallPadding mediumPadding"
+    },
+    "wgts": [
+        {
+            "relId": "label",
+            "type": "label",
+            "prps": {
+                "cpt": "$rowData.name$",
+                "fontSize": "16px",
+                "color": "#ffffff",
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "type": "applyComparison",
+                                "operator": "isTruthy",
+                                "value": "$rowData.isParent$",
+                                "branch": {
+                                    "true": [
+                                        {
+                                            "type": "setMultiState",
+                                            "value": {
+                                                "uppercase": true,
+                                                "fontWeight": 700
+                                            }
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "type": "setMultiState",
+                                            "value": {
+                                                "fontWeight": 400
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "icon",
+            "prps": {
+                "vis": false,
+                "color": "#ffffff",
+                "value": "chevron_right",
+                "transform": "rotate(0deg)",
+                "transitionProperty": "transform",
+                "transitionDuration": "0.2s",
+                "flows": [
+                    {
+                        "from": "||treeview||",
+                        "fromKey": "childData-%rowData.id%",
+                        "toKey": "vis",
+                        "mapFunctionString": "v => Array.isArray(v) && v.length > 0"
+                    },
+                    {
+                        "from": "||treenode||",
+                        "fromKey": "expanded",
+                        "toKey": "transform",
+                        "mapFunctionString": "v => v ? 'rotate(90deg)' : 'rotate(0deg)'"
+                    }
+                ]
+            }
+        }
+    ]
+}

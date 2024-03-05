@@ -1,0 +1,29 @@
+{
+    "acceptPrps": {},
+    "prps": {
+        "staticData": [
+            {
+                "id": "community",
+                "name": "COMMUNITY",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "1.1",
+                        "name": "Meet the Team",
+                        "dataFile": "1-1-meet-the-team"
+                    },
+                    {
+                        "id": "1.2",
+                        "name": "Opus Discord",
+                        "dataFile": "1-2-opus-discord"
+                    },
+                    {
+                        "id": "1.3",
+                        "name": "Popular Discussion Forums",
+                        "dataFile": "1-3-popular-discussion-forums"
+                    }
+                ]
+            }
+        ]
+    }
+}

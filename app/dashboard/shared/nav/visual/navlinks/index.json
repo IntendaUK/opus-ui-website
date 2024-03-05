@@ -1,0 +1,137 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "Get Started",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "learn"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "Learn",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "lessons"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "Docs",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "docs"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "Community",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "community"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "Blog",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "blog"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "scope": "profileLink",
+            "type": "container",
+            "prps": {
+                "marginLeft": "padding",
+                "canClick": true,
+                "canHover": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "openUrl",
+                            "url": "https://github.com/IntendaUK/opus-ui"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/github.svg",
+                        "imageWidth": "24px",
+                        "imageHeight": "24px"
+                    }
+                }
+            ]
+        }
+    ]
+}

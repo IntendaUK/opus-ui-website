@@ -1,0 +1,51 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "mainAxisAlign": "space-between",
+        "backgroundColor": "secondaryBackground",
+        "width": "100%",
+        "height": "83px",
+        "padding": true,
+        "paddingSize": "0px 36px",
+        "overflow": "hidden"
+    },
+    "wgts": [
+        {
+            "type": "container",
+            "prps": {
+                "canClick": true,
+                "canHover": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "setState",
+                            "target": "||router||",
+                            "key": "tPerformRoute",
+                            "value": "default"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/logoSimple.svg",
+                        "height": "36px",
+                        "width": "auto"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/navlinks/index"
+                }
+            ]
+        }
+    ]
+}

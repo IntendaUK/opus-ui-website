@@ -1,0 +1,87 @@
+{
+    "acceptPrps": {
+        "imageUrl": {
+            "type": "string",
+            "desc": "path to the teamMembers profileImage"
+        },
+        "name": {
+            "type": "string",
+            "desc": "Defines value for the name caption"
+        },
+        "title": {
+            "type": "string",
+            "desc": "Defines value for the itle's caption underneath the name's caption"
+        },
+        "description": {
+            "type": "array",
+            "desc": "An array of strings housing the team member's description"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "flex": true,
+        "gap": "bigPadding"
+    },
+    "wgts": [
+        {
+            "type": "image",
+            "prps": {
+                "value": "%imageUrl%",
+                "imageWidth": "186px",
+                "imageHeight": "232px",
+                "style": {
+                    ".cpnImage img": {
+                        "object-fit": "cover"
+                    }
+                }
+            }
+        },
+        {
+            "type": "containerSimple",
+            "prps": {
+                "flex": true,
+                "height": "232px"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "%name%",
+                        "color": "primaryOpusBlue",
+                        "fontSize": "24px"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "%title%",
+                        "color": "footerText",
+                        "fontSize": "18px",
+                        "marginTop": "smallPadding"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "%description%",
+                        "color": "footerText",
+                        "fontSize": "18px",
+                        "marginTop": "smallPadding",
+                        "lineHeight": "30px",
+                        "overflowY": "auto",
+                        "justify": "stretch"
+                    }
+                },
+                {
+                    "type": "divider",
+                    "prps": {
+                        "color": "primaryOpusBlue",
+                        "thickness": "1px",
+                        "marginTop": "auto"
+                    }
+                }
+            ]
+        }
+    ]
+}

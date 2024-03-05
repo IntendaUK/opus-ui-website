@@ -1,0 +1,57 @@
+{
+	"acceptPrps": {},
+	"scope": "treeview",
+	"type": "treeview",
+	"traits": [
+		{
+			"trait": "./functional/staticData"
+		}
+	],
+	"prps": {
+		"dtaAtr": "id",
+		"disAtr": "name",
+		"childAtr": "children",
+		"hideRootNode": true,
+		"autoExpand": true,
+		"renderExpander": false,
+		"selectedLessonId": null,
+		"height": "100%",
+		"mdaLabel": {
+			"id": "((rowData.id))label",
+			"type": "container",
+			"traits": [
+				{
+					"trait": "./functional/handleSidebarClick",
+					"traitPrps": {
+						"rowData": "{{rowData}}"
+					}
+				}
+			],
+			"prps": {
+				"padding": true,
+				"paddingSize": "smallPadding",
+				"canClick": true,
+				"flows": [
+					{
+						"from": "||treeview||",
+						"fromKey": "selectedLessonId",
+						"toKey": "backgroundColor",
+						"mapFunctionString": "v => v === {{rowData.dataFile}} ? '#242D3D' : 'transparent' "
+					}
+				]
+			},
+			"wgts": [
+				{
+					"traits": [
+						{
+							"trait": "./visual/iconAndLabel",
+							"traitPrps": {
+								"rowData": "{{rowData}}"
+							}
+						}
+					]
+				}
+			]
+		}
+	}
+}

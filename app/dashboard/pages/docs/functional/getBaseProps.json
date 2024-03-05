@@ -1,0 +1,74 @@
+{
+    "acceptPrps": {},
+    "prps": {
+        "scps": [
+            {
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "source": "||docs||",
+                        "key": "selectedNode"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "getData",
+                        "filters": [],
+                        "dtaObj": "baseProps/animationProps",
+                        "offset": 0,
+                        "pageSize": 1,
+                        "storeAsVariable": "animationProps"
+                    },
+                    {
+                        "type": "getData",
+                        "filters": [],
+                        "dtaObj": "baseProps/overlayProps",
+                        "offset": 0,
+                        "pageSize": 1,
+                        "storeAsVariable": "overlayProps"
+                    },
+                    {
+                        "type": "getData",
+                        "filters": [],
+                        "dtaObj": "baseProps/positioningProps",
+                        "offset": 0,
+                        "pageSize": 1,
+                        "storeAsVariable": "positioningProps"
+                    },
+                    {
+                        "type": "getData",
+                        "filters": [],
+                        "dtaObj": "baseProps/index",
+                        "offset": 0,
+                        "pageSize": 1,
+                        "storeAsVariable": "indexProps"
+                    },
+                    {
+                        "type": "concatArray",
+                        "value": "{{variable.animationProps.data.0.animationProps}}",
+                        "concatValue": "{{variable.overlayProps.data.0.overlayProps}}",
+                        "storeAsVariable": "animationOverlayProps"
+                    },
+                    {
+                        "type": "concatArray",
+                        "value": "{{variable.positioningProps.data.0.positioningProps}}",
+                        "concatValue": "{{variable.indexProps.data.0.index}}",
+                        "storeAsVariable": "positioningIndexProps"
+                    },
+                    {
+                        "type": "concatArray",
+                        "value": "{{variable.animationOverlayProps}}",
+                        "concatValue": "{{variable.positioningIndexProps}}",
+                        "storeAsVariable": "baseProps"
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||docs||",
+                        "key": "baseProps",
+                        "value": "{{variable.baseProps}}"
+                    }
+                ]
+            }
+        ]
+    }
+}

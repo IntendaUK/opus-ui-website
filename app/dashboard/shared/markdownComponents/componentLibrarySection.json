@@ -1,0 +1,140 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "object"
+		}
+	},
+	"scope": "section",
+	"type": "containerSimple",
+	"prps": {
+		"border": "2px solid {theme.colors.menuHighlighOutline}",
+		"backgroundColor": "secondaryBackground",
+		"borderRadius": "6px",
+		"expanded": false
+	},
+	"wgts": [
+		{
+			"type": "container",
+			"prps": {
+				"dir": "horizontal",
+				"mainAxisAlign": "space-between",
+				"crossAxisAlign": "center",
+				"canClick": true,
+				"padding": true,
+				"paddingSize": "tinyPadding smallPadding",
+				"backgroundColor": "menuHighlighOutline",
+				"fireScript": {
+					"actions": [
+						{
+							"type": "setState",
+							"target": "||section||",
+							"key": "expanded",
+							"value": "{{eval.!{{state.||section||.expanded}}}}"
+						}
+					]
+				}
+			},
+			"wgts": [
+				{
+					"type": "label",
+					"prps": {
+						"cpt": "Included Components",
+						"fontSize": "17px"
+					}
+				},
+				{
+					"type": "icon",
+					"prps": {
+						"color": "footerText",
+						"fontSize": "17px",
+						"flows": [
+							{
+								"from": "||section||",
+								"fromKey": "expanded",
+								"mapFunctionString": "v => v ? 'expand_less' : 'expand_more'"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"type": "containerSimple",
+			"prps": {
+				"vis": false,
+				"flows": [
+					{
+						"from": "||section||",
+						"fromKey": "expanded",
+						"toKey": "vis"
+					}
+				],
+				"style": {
+					".cpnContainerSimple": {
+						"> *:nth-child(2n + 1)": {
+							"background-color": "rgba(255, 255, 255, 0.02) !important"
+						}
+					}
+				}
+			},
+			"wgts": [
+				{
+					"type": "repeater",
+					"prps": {
+						"staticData": "$value$",
+						"pageSize": 100,
+						"rowMda": {
+							"type": "containerSimple",
+							"prps": {
+								"width": "100%",
+								"dir": "horizontal",
+								"padding": true,
+								"paddingSize": "smallPadding"
+							},
+							"wgts": [
+								{
+									"type": "label",
+									"prps": {
+										"cpt": "((rowData.type))",
+										"fontSize": "17px",
+										"color": "footerText",
+										"width": "30%"
+									}
+								},
+								{
+									"type": "containerSimple",
+									"prps": {
+										"flex": true,
+										"style": {
+											".cpnContainerSimple": {
+												"> .cpnLabel + .cpnLabel": {
+													"margin-top": "var(--global-smallPadding)"
+												}
+											}
+										}
+									},
+									"wgts": [
+										{
+											"type": "repeater",
+											"prps": {
+												"staticData": "{{rowData.desc}}",
+												"rowMda": {
+													"type": "label",
+													"prps": {
+														"cpt": "• ((rowData))",
+														"fontSize": "17px",
+														"color": "#aaa"
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	]
+}

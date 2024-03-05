@@ -1,0 +1,14 @@
+{
+  "themeConfig": {
+    "isStyleTheme": false,
+    "isFreeTextTheme": true
+  },
+  "teamMemberInfo": ">markdown/teamMemberInfo.md",
+  "lessons": ">>markdown/lessons",
+  "gettingStarted": ">>markdown/gettingStarted",
+  "docs": ">>markdown/docs",
+  "community": ">>markdown/community",
+  "blogPosts": ">data/blogPosts.md",
+  "blogPostBodies": ">>data/blogPostBodies",
+  "examples": ">>data/examples"
+}

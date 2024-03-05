@@ -1,0 +1,61 @@
+{
+    "acceptPrps": {},
+    "scope": "team",
+    "type": "containerSimple",
+    "prps": {},
+    "wgts": [
+        {
+            "type": "repeater",
+            "prps": {
+                "staticData": [],
+                "freeTextTheme": "{theme.freeText.teamMemberInfo}",
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "type": "setState",
+                                "key": "staticData",
+                                "value": [
+                                    "{{eval.",
+                                    "    const res = {{state.self.freeTextTheme}}",
+                                    "        .split('---\\n')",
+                                    "        .map(m => {",
+                                    "            const split = m.split('\\n');",
+                                    "            return {",
+                                    "                imageUrl: split[0],",
+                                    "                name: split[1],",
+                                    "                jobTitle: split[2],",
+                                    "                description: split.slice(3, split.length - 1)",
+                                    "            };",
+                                    "        });",
+                                    "    res;",
+                                    "}}"
+                                ],
+                                "inlineKeys": [
+                                    "value"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "rowMda": {
+                    "traits": [
+                        {
+                            "trait": "./visual/teamMemberProfile",
+                            "traitPrps": {
+                                "imageUrl": "{{rowData.imageUrl}}",
+                                "name": "{{rowData.name}}",
+                                "jobTitle": "{{rowData.jobTitle}}",
+                                "description": "{{rowData.description}}"
+                            }
+                        }
+                    ],
+                    "prps": {
+                        "marginBottom": "mediumPadding",
+                        "marginTop": "giantPadding"
+                    }
+                }
+            }
+        }
+    ]
+}

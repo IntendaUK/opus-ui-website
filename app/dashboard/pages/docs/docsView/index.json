@@ -1,0 +1,112 @@
+{
+    "acceptPrps": {},
+    "scope": "docsView",
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "flex": true,
+        "scps": [
+            {
+                "id": "sL",
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "source": "||docs||",
+                        "key": "mdType"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "convertMarkdownToComponents",
+                        "value": "{{state.||docs||.docsType.((state.||docs||.mdType))}}",
+                        "storeAsVariable": "docsData"
+                    },
+                    {
+                        "type": "setState",
+                        "key": "data",
+                        "value": "{{variable.docsData}}"
+                    }
+                ]
+            }
+        ]
+    },
+    "wgts": [
+        {
+            "relId": "contents",
+            "type": "container",
+            "prps": {
+                "flex": true,
+                "padding": true,
+                "paddingSize": "smallPadding bigPadding",
+                "height": "100%",
+                "overflow": "auto",
+                "scps": [
+                    {
+                        "id": "sLC",
+                        "concurrency": {
+                            "pool": "sLC",
+                            "mode": "wait"
+                        },
+                        "triggers": [
+                            {
+                                "event": "onStateChange",
+                                "source": "||docsView||",
+                                "key": "data"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "stopScript",
+                                "condition": {
+                                    "operator": "isFalsy",
+                                    "value": "{{sLC.state.||docsView||.data}}"
+                                }
+                            },
+                            {
+                                "type": "setState",
+                                "key": "deleteKeys",
+                                "value": [
+                                    {
+                                        "key": "extraWgts",
+                                        "value": {
+                                            "all": true
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "wait",
+                                "duration": 1
+                            },
+                            {
+                                "type": "log",
+                                "msg": "{{state.||docsView||.data.components}}"
+                            },
+                            {
+                                "id": "sLCM",
+                                "type": "mapArray",
+                                "value": "{{state.||docsView||.data.components}}",
+                                "storeAsVariable": "extraWgts",
+                                "mapTo": {
+                                    "traits": [
+                                        {
+                                            "trait": "shared/markdownComponents/((sLCM.variable.record.type))",
+                                            "traitPrps": {
+                                                "value": "{{sLCM.variable.record.value}}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "setState",
+                                "key": "extraWgts",
+                                "value": "{{variable.extraWgts}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

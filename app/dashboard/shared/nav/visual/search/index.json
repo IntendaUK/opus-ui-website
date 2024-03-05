@@ -1,0 +1,111 @@
+{
+    "acceptPrps": {},
+    "scope": "search",
+    "type": "container",
+    "prps": {
+        "canClick": true,
+        "canHover": true,
+        "backgroundColor": "primarySearch",
+        "borderRadius": "6px",
+        "padding": true,
+        "paddingSize": "10px mediumPadding",
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "hoverPrps": {
+            "on": {
+                "border": "1px solid {theme.colors.primaryOpusBlue}"
+            },
+            "off": {
+                "border": "1px solid transparent"
+            }
+        },
+        "fireScript": {
+            "actions": [
+                {
+                    "type": "setState",
+                    "target": "||search.searchBgTile||",
+                    "key": "vis",
+                    "value": true
+                },
+                {
+                    "type": "setState",
+                    "target": "||search.searchModal||",
+                    "key": "vis",
+                    "value": true
+                }
+            ]
+        }
+    },
+    "traits": [
+        "./functional/ctrlPlusKPress",
+        "./functional/escPress"
+    ],
+    "wgts": [
+        {
+            "type": "icon",
+            "prps": {
+                "value": "search",
+                "color": "#ffffff",
+                "marginRight": "5px"
+            }
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "Search",
+                "color": "#ffffff",
+                "width": "80%"
+            }
+        },
+        {
+            "type": "containerSimple",
+            "prps": {
+                "dir": "horizontal",
+                "gap": "4px",
+                "marginLeft": "auto"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Ctrl",
+                        "fontSize": "12px",
+                        "color": "text",
+                        "backgroundColor": "secondaryBackground",
+                        "borderRadius": "5px",
+                        "paddingSize": "1px 8px"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "K",
+                        "fontSize": "12px",
+                        "color": "text",
+                        "backgroundColor": "secondaryBackground",
+                        "borderRadius": "5px",
+                        "paddingSize": "1px 8px"
+                    }
+                }
+            ]
+        },
+        {
+            "relId": "searchBgTile",
+            "traits": [
+                {
+                    "trait": "./visual/searchBgTile",
+                    "traitPrps": {}
+                }
+            ]
+        },
+        {
+            "relId": "searchModal",
+            "traits": [
+                {
+                    "trait": "./visual/searchModal",
+                    "traitPrps": {}
+                }
+            ]
+        }
+    ]
+}

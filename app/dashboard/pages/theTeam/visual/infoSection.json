@@ -1,0 +1,46 @@
+{
+  "acceptPrps": {
+    "headerCpt": {
+      "type": "string",
+      "desc": "The header/title cpt above the text information cpt"
+    },
+    "headerCptSize": {
+      "type": "string",
+      "desc": "Fontsize of header/title cpts",
+      "dft": "32px"
+    },
+    "infoCpt": {
+      "type": "string",
+      "desc": "The information cpt above the header/title cpt",
+      "dft": "20px"
+    },
+    "infoCptSize": {
+      "type": "string",
+      "desc": "Font size of header/title cpt"
+    }
+  },
+  "type": "containerSimple",
+  "prps": {},
+  "wgts": [
+    {
+      "type": "label",
+      "prps": {
+        "morphPrps": [
+          "cpt"
+        ],
+        "cpt": "%headerCpt%",
+        "fontSize": "%headerCptSize%",
+        "fontWeight": "800",
+        "vis": "$headerCptVis$"
+      }
+    },
+    {
+      "type": "label",
+      "prps": {
+        "cpt": "%infoCpt%",
+        "marginTop": "smallPadding",
+        "fontSize": "%infoCptSize%"
+      }
+    }
+  ]
+}

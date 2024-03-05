@@ -1,0 +1,1062 @@
+{
+    "acceptPrps": {},
+    "scope": "treeview",
+    "type": "treeview",
+    "prps": {
+        "dtaAtr": "id",
+        "disAtr": "data",
+        "childAtr": "children",
+        "hideRootNode": true,
+        "autoExpand": true,
+        "renderExpander": false,
+        "noPad": true,
+        "staticData": [
+            {
+                "id": "components",
+                "name": "Components",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "containerSimple",
+                        "name": "containerSimple",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/containerSimple"
+                        }
+                    },
+                    {
+                        "id": "label",
+                        "name": "Label",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/label"
+                        }
+                    },
+                    {
+                        "id": "icon",
+                        "name": "Icon",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/icon"
+                        }
+                    },
+                    {
+                        "id": "input",
+                        "name": "Input",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/input"
+                        }
+                    },
+                    {
+                        "id": "container",
+                        "name": "container",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/container"
+                        }
+                    },
+                    {
+                        "id": "camera",
+                        "name": "Camera",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/camera"
+                        }
+                    },
+                    {
+                        "id": "calculationBuilder",
+                        "name": "calculationBuilder",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/calculationBuilder"
+                        }
+                    },
+                    {
+                        "id": "audioPlayer",
+                        "name": "audioPlayer",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/audioPlayer"
+                        }
+                    },
+                    {
+                        "id": "audioRecorder",
+                        "name": "audioRecorder",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/audioRecorder"
+                        }
+                    },
+                    {
+                        "id": "button",
+                        "name": "button",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/button"
+                        }
+                    },
+                    {
+                        "id": "canvas",
+                        "name": "canvas",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/canvas"
+                        }
+                    },
+                    {
+                        "id": "checkbox",
+                        "name": "checkbox",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/checkbox"
+                        }
+                    },
+                    {
+                        "id": "code",
+                        "name": "code",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/code"
+                        }
+                    },
+                    {
+                        "id": "codeEditor",
+                        "name": "codeEditor",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/codeEditor"
+                        }
+                    },
+                    {
+                        "id": "containerDnd",
+                        "name": "containerDnd",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/containerDnd"
+                        }
+                    },
+                    {
+                        "id": "containerMovable",
+                        "name": "containerMovable",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/containerMovable"
+                        }
+                    },
+                    {
+                        "id": "contextMenuManager",
+                        "name": "contextMenuManager",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/contextMenuManager"
+                        }
+                    },
+                    {
+                        "id": "crumbTrail",
+                        "name": "crumbTrai",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/crumbTrail"
+                        }
+                    },
+                    {
+                        "id": "dataLoader",
+                        "name": "dataLoader",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/dataLoader"
+                        }
+                    },
+                    {
+                        "id": "datePicker",
+                        "name": "datePicker",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/datePicker"
+                        }
+                    },
+                    {
+                        "id": "divider",
+                        "name": "divider",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/divider"
+                        }
+                    },
+                    {
+                        "id": "dragger",
+                        "name": "dragger",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/dragger"
+                        }
+                    },
+                    {
+                        "id": "expoInterface",
+                        "name": "expoInterface",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/expoInterface"
+                        }
+                    },
+                    {
+                        "id": "focusLine",
+                        "name": "focusLine",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/focusLine"
+                        }
+                    },
+                    {
+                        "id": "grid",
+                        "name": "grid",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/grid"
+                        }
+                    },
+                    {
+                        "id": "html",
+                        "name": "html",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/html"
+                        }
+                    },
+                    {
+                        "id": "image",
+                        "name": "image",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/image"
+                        }
+                    },
+                    {
+                        "id": "lineDragger",
+                        "name": "lineDragger",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/lineDragger"
+                        }
+                    },
+                    {
+                        "id": "localStorangeManager",
+                        "name": "localStorangeManager",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/localStorangeManager"
+                        }
+                    },
+                    {
+                        "id": "mapLocationIq",
+                        "name": "mapLocationIq",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/mapLocationIq"
+                        }
+                    },
+                    {
+                        "id": "markdownLabel",
+                        "name": "markdownLabel",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/markdownLabel"
+                        }
+                    },
+                    {
+                        "id": "modal",
+                        "name": "modal",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/modal"
+                        }
+                    },
+                    {
+                        "id": "mover",
+                        "name": "mover",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/mover"
+                        }
+                    },
+                    {
+                        "id": "notifications",
+                        "name": "notifications",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/notifications"
+                        }
+                    },
+                    {
+                        "id": "pdfViewer",
+                        "name": "pdfViewer",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/pdfViewer"
+                        }
+                    },
+                    {
+                        "id": "popup",
+                        "name": "popup",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/popup"
+                        }
+                    },
+                    {
+                        "id": "progressBar",
+                        "name": "progressBar",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/progressBar"
+                        }
+                    },
+                    {
+                        "id": "radio",
+                        "name": "radio",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/radio"
+                        }
+                    },
+                    {
+                        "id": "repeater",
+                        "name": "repeater",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/repeater"
+                        }
+                    },
+                    {
+                        "id": "resizer",
+                        "name": "resizer",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/resizer"
+                        }
+                    },
+                    {
+                        "id": "slider",
+                        "name": "slider",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/slider"
+                        }
+                    },
+                    {
+                        "id": "spinner",
+                        "name": "spinner",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/spinner"
+                        }
+                    },
+                    {
+                        "id": "svg",
+                        "name": "svg",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/svg"
+                        }
+                    },
+                    {
+                        "id": "tab",
+                        "name": "tab",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/tab"
+                        }
+                    },
+                    {
+                        "id": "tabContainer",
+                        "name": "tabContainer",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/tabContainer"
+                        }
+                    },
+                    {
+                        "id": "timePicker",
+                        "name": "timePicker",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/timePicker"
+                        }
+                    },
+                    {
+                        "id": "treeview",
+                        "name": "treeview",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/treeview"
+                        }
+                    },
+                    {
+                        "id": "upload",
+                        "name": "upload",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/upload"
+                        }
+                    },
+                    {
+                        "id": "url",
+                        "name": "url",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/url"
+                        }
+                    },
+                    {
+                        "id": "videoPlayer",
+                        "name": "videoPlayer",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/videoPlayer"
+                        }
+                    },
+                    {
+                        "id": "viewport",
+                        "name": "viewport",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/viewport"
+                        }
+                    },
+                    {
+                        "id": "webSocket",
+                        "name": "webSocket",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/webSocket"
+                        }
+                    },
+                    {
+                        "id": "zoomPanner",
+                        "name": "zoomPanner",
+                        "data": {
+                            "template": "component",
+                            "loadData": "components/zoomPanner"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": "scripts",
+                "name": "Scripts",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "triggers",
+                        "name": "Triggers",
+                        "isParent": true,
+                        "children": [
+                            {
+                                "id": "onMount",
+                                "name": "onMount",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onMount"
+                                }
+                            },
+                            {
+                                "id": "onStateChange",
+                                "name": "onStateChange",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onStateChange"
+                                }
+                            },
+                            {
+                                "id": "onAllMounted",
+                                "name": "onAllMounted",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onAllMounted"
+                                }
+                            },
+                            {
+                                "id": "onBlur",
+                                "name": "onBlur",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onBlur"
+                                }
+                            },
+                            {
+                                "id": "onComponentChildrenChanged",
+                                "name": "onComponentChildrenChanged",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onComponentChildrenChanged"
+                                }
+                            },
+                            {
+                                "id": "onComponentResized",
+                                "name": "onComponentResized",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onComponentResized"
+                                }
+                            },
+                            {
+                                "id": "onConnectionLost",
+                                "name": "onConnectionLost",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onConnectionLost"
+                                }
+                            },
+                            {
+                                "id": "onConnectionRestored",
+                                "name": "onConnectionRestored",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onConnectionRestored"
+                                }
+                            },
+                            {
+                                "id": "onFocus",
+                                "name": "onFocus",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onFocus"
+                                }
+                            },
+                            {
+                                "id": "onGlobalKeyDown",
+                                "name": "onGlobalKeyDown",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onGlobalKeyDown"
+                                }
+                            },
+                            {
+                                "id": "onInterval",
+                                "name": "onInterval",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onInterval"
+                                }
+                            },
+                            {
+                                "id": "onKeyDown",
+                                "name": "onKeyDown",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onKeyDown"
+                                }
+                            },
+                            {
+                                "id": "onPlatformCrash",
+                                "name": "onPlatformCrash",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onPlatformCrash"
+                                }
+                            },
+                            {
+                                "id": "onScrollComponent",
+                                "name": "onScrollComponent",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onScrollComponent"
+                                }
+                            },
+                            {
+                                "id": "onUnmount",
+                                "name": "onUnmount",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onUnmount"
+                                }
+                            },
+                            {
+                                "id": "onWindowResized",
+                                "name": "onWindowResized",
+                                "data": {
+                                    "template": "trigger",
+                                    "loadData": "scripts/triggers/onWindowResized"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "actions",
+                        "name": "Actions",
+                        "isParent": true,
+                        "children": [
+                            {
+                                "id": "setState",
+                                "name": "setState",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setState"
+                                }
+                            },
+                            {
+                                "id": "log",
+                                "name": "log",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/log"
+                                }
+                            },
+                            {
+                                "id": "addClass",
+                                "name": "addClass",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/addClass"
+                                }
+                            },
+                            {
+                                "id": "allCpnsHaveStates",
+                                "name": "allCpnsHaveStates",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/allCpnsHaveStates"
+                                }
+                            },
+                            {
+                                "id": "concatArray",
+                                "name": "concatArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/concatArray"
+                                }
+                            },
+                            {
+                                "id": "defineFunction",
+                                "name": "defineFunction",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/defineFunction"
+                                }
+                            },
+                            {
+                                "id": "deleteKeys",
+                                "name": "deleteKeys",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/deleteKeys"
+                                }
+                            },
+                            {
+                                "id": "deleteVariable",
+                                "name": "deleteVariable",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/deleteVariable"
+                                }
+                            },
+                            {
+                                "id": "deleteVariableKey",
+                                "name": "deleteVariableKey",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/deleteVariableKey"
+                                }
+                            },
+                            {
+                                "id": "deleteVariables",
+                                "name": "deleteVariables",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/deleteVariables"
+                                }
+                            },
+                            {
+                                "id": "doesComponentOverflow",
+                                "name": "doesComponentOverflow",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/doesComponentOverflow"
+                                }
+                            },
+                            {
+                                "id": "evalUnsafeJs",
+                                "name": "evalUnsafeJs",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/evalUnsafeJs"
+                                }
+                            },
+                            {
+                                "id": "exitLoop",
+                                "name": "exitLoop",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/exitLoop"
+                                }
+                            },
+                            {
+                                "id": "filterArray",
+                                "name": "filterArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/filterArray"
+                                }
+                            },
+                            {
+                                "id": "findInArray",
+                                "name": "findInArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/findInArray"
+                                }
+                            },
+                            {
+                                "id": "findIndexInArray",
+                                "name": "findIndexInArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/findIndexInArray"
+                                }
+                            },
+                            {
+                                "id": "forLoop",
+                                "name": "forLoop",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/forLoop"
+                                }
+                            },
+                            {
+                                "id": "generateRandomInteger",
+                                "name": "generateRandomInteger",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/generateRandomInteger"
+                                }
+                            },
+                            {
+                                "id": "getClosestParentOfType",
+                                "name": "getClosestParentOfType",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getClosestParentOfType"
+                                }
+                            },
+                            {
+                                "id": "getComponentAtPosition",
+                                "name": "getComponentAtPosition",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getComponentAtPosition"
+                                }
+                            },
+                            {
+                                "id": "getComponentHeight",
+                                "name": "getComponentHeight",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getComponentHeight"
+                                }
+                            },
+                            {
+                                "id": "getComponentWidth",
+                                "name": "getComponentWidth",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getComponentWidth"
+                                }
+                            },
+                            {
+                                "id": "getData",
+                                "name": "getData",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getData"
+                                }
+                            },
+                            {
+                                "id": "getDomTree",
+                                "name": "getDomTree",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getDomTree"
+                                }
+                            },
+                            {
+                                "id": "getFileDataUrl",
+                                "name": "getFileDataUrl",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getFileDataUrl"
+                                }
+                            },
+                            {
+                                "id": "getFlows",
+                                "name": "getFlows",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getFlows"
+                                }
+                            },
+                            {
+                                "id": "getNextComponentId",
+                                "name": "getNextComponentId",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getNextComponentId"
+                                }
+                            },
+                            {
+                                "id": "getTheme",
+                                "name": "getTheme",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/getTheme"
+                                }
+                            },
+                            {
+                                "id": "joinArray",
+                                "name": "joinArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/joinArray"
+                                }
+                            },
+                            {
+                                "id": "loadExternalls",
+                                "name": "loadExternalls",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/loadExternalls"
+                                }
+                            },
+                            {
+                                "id": "mapArray",
+                                "name": "mapArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/mapArray"
+                                }
+                            },
+                            {
+                                "id": "morphIterateArray",
+                                "name": "morphIterateArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/morphIterateArray"
+                                }
+                            },
+                            {
+                                "id": "openUrl",
+                                "name": "openUrl",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/openUrl"
+                                }
+                            },
+                            {
+                                "id": "popVariable",
+                                "name": "popVariable",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/popVariable"
+                                }
+                            },
+                            {
+                                "id": "pushVariable",
+                                "name": "pushVariable",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/pushVariable"
+                                }
+                            },
+                            {
+                                "id": "queryUrl",
+                                "name": "queryUrl",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/queryUrl"
+                                }
+                            },
+                            {
+                                "id": "reduceArray",
+                                "name": "reduceArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/reduceArray"
+                                }
+                            },
+                            {
+                                "id": "removeClass",
+                                "name": "removeClass",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/removeClass"
+                                }
+                            },
+                            {
+                                "id": "removeStylesheet",
+                                "name": "removeStylesheet",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/removeStylesheet"
+                                }
+                            },
+                            {
+                                "id": "replacelnString",
+                                "name": "replacelnString",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/replacelnString"
+                                }
+                            },
+                            {
+                                "id": "resolveScopedId",
+                                "name": "resolveScopedId",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/resolveScopedId"
+                                }
+                            },
+                            {
+                                "id": "scrollToComponent",
+                                "name": "scrollToComponent",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/scrollToComponent"
+                                }
+                            },
+                            {
+                                "id": "setMultiState",
+                                "name": "setMultiState",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setMultiState"
+                                }
+                            },
+                            {
+                                "id": "setTagState",
+                                "name": "setTagState",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setTagState"
+                                }
+                            },
+                            {
+                                "id": "setVariable",
+                                "name": "setVariable",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setVariable"
+                                }
+                            },
+                            {
+                                "id": "setVariableKey",
+                                "name": "setVariableKey",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setVariableKey"
+                                }
+                            },
+                            {
+                                "id": "setVariableKeys",
+                                "name": "setVariableKeys",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setVariableKeys"
+                                }
+                            },
+                            {
+                                "id": "setVariables",
+                                "name": "setVariables",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/setVariables"
+                                }
+                            },
+                            {
+                                "id": "showNotification",
+                                "name": "showNotification",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/showNotification"
+                                }
+                            },
+                            {
+                                "id": "spliceArray",
+                                "name": "spliceArray",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/spliceArray"
+                                }
+                            },
+                            {
+                                "id": "stopScript",
+                                "name": "stopScript",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/stopScript"
+                                }
+                            },
+                            {
+                                "id": "toggleClass",
+                                "name": "toggleClass",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/toggleClass"
+                                }
+                            },
+                            {
+                                "id": "toggleLayoutDebug",
+                                "name": "toggleLayoutDebug",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/toggleLayoutDebug"
+                                }
+                            },
+                            {
+                                "id": "wait",
+                                "name": "wait",
+                                "data": {
+                                    "template": "action",
+                                    "loadData": "scripts/actions/wait"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "mdaLabel": {
+            "id": "((rowData.id))",
+            "type": "container",
+            "prps": {
+                "canClick": true
+            },
+            "traits": [
+                {
+                    "trait": "./functional/handleDropDownBehaviour",
+                    "traitPrps": {
+                        "rowData": "{{rowData}}"
+                    }
+                },
+                {
+                    "trait": "./functional/handleBackgroundColorBehaviour",
+                    "traitPrps": {
+                        "rowData": "{{rowData}}"
+                    }
+                }
+            ],
+            "wgts": [
+                {
+                    "id": "((rowData.id))-label",
+                    "traits": [
+                        {
+                            "trait": "./visual/iconAndLabel",
+                            "traitPrps": {
+                                "rowData": "{{rowData}}"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

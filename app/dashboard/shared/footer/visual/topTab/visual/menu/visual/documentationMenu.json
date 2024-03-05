@@ -1,0 +1,68 @@
+{
+    "type": "containerSimple",
+    "prps": {
+        "gap": "32px"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Documentation",
+                        "labelColor": "primaryOpusBlue"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Training Material"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "The Team",
+                        "clickActionScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "systemViewport",
+                                    "key": "value",
+                                    "value": "pages/community/index"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "24/7 Support"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        }
+    ]
+}

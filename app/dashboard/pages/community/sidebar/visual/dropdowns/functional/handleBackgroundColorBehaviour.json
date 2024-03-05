@@ -1,0 +1,48 @@
+{
+    "acceptPrps": {
+        "rowData": {
+            "type": "object",
+            "desc": "used to flow data from staticData in index file"
+        }
+    },
+    "prps": {
+        "scps": [
+            {
+                "triggers": [
+                    {
+                        "event": "onMount"
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||community||",
+                        "key": "selectedSectionId"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "applyComparison",
+                        "operator": "isEqual",
+                        "compareValue": "{{state.||community||.selectedSectionId}}",
+                        "value": "$rowData.dataFile$",
+                        "branch": {
+                            "true": [
+                                {
+                                    "type": "setState",
+                                    "key": "backgroundColor",
+                                    "value": "primarySearch"
+                                }
+                            ],
+                            "false": [
+                                {
+                                    "type": "setState",
+                                    "key": "backgroundColor",
+                                    "value": "transparent"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

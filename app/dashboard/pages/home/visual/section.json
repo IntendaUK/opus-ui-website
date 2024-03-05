@@ -1,0 +1,342 @@
+{
+	"acceptPrps": {
+		"title": {
+			"type": "string"
+		},
+		"subTitle": {
+			"type": "string"
+		},
+		"body": {
+			"type": "string"
+		},
+		"details": {
+			"type": "array"
+		},
+		"code": {
+			"type": "object",
+			"dft": {}
+		},
+		"reverse": {
+			"type": "boolean",
+			"dft": false
+		},
+		"examples": {
+			"type": "array",
+			"desc": "An array of example names to be rendered in the code modal, when opened. These examples must all be in the data/examples folder.",
+			"spec": [
+				"example1",
+				"example2"
+			]
+		},
+		"containerDir": {
+			"type": "boolean",
+			"morph": true,
+			"morphVariable": "res",
+			"morphActions": [
+				{
+					"type": "setVariable",
+					"name": "res",
+					"value": "{{eval.%reverse% ? 'row-reverse' : 'row'}}"
+				}
+			]
+		},
+		"textBlockExtraPrps": {
+			"type": "boolean",
+			"morph": true,
+			"morphVariable": "res",
+			"morphActions": [
+				{
+					"type": "setVariable",
+					"name": "res",
+					"value": "{{eval.%reverse% ? { marginLeft: '90px' } : { marginRight: '90px' } }}"
+				}
+			]
+		}
+	},
+	"type": "containerSimple",
+	"prps": {
+		"flexDirection": "%containerDir%"
+	},
+	"wgts": [
+		{
+			"type": "containerSimple",
+			"prps": {
+				"dir": "vertical",
+				"width": "650px",
+				"spread-": "$textBlockExtraPrps$",
+				"paddingTop": "padding"
+			},
+			"wgts": [
+				{
+					"type": "containerSimple",
+					"prps": {
+						"dir": "horizontal",
+						"crossAxisAlign": "center"
+					},
+					"wgts": [
+						{
+							"type": "image",
+							"prps": {
+								"value": "{theme.system.mdaLocation}/images/note.svg",
+								"imageWidth": "auto",
+								"imageHeight": "58px"
+							}
+						},
+						{
+							"type": "label",
+							"prps": {
+								"cpt": "%title%",
+								"fontSize": "42px",
+								"color": "white",
+								"marginLeft": "mediumPadding"
+							}
+						}
+					]
+				},
+				{
+					"type": "label",
+					"prps": {
+						"cpt": "%subTitle%",
+						"color": "primaryOpusBlue",
+						"fontSize": "18px",
+						"marginTop": "smallPadding",
+						"lineHeight": "28px"
+					}
+				},
+				{
+					"type": "label",
+					"prps": {
+						"cpt": "%body%",
+						"color": "white",
+						"fontSize": "18px",
+						"margin": "padding 0px"
+					}
+				},
+				{
+					"type": "repeater",
+					"prps": {
+						"staticData": "$details$",
+						"rowMda": {
+							"type": "containerSimple",
+							"prps": {
+								"dir": "horizontal",
+								"marginBottom": "tinyPadding"
+							},
+							"wgts": [
+								{
+									"type": "label",
+									"prps": {
+										"cpt": "•",
+										"color": "primaryOpusBlue",
+										"fontSize": "28px",
+										"lineHeight": "28px"
+									}
+								},
+								{
+									"type": "label",
+									"prps": {
+										"cpt": "((rowData))",
+										"color": "white",
+										"fontSize": "18px",
+										"lineHeight": "28px",
+										"marginLeft": "smallPadding"
+									}
+								}
+							]
+						}
+					}
+				},
+				{
+					"scope": "hoverArea",
+					"condition": {
+						"operator": "isTruthy",
+						"value": "$examples$"
+					},
+					"type": "container",
+					"prps": {
+						"canClick": true,
+						"canHover": true,
+						"marginTop": "mediumPadding",
+						"dir": "horizontal",
+						"crossAxisAlign": "center",
+						"fireScript": {
+							"actions": [
+								{
+									"type": "setMultiState",
+									"target": "||home.codeModal||",
+									"value": {
+										"vis": true,
+										"examples": "$examples$"
+									}
+								}
+							]
+						}
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"cpt": "More Examples",
+								"color": "white",
+								"fontSize": "18px"
+							}
+						},
+						{
+							"type": "containerSimple",
+							"prps": {
+								"borderRadius": "50%",
+								"width": "28px",
+								"height": "28px",
+								"mainAxisAlign": "center",
+								"crossAxisAlign": "center",
+								"backgroundColor": "menuHighlighOutline",
+								"marginLeft": "smallPadding",
+								"flows": [
+									{
+										"from": "||hoverArea||",
+										"fromKey": "hovered",
+										"toKey": "backgroundColor",
+										"mapFunctionString": "v => v ? '{theme.colors.secondaryOpusBlue}' : '{theme.colors.menuHighlighOutline}'"
+									}
+								]
+							},
+							"wgts": [
+								{
+									"type": "icon",
+									"prps": {
+										"value": "arrow_forward",
+										"color": "white",
+										"fontSize": "18px"
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"scope": "editor",
+			"type": "containerSimple",
+			"prps": {
+				"border": "2px solid {theme.colors.menuHighlighOutline}",
+				"backgroundColor": "secondaryBackground",
+				"borderRadius": "6px",
+				"width": "650px",
+				"height": "600px"
+			},
+			"wgts": [
+				{
+					"type": "containerSimple",
+					"prps": {
+						"flex": true
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"paddingSize": "tinyPadding smallPadding",
+								"backgroundColor": "menuHighlighOutline",
+								"cpt": "helloWorld.json"
+							}
+						},
+						{
+							"relId": "code",
+							"type": "codeEditor",
+							"prps": {
+								"paddingSize": "mediumPadding",
+								"fontSize": "24px",
+								"value": "",
+								"valueObj": "$code$",
+								"language": "json"
+							}
+						}
+					]
+				},
+				{
+					"type": "label",
+					"prps": {
+						"paddingSize": "tinyPadding smallPadding",
+						"backgroundColor": "menuHighlighOutline",
+						"cpt": "Preview"
+					}
+				},
+				{
+					"relId": "preview",
+					"type": "container",
+					"prps": {
+						"padding": true,
+						"paddingSize": "mediumPadding",
+						"scps": [
+							{
+								"id": "sP",
+								"concurrency": {
+									"pool": "preview"
+								},
+								"triggers": [
+									{
+										"event": "onStateChange",
+										"source": "||editor.code||",
+										"match": [
+											{
+												"operator": "isNotEqual",
+												"value": "{{state.||editor.code||.value}}",
+												"compareValue": "{}"
+											}
+										]
+									}
+								],
+								"actions": [
+									{
+										"type": "setVariable",
+										"name": "loadedObj",
+										"value": [
+											"{{eval.",
+											"    let res;",
+											"    try {",
+											"        res = JSON.parse({{state.((variable.triggeredFrom)).value}});",
+											"    } catch (e) {}",
+											"    res;",
+											"}}"
+										],
+										"inlineKeys": [
+											"value"
+										]
+									},
+									{
+										"type": "stopScript",
+										"condition": {
+											"operator": "isFalsy",
+											"value": "{{sP.variable.loadedObj}}"
+										}
+									},
+									{
+										"type": "setState",
+										"key": "deleteKeys",
+										"value": [
+											{
+												"key": "extraWgts",
+												"value": {
+													"all": true
+												}
+											}
+										]
+									},
+									{
+										"type": "wait",
+										"duration": 1
+									},
+									{
+										"type": "setState",
+										"key": "extraWgts",
+										"value": "{{variable.loadedObj}}"
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}

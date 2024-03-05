@@ -1,0 +1,197 @@
+{
+    "acceptPrps": {},
+    "type": "repeater",
+    "prps": {
+        "pageSize": 999999,
+        "staticData": "",
+        "flows": [
+            {
+                "from": "||docs||",
+                "fromKey": "propSpecs",
+                "toKey": "staticData"
+            }
+        ],
+        "rowMda": {
+            "scope": "configKeys",
+            "type": "container",
+            "prps": {
+                "marginTop": "10px",
+                "autoChildMargins": true,
+                "autoChildMarginsSize": "5px"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "((rowData.key)):",
+                        "color": "primaryOpusBlue",
+                        "width": "fit-content",
+                        "fontSize": "18px",
+                        "fontWeight": "700",
+                        "italic": true
+                    }
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "8px",
+                        "marginLeft": "15px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "description:",
+                                "color": "#ffffff"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.desc))",
+                                "color": "#ffffff",
+                                "italic": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "8px",
+                        "marginLeft": "15px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "dataType:",
+                                "color": "#ffffff"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.dataType))",
+                                "color": "#ffffff",
+                                "italic": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "8px",
+                        "marginLeft": "15px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "Mandatory:",
+                                "color": "#ffffff"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.mandatory))",
+                                "color": "#ffffff",
+                                "italic": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "8px",
+                        "marginLeft": "15px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "Default:",
+                                "color": "#ffffff"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.dft))",
+                                "color": "#ffffff",
+                                "italic": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "relId": "options",
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "8px",
+                        "marginLeft": "15px",
+                        "options": "((rowData.options))",
+                        "flows": [
+                            {
+                                "from": "||configKeys.options||",
+                                "fromKey": "options",
+                                "toKey": "vis",
+                                "mapFunctionString": "(v) => {if (v === 'undefined') return false; else return true}"
+                            }
+                        ]
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "options:",
+                                "color": "#ffffff"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.options))",
+                                "color": "#ffffff",
+                                "italic": true
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "8px",
+                        "marginLeft": "15px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "Description:",
+                                "color": "#ffffff"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.desc))",
+                                "color": "#ffffff",
+                                "italic": true
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "acceptPrps": {},
+    "scope": "dropdowns",
+    "type": "containerSimple",
+    "prps": {
+        "selectedNode": "",
+        "backgroundColor": "primaryBackground",
+        "width": "340px",
+        "paddingTop": "mediumPadding"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./visual/dropdowns/index"
+                }
+            ]
+        }
+    ]
+}

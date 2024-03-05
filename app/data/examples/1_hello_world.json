@@ -1,0 +1,18 @@
+{
+    "type": "containerSimple",
+    "prps": {
+        "backgroundColor": "#6E9BEA",
+        "padding": true,
+        "paddingSize": "4px 8px",
+        "borderRadius": "4px"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "Hello world!",
+                "color": "white"
+            }
+        }
+    ]
+}

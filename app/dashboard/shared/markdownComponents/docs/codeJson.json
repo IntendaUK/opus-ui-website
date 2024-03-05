@@ -1,0 +1,18 @@
+{
+    "acceptPrps": {},
+    "traits": [
+        {
+            "trait": "./../codeJson",
+            "traitPrps": {
+                "flows": [
+                    {
+                        "from": "||docs||",
+                        "fromKey": "selectedDocData",
+                        "fromSubKey": "usage",
+                        "toKey": "valueObj"
+                    }
+                ]
+            }
+        }
+    ]
+}

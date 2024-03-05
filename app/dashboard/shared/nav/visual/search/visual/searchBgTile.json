@@ -1,0 +1,39 @@
+{
+    "acceptPrps": {},
+    "scope": "searchBgTile",
+    "type": "container",
+    "container": "root",
+    "prps": {
+        "canClick": true,
+        "position": "absolute",
+        "left": "0px",
+        "top": "0px",
+        "width": "100vw",
+        "height": "100vh",
+        "backgroundColor": "#191D23",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "mainAxisAlign": "center",
+        "crossAxisAlign": "center",
+        "zIndex": 10,
+        "vis": false,
+        "comment": "This is meant to close the modal on any click, it not useful for now",
+        "fireScript": {
+            "actions": [
+                {
+                    "type": "setState",
+                    "target": "||search.searchModal||",
+                    "key": "vis",
+                    "value": false
+                },
+                {
+                    "type": "setState",
+                    "target": "||search.searchBgTile||",
+                    "key": "vis",
+                    "value": false
+                }
+            ]
+        }
+    },
+    "wgts": []
+}

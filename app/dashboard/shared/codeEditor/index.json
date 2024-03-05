@@ -1,0 +1,29 @@
+{
+    "acceptPrps": {
+        "code": {
+            "type": "string",
+            "desc": "json code to be displayed"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "borderRadius": "15px",
+        "border": "0.5px solid lightGrey",
+        "hasShadow": true,
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "width": "100%",
+        "margin": "mediumPadding 0px"
+    },
+    "wgts": [
+        {
+            "type": "codeEditor",
+            "prps": {
+                "language": "json",
+                "value": "$code$",
+                "prettyPrint": true,
+                "lint": true
+            }
+        }
+    ]
+}

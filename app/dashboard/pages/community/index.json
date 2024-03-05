@@ -1,0 +1,43 @@
+{
+    "acceptPrps": {},
+    "scope": "community",
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "flex": true,
+        "height": "100%",
+        "selectedSectionId": "1-1-meet-the-team",
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "type": "setState",
+                        "key": "lessons",
+                        "value": "{theme.freeText.community}"
+                    }
+                ]
+            }
+        ]
+    },
+    "wgts": [
+        {
+            "relId": "sidebar",
+            "traits": [
+                {
+                    "trait": "./sidebar/index"
+                }
+            ],
+            "prps": {
+                "borderRight": "1px solid {theme.colors.menuHighlighOutline}"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./sectionView/index",
+                    "traitPrps": {}
+                }
+            ]
+        }
+    ]
+}

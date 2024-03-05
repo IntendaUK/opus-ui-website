@@ -1,0 +1,34 @@
+{
+    "acceptPrps": {},
+    "scope": "post",
+    "type": "containerSimple",
+    "prps": {
+        
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "padding": true,
+                "paddingSize": "50px 300px"
+            },
+            "wgts": [
+                {
+                    "traits": [
+                        {
+                            "trait": "./visual/extendedBlog/index",
+                            "traitPrps": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/footer/index"
+                }
+            ]
+        }
+    ]
+}

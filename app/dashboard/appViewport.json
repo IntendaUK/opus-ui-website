@@ -1,0 +1,42 @@
+{
+    "scope": "appViewport",
+    "type": "containerSimple",
+    "prps": {
+        "singlePage": true,
+        "backgroundColor": "primaryBackground"
+    },
+    "wgts": [
+        {
+            "scope": "router",
+            "traits": [
+                {
+                    "trait": "router/index",
+                    "traitPrps": {}
+                }
+            ]
+        },
+        {
+            "relId": "nav",
+            "traits": [
+                {
+                    "trait": "shared/nav/index"
+                }
+            ]
+        },
+        {
+            "type": "containerSimple",
+            "prps": {
+                "flex": true
+            },
+            "wgts": [
+                {
+                    "id": "systemViewport",
+                    "type": "viewport",
+                    "prps": {
+                        
+                    }
+                }
+            ]
+        }
+    ]
+}

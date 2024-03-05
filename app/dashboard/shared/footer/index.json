@@ -1,0 +1,90 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "padding": true,
+        "paddingSize": "mediumPadding padding",
+        "backgroundColor": "#191D23",
+        "marginTop": "mediumPadding",
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "mainAxisAlign" :"space-between",
+        "width": "100%",
+        "height": "100px"
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {},
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/logo.png",
+                        "imageHeight": "24px",
+                        "imageWidth": "auto"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "marginTop": "tinyPadding",
+                        "cpt": "© 2024",
+                        "fontSize": "14px",
+                        "color": "secondaryText"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "prps": {
+                "marginLeft": "auto",
+                "canClick": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "openUrl",
+                            "url": "https://opus-ui.com/discord"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/discord.svg",
+                        "imageWidth": "24px",
+                        "imageHeight": "24px"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "prps": {
+                "marginLeft": "padding",
+                "canClick": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "openUrl",
+                            "url": "https://github.com/IntendaUK/opus-ui"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/github.svg",
+                        "imageWidth": "24px",
+                        "imageHeight": "24px"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "acceptPrps": {},
+    "scope": "dateAndAuthor",
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "margin": "smallPadding 0px",
+        "data": null,
+        "flows": [
+            {
+                "from": "||extendBlog||",
+                "fromKey": "selectedBlog",
+                "toKey": "data"
+            }
+        ]
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "color": "secondaryText",
+                "fontSize": "18px",
+                "lineHeight": "24px",
+                "flows": [
+                    {
+                        "from": "||dateAndAuthor||",
+                        "fromKey": "data",
+                        "fromSubKey": "date",
+                        "toKey": "cpt",
+                        "mapFunctionString": "v => `${v} by`"
+                    }
+                ]
+            }
+        },
+        {
+            "scope": "author",
+            "type": "container",
+            "prps": {
+                "marginLeft": "tinyPadding",
+                "canClick": true,
+                "canHover": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "setState",
+                            "target": "||router||",
+                            "key": "tPerformRoute",
+                            "value": "community"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "color": "primaryOpusBlue",
+                        "fontSize": "18px",
+                        "lineHeight": "24px",
+                        "flows": [
+                            {
+                                "from": "||dateAndAuthor||",
+                                "fromKey": "data",
+                                "fromSubKey": "author",
+                                "toKey": "cpt"
+                            },
+                            {
+                                "from": "||author||",
+                                "fromKey": "hovered",
+                                "toKey": "underline"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

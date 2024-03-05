@@ -1,0 +1,38 @@
+{
+    "acceptPrps": {},
+    "prps": {
+        "scps": [
+            {
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "source": "||docs||",
+                        "key": "selectedNode"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "getData",
+                        "filters": [],
+                        "dtaObj": "{{state.||docs||.selectedNode.loadData}}",
+                        "offset": 0,
+                        "pageSize": 1,
+                        "storeAsVariable": "selectedDocData"
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||docs||",
+                        "key": "selectedDocData",
+                        "value": "{{variable.selectedDocData.data.0}}"
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||docs||",
+                        "key": "propSpecs",
+                        "value": "{{variable.selectedDocData.data.0.propSpec}}"
+                    }
+                ]
+            }
+        ]
+    }
+}

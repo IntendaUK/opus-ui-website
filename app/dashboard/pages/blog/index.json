@@ -1,0 +1,42 @@
+{
+    "acceptPrps": {},
+    "scope": "blog",
+    "type": "containerSimple",
+    "prps": {
+        "selectedBlogIndex": [],
+        "blogPosts": []
+    },
+    "traits": [
+        {
+            "trait": "./functional/getBlogPosts",
+            "traitPrps": {}
+        }
+    ],
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "padding": true,
+                "paddingSize": "50px 300px",
+                "minHeight": "calc(100vh - 207px)"
+            },
+            "wgts": [
+                {
+                    "traits": [
+                        {
+                            "trait": "./visual/blogs/index",
+                            "traitPrps": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/footer/index"
+                }
+            ]
+        }
+    ]
+}

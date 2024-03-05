@@ -1,0 +1,36 @@
+{
+    "acceptPrps":{},
+    "prps": {
+        "freeTextTheme": "{theme.freeText.blogPosts}",
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "type": "setState",
+                        "key": "blogPosts",
+                        "value": [
+                            "{{eval.",
+                            "    const res = {{state.self.freeTextTheme}}",
+                            "        .split('---\\n')",
+                            "        .map(m => {",
+                            "            const split = m.split('\\n');",
+                            "            return {",
+                            "                id: split[0],",
+                            "                title: split[1],",
+                            "                date: split[2],",
+                            "                author: split[3],",
+                            "                desc: split[4],",
+                            "            };",
+                            "        });",
+                            "    res;",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

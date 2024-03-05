@@ -1,0 +1,40 @@
+{
+    "acceptPrps":{},
+    "prps": {
+        "scps": [
+            {
+                "triggers": [
+                    {
+                        "event": "onGlobalKeyDown",
+                        "consumeEventOnUse": true,
+                        "match": [
+                            {
+                                "comparison": "isEqual",
+                                "value": "((event.key))",
+                                "compareValue": "k"
+                            },
+                            {
+                                "comparison": "isNotFalsy",
+                                "value": "((event.ctrlDown))"
+                            }
+                        ]
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "setState",
+                        "target": "||search.searchModal||",
+                        "key": "vis",
+                        "value": true
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||search.searchBgTile||",
+                        "key": "vis",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

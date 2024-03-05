@@ -1,0 +1,43 @@
+{
+    "acceptPrps": {
+        "cpt": {
+            "type": "string",
+            "desc": "Title for each navlink"
+        },
+        "onClickScript": {
+            "type": "object",
+            "desc": "fireScript action for a click action"
+        }
+    },
+    "scope": "navlink",
+    "type": "container",
+    "prps": {
+        "canClick": true,
+        "canHover": true,
+        "marginRight": "mediumPadding",
+        "fireScript": "$onClickScript$"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "%cpt%",
+                "fontSize": "16px",
+                "flows": [
+                    {
+                        "from": "||navlink||",
+                        "fromKey": "hovered",
+                        "toKey": "color",
+                        "mapFunctionString": "v => v ? '#c1c1c1' : '#ffffff'"
+                    },
+                    {
+                        "from": "||navlink||",
+                        "fromKey": "hovered",
+                        "toKey": "borderBottom",
+                        "mapFunctionString": "v => v ? '3px solid {theme.colors.primaryOpusBlue}' : 'none'"
+                    }
+                ]
+            }
+        }
+    ]
+}

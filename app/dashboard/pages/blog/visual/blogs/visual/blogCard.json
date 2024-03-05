@@ -1,0 +1,115 @@
+{
+    "acceptPrps": {
+        "rowData": {
+            "type": "object",
+            "desc": "used to display data on card sections for blogs"
+        },
+        "blogIndex": {
+            "type": "integer",
+            "desc": "The index of the blog post in the blog posts array"
+        }
+    },
+    "type": "container",
+    "prps": {
+        "borderRadius": "6px",
+        "backgroundColor": "secondaryBackground",
+        "border": "1px solid {theme.colors.menuHighlighOutline}",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "gap": "smallPadding"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "$rowData.title$",
+                "fontSize": "30px",
+                "fontWeight": "800",
+                "color": "text"
+            }
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "$rowData.date$",
+                "color": "#666666"
+            }
+        },
+        {
+            "type": "markdownLabel",
+            "prps": {
+                "cpt": "$rowData.desc$",
+                "color": "text",
+                "fontSize": "18px",
+                "fontWeight": "400"
+            }
+        },
+        {
+            "scope": "readMore",
+            "type": "container",
+            "traits": [
+                {
+                    "trait": "./../functional/expandBlog",
+                    "traitPrps": {
+                        "rowData": "$rowData$",
+                        "blogIndex": "$blogIndex$"
+                    }
+                }
+            ],
+            "prps": {
+                "dir": "horizontal",
+                "gap": "smallPadding",
+                "crossAxisAlign": "center",
+                "canClick": true,
+                "canHover": true
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Read more",
+                        "color": "#ffffff",
+                        "fontSize": "18px",
+                        "fontWeight": "500"
+                    }
+                },
+                {
+                    "type": "container",
+                    "prps": {
+                        
+                        "backgroundColor": "primarySearch",
+                        "borderRadius": "50%",
+                        "padding": true,
+                        "paddingSize": "tinyPadding",
+                        "flows": [
+                            {
+                                "from": "||readMore||",
+                                "fromKey": "hovered",
+                                "toKey": "backgroundColor",
+                                "mapFunctionString": "v => v ? '{theme.colors.secondaryOpusBlue}' : '{theme.colors.menuHighlighOutline}'"
+                            }
+                        ],
+                        "hoverPrps": {
+                            "on": {
+                                "backgroundColor": "secondaryOpusBlue"
+                            },
+                            "off": {
+                                "backgroundColor": "primarySearch"
+                            }
+                        }
+                    },
+                    "wgts": [
+                        {
+                            "type": "icon",
+                            "prps": {
+                                "value": "arrow_forward",
+                                "color": "#ffffff",
+                                "fontSize": "18px"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

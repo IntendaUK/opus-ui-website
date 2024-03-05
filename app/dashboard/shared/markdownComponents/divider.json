@@ -1,0 +1,12 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "string"
+		}
+	},
+	"type": "divider",
+	"prps": {
+		"color": "primaryOpusBlue",
+		"thickness": "%value%"
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "acceptPrps":{},
+    "scope": "searchModal",
+    "type": "containerSimple",
+    "container": "root",
+    "prps": {
+        "position": "absolute",
+        "top": "50%",
+        "left": "50%",
+        "transform": "translate(-50%, -50%)",
+        "backgroundColor": "bgMedium",
+        "width": "40%",
+        "height": "95%",
+        "borderRadius": "15px",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "zIndex": 11,
+        "vis": false
+    },
+    "traits": [
+        "./../functional/escPress"
+    ],
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./searchInput",
+                    "traitPrps": {}
+                }
+            ]
+        }
+    ]
+}

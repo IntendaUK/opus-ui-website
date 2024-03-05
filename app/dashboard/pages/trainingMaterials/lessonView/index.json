@@ -1,0 +1,153 @@
+{
+	"acceptPrps": {},
+	"type": "container",
+	"prps": {
+		"flex": true,
+		"padding": true,
+		"paddingSize": "smallPadding bigPadding",
+		"height": "100%",
+		"overflow": "auto",
+		"scps": [
+			{
+				"id": "sL",
+				"triggers": [
+					{
+						"event": "onStateChange",
+						"source": "||lessons||",
+						"key": "selectedLessonId"
+					}
+				],
+				"actions": [
+					{
+						"type": "setVariable",
+						"name": "lessonData",
+						"value": [
+							"{{eval.",
+							"    const split = {{state.||lessons||.lessons.((state.||lessons||.selectedLessonId))}}",
+							"        .split('\\n');",
+							"    const [, title, , , ...data] = split;",
+							"    const videos = data.filter(v => v.startsWith(\"http\"));",
+							"    const discussed = data.filter(v => !v.startsWith(\"http\"));",
+							"    discussed.shift();",
+							"    const discussedTitle = discussed[0];",
+							"    discussed.shift();",
+							"    ({ title, videos, discussed, discussedTitle});",
+							"}}"
+						],
+						"inlineKeys": [
+							"value"
+						]
+					},
+					{
+						"type": "setState",
+						"key": "deleteKeys",
+						"value": [
+							{
+								"key": "extraWgts",
+								"value": {
+									"all": true
+								}
+							}
+						]
+					},
+					{
+						"type": "wait",
+						"duration": 1
+					},
+					{
+						"type": "setVariable",
+						"name": "extraWgts",
+						"value": []
+					},
+					{
+						"id": "sLM",
+						"type": "morphIterateArray",
+						"value": "{{variable.lessonData.videos}}",
+						"chain": [
+							{
+								"actionCondition": {
+									"operator": "isTruthy",
+									"value": "{{sLM.variable.record}}"
+								},
+								"type": "pushVariable",
+								"name": "extraWgts",
+								"scope": "sL",
+								"value": {
+									"type": "label",
+									"prps": {
+										"cpt": "{{sL.variable.lessonData.title}}",
+										"color": "#ffffff",
+										"fontSize": "20px",
+										"margin": "20px"
+									}
+								}
+							},
+							{
+								"actionCondition": {
+									"operator": "isTruthy",
+									"value": "{{sLM.variable.record}}"
+								},
+								"type": "pushVariable",
+								"name": "extraWgts",
+								"scope": "sL",
+								"value": {
+									"traits": [
+										{
+											"trait": "./visual/video",
+											"traitPrps": {
+												"url": "{{sLM.eval.{{sLM.variable.record}}.replace('watch?v=', 'embed/')}}"
+											}
+										}
+									]
+								}
+							},
+							{
+								"actionCondition": {
+									"operator": "isTruthy",
+									"value": "{{sLM.variable.record}}"
+								},
+								"type": "pushVariable",
+								"name": "extraWgts",
+								"scope": "sL",
+								"value": {
+									"type": "label",
+									"prps": {
+										"cpt": "{{sL.variable.lessonData.discussedTitle}}",
+										"color": "#ffffff",
+										"fontSize": "20px",
+										"fontWeight": "800",
+										"margin": "24px 0px 5px 0px"
+									}
+								}
+							},
+							{
+								"actionCondition": {
+									"operator": "isTruthy",
+									"value": "{{sLM.variable.record}}"
+								},
+								"type": "pushVariable",
+								"name": "extraWgts",
+								"scope": "sL",
+								"value": {
+									"traits": [
+										{
+											"trait": "./visual/discussed",
+											"traitPrps": {
+												"text": "{{sL.variable.lessonData.discussed}}"
+											}
+										}
+									]
+								}
+							}
+						]
+					},
+					{
+						"type": "setState",
+						"key": "extraWgts",
+						"value": "{{variable.extraWgts}}"
+					}
+				]
+			}
+		]
+	}
+}

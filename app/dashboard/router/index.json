@@ -1,0 +1,115 @@
+{
+	"acceptPrps": {},
+	"type": "containerSimple",
+	"prps": {
+		"tPerformRoute": null,
+		"config": {
+			"default": {
+				"title": "Opus UI",
+				"url": "pages/home/index",
+				"path": "/"
+			},
+			"learn": {
+				"title": "Opus UI - Learn",
+				"url": "pages/gettingStarted/index",
+				"path": "/learn"
+			},
+			"lessons": {
+				"title": "Opus UI - Lessons",
+				"url": "pages/trainingMaterials/index",
+				"path": "/lessons"
+			},
+			"docs": {
+				"title": "Opus UI - Docs",
+				"url": "pages/docs/index",
+				"path": "/docs"
+			},
+			"community": {
+				"title": "Opus UI - Community",
+				"url": "pages/community/index",
+				"path": "/community"
+			},
+			"blogPost": {
+				"url": "pages/blog/post",
+				"path": "/blog/post"
+			},
+			"blog": {
+				"title": "Opus UI - Blog",
+				"url": "pages/blog/index",
+				"path": "/blog"
+			}
+		},
+		"scps": [
+			{
+				"actions": [
+					{
+						"type": "routeFromUrl",
+						"config": "{{state.self.config}}",
+						"storeAsVariable": "loadDashboard"
+					},
+					{
+						"type": "setState",
+						"target": "systemViewport",
+						"value": "{{variable.loadDashboard}}"
+					}
+				]
+			},
+			{
+				"id": "sPR",
+				"triggers": [
+					{
+						"event": "onStateChange",
+						"key": "tPerformRoute",
+						"match": [
+							{
+								"operator": "isNotFalsy",
+								"key": "tPerformRoute"
+							}
+						]
+					}
+				],
+				"actions": [
+					{
+						"type": "route",
+						"config": "{{state.self.config}}",
+						"routeTo": "{{state.self.tPerformRoute}}",
+						"storeAsVariable": "loadDashboard"
+					},
+					{
+						"type": "stopScript",
+						"condition": {
+							"operator": "isFalsy",
+							"value": "{{sPR.variable.loadDashboard}}1"
+						}
+					},
+					{
+						"type": "setState",
+						"target": "systemViewport",
+						"value": "{{variable.loadDashboard}}"
+					}
+				]
+			},
+			{
+				"triggers": [
+					{
+						"event": "onStateChange",
+						"key": "onRoute",
+						"match": [
+							{
+								"operator": "isTruthy",
+								"key": "onRoute"
+							}
+						]
+					}
+				],
+				"actions": [
+					{
+						"type": "setState",
+						"key": "onRoute",
+						"value": false
+					}
+				]
+			}
+		]
+	}
+}

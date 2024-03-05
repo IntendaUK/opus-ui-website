@@ -1,0 +1,59 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "gap": "32px"
+    },
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Features",
+                        "labelColor": "primaryOpusBlue"
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Low-Code"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Faster Development"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./menuLabel",
+                    "traitPrps": {
+                        "menuTag": "Opus-Source"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "smallPadding"
+            }
+        }
+    ]
+}

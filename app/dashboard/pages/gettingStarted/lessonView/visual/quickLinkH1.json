@@ -1,0 +1,38 @@
+{
+	"acceptPrps": {
+		"heading": "string",
+		"headingId": "string"
+	},
+	"type": "container",
+	"prps": {
+		"canClick": true,
+		"fireScript": {
+			"actions": [
+				{
+					"type": "scrollToComponent",
+					"target": "%headingId%",
+					"alignVertical": "start"
+				}
+			]
+		}
+	},
+	"wgts": [
+		{
+			"type": "label",
+			"prps": {
+				"cpt": "%heading%",
+				"fontSize": "17px",
+				"color": "footerText",
+				"lineHeight": "36px",
+				"flows": [
+					{
+						"from": "||lessonView.quickLinks||",
+						"fromKey": "highlightedHeadingId",
+						"toKey": "color",
+						"mapFunctionString": "v => v === '%headingId%' ? 'primaryOpusBlue' : 'footerText'"
+					}
+				]
+			}
+		}
+	]
+}

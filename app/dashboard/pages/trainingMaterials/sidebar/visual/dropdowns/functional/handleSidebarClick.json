@@ -1,0 +1,36 @@
+{
+    "acceptPrps": {
+        "rowData": {
+            "type": "object",
+            "desc": "used to flow data from staticData in index file"
+        }
+    },
+    "prps": {
+        "fireScript": {
+            "actions": [
+                {
+                    "actionCondition": {
+                        "operator": "isTruthy",
+                        "value": "$rowData.children$"
+                    },
+                    "type": "forLoop",
+                    "count": "{{state.||treeview||.expandedNodes.length}}",
+                    "actions": [
+                        {
+                            "type": "setState",
+                            "target": "||treeview||",
+                            "key": "tToggleParent",
+                            "value": "{{state.||treeview||.staticData.((variable.rowNumber))}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "setState",
+                    "target": "||lessons||",
+                    "key": "selectedLessonId",
+                    "value": "$rowData.dataFile$"
+                }
+            ]
+        }
+    }
+}

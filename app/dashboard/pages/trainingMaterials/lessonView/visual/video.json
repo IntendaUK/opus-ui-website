@@ -1,0 +1,18 @@
+{
+	"acceptPrps": {
+		"url": {
+			"type": "string"
+		}
+	},
+	"type": "url",
+	"prps": {
+		"value": "%url%?rel=0",
+		"width": "100%",
+		"style": {
+			".cpnUrl": {
+				"height": "unset",
+				"aspect-ratio": "16 / 9"
+			}
+		}
+	}
+}

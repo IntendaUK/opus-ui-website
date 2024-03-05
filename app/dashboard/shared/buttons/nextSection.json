@@ -1,0 +1,59 @@
+{
+    "acceptPrps": {
+        "nextSectionTitle": {
+            "type": "string",
+            "desc": "title for the next section in tutorials"
+        }
+    },
+    "type": "container",
+    "prps": {
+        "canHover": true,
+        "canClick": true,
+        "dir": "horizontal",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "borderRadius": "10px",
+        "mainAxisAlign": "center",
+        "crossAxisAlign": "center",
+        "gap": "10px",
+        "hoverPrps": {
+            "on": {
+                "backgroundColor": "darkGrey"
+            },
+            "off": {
+                "backgroundColor": "transparent"
+            }
+        }
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "gap": "10px"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Next"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "$nextSectionTitle$",
+                        "color": "#3591af",
+                        "fontWeight": "700"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "icon",
+            "prps": {
+                "value": "arrow_forward_ios",
+                "color": "grey"
+            }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "mainAxisAlign": "space-between",
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "©2024",
+                "color": "footerText",
+                "fontSize": "20px"
+            }
+        },
+        {
+            "type": "containerSimple",
+            "prps": {},
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/github.svg",
+                        "imageWidth": "24px",
+                        "imageHeight": "24px"
+                    }
+                }
+            ]
+        }
+    ]
+}

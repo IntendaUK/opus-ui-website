@@ -1,0 +1,42 @@
+{
+    "acceptPrps": {
+        "menuTag": {
+            "type": "string",
+            "desc": "cpt for name for each menu label"
+        },
+        "clickActionScript": {
+            "type": "object",
+            "desc": "fireScript used to open the selected menu screen"
+        },
+        "labelColor": {
+            "type": "string",
+            "dft": "#ffffff",
+            "desc": "used to give the label a dft color, and add a custom color as well"
+        }
+    },
+    "scope": "link",
+    "type": "container",
+    "prps": {
+        "canClick": true,
+        "canHover": true,
+        "fireScript": "$clickActionScript$"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "%menuTag%",
+                "color": "%labelColor%",
+                "fontSize": "20px",
+                "flows": [
+                    {
+                        "from": "||link||",
+                        "fromKey": "hovered",
+                        "toKey": "color",
+                        "mapFunctionString": "v => v ? '{theme.colors.primaryOpusBlue}' : '%labelColor%'"
+                    }
+                ]
+            }
+        }
+    ]
+}

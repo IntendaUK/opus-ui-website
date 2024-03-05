@@ -1,0 +1,82 @@
+{
+    "acceptPrps": {
+        "title": {
+            "type": "string",
+            "desc": "title of learning objectives"
+        },
+        "itemList": {
+            "type": "array",
+            "desc": "array of strings received, used to display data on card onbjectives section"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "borderRadius": "15px",
+        "border": "1px solid lightGrey",
+        "padding": true,
+        "paddingSize": "mediumPadding",
+        "backgroundColor": "#2C2C2C",
+        "width": "100%"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "%title%",
+                "fontSize": "24px",
+                "fontWeight": "700",
+                "marginBottom": "10px",
+                "color": "text"
+            }
+        },
+        {
+            "scope": "objectives",
+            "type": "repeater",
+            "prps": {
+                "rowMda": {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "margin": "0px 0px 10px 10px",
+                        "gap": "10px"
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "●"
+                            }
+                        },
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "((rowData.line))"
+                            }
+                        }
+                    ]
+                },
+                "scps": [
+                    {
+                        "actions": [
+                            {
+                                "id": "sM",
+                                "type": "mapArray",
+                                "value": "$itemList$",
+                                "mapTo": {
+                                    "line": "{{sM.variable.record}}"
+                                },
+                                "storeAsVariable": "lineItems"
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||objectives||",
+                                "key": "staticData",
+                                "value": "{{variable.lineItems}}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

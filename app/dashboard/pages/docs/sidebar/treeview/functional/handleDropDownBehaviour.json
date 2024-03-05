@@ -1,0 +1,30 @@
+{
+    "acceptPrps": {
+        "rowData": {
+            "type": "object",
+            "desc": "used to flow data from staticData in index file"
+        }
+    },
+    "prps": {
+        "fireScript": {
+            "actions": [
+                {
+                    "actionCondition": {
+                        "operator": "isTruthy",
+                        "value": "$rowData.children$"
+                    },
+                    "type": "setState",
+                    "target": "||treeview||",
+                    "key": "tToggleParent",
+                    "value": "$rowData$"
+                },
+                {
+                    "type": "setState",
+                    "target": "||docs||",
+                    "key": "selectedNode",
+                    "value": "$rowData.data$"
+                }
+            ]
+        }
+    }
+}

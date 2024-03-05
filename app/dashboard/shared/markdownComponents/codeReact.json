@@ -1,0 +1,24 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "object"
+		}
+	},
+	"type": "containerSimple",
+	"prps": {
+		"border": "2px solid {theme.colors.menuHighlighOutline}",
+		"backgroundColor": "secondaryBackground",
+		"padding": true,
+		"paddingSize": "mediumPadding",
+		"borderRadius": "6px"
+	},
+	"wgts": [
+		{
+			"type": "codeEditor",
+			"prps": {
+				"value": "$value$",
+				"language": "jsx"
+			}
+		}
+	]
+}

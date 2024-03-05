@@ -1,0 +1,228 @@
+{
+	"acceptPrps": {},
+	"scope": "lessonView",
+	"type": "containerSimple",
+	"prps": {
+		"dir": "horizontal",
+		"flex": true,
+		"scps": [
+			{
+				"id": "sL",
+				"triggers": [
+					{
+						"event": "onMount"
+					},
+					{
+						"event": "onStateChange",
+						"source": "||gettingStarted||",
+						"key": "selectedLessonId"
+					}
+				],
+				"actions": [
+					{
+						"type": "convertMarkdownToComponents",
+						"value": "{{state.||gettingStarted||.lessons.((state.||gettingStarted||.selectedLessonId))}}",
+						"storeAsVariable": "lessonData"
+					},
+					{
+						"type": "setState",
+						"key": "data",
+						"value": "{{variable.lessonData}}"
+					}
+				]
+			}
+		]
+	},
+	"wgts": [
+		{
+			"relId": "contents",
+			"type": "container",
+			"prps": {
+				"flex": true,
+				"padding": true,
+				"paddingSize": "smallPadding bigPadding",
+				"height": "100%",
+				"overflow": "auto",
+				"scps": [
+					{
+						"id": "sLC",
+						"concurrency": {
+							"pool": "sLC",
+							"mode": "wait"
+						},
+						"triggers": [
+							{
+								"event": "onMount"
+							},
+							{
+								"event": "onStateChange",
+								"source": "||lessonView||",
+								"key": "data"
+							}
+						],
+						"actions": [
+							{
+								"type": "stopScript",
+								"condition": {
+									"operator": "isFalsy",
+									"value": "{{sLC.state.||lessonView||.data}}"
+								}
+							},
+							{
+								"type": "setState",
+								"key": "deleteKeys",
+								"value": [
+									{
+										"key": "extraWgts",
+										"value": {
+											"all": true
+										}
+									}
+								]
+							},
+							{
+								"type": "wait",
+								"duration": 1
+							},
+							{
+								"id": "sLCM",
+								"type": "mapArray",
+								"value": "{{state.||lessonView||.data.components}}",
+								"storeAsVariable": "extraWgts",
+								"mapTo": {
+									"traits": [
+										{
+											"trait": "shared/markdownComponents/((sLCM.variable.record.type))",
+											"traitPrps": {
+												"value": "{{sLCM.variable.record.value}}"
+											}
+										}
+									]
+								}
+							},
+							{
+								"type": "setState",
+								"key": "extraWgts",
+								"value": "{{variable.extraWgts}}"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"relId": "quickLinks",
+			"type": "container",
+			"prps": {
+				"padding": true,
+				"paddingSize": "mediumPadding",
+				"height": "100%",
+				"backgroundColor": "primarySearch",
+				"width": "300px",
+				"overflow": "auto",
+				"scps": [
+					{
+						"id": "sLH",
+						"concurrency": {
+							"pool": "sLH",
+							"mode": "wait"
+						},
+						"triggers": [
+							{
+								"event": "onMount"
+							},
+							{
+								"event": "onStateChange",
+								"source": "||lessonView||",
+								"key": "data"
+							}
+						],
+						"actions": [
+							{
+								"type": "stopScript",
+								"condition": {
+									"operator": "isFalsy",
+									"value": "{{sLH.state.||lessonView||.data}}"
+								}
+							},
+							{
+								"type": "setState",
+								"key": "deleteKeys",
+								"value": [
+									{
+										"key": "extraWgts",
+										"value": {
+											"all": true
+										}
+									}
+								]
+							},
+							{
+								"type": "wait",
+								"duration": 1
+							},
+							{
+								"id": "sLHM",
+								"type": "mapArray",
+								"value": "{{state.||lessonView||.data.headings}}",
+								"storeAsVariable": "extraWgts",
+								"mapTo": {
+									"traits": [
+										{
+											"trait": "./visual/quickLinkH1",
+											"traitPrps": {
+												"heading": "{{sLHM.variable.record.heading}}",
+												"headingId": "{{sLHM.variable.record.id}}"
+											}
+										}
+									]
+								}
+							},
+							{
+								"type": "setMultiState",
+								"value": {
+									"extraWgts": "{{sLH.variable.extraWgts}}",
+									"highlightedHeadingId": "{{sLH.state.||lessonView||.data.headings.0.id}}"
+								}
+							}
+						]
+					},
+					{
+						"id": "sS",
+						"triggers": [
+							{
+								"event": "onScrollComponent",
+								"source": "||lessonView.contents||"
+							}
+						],
+						"actions": [
+							{
+								"type": "getDocSectionInView",
+								"scrollContainerId": "||lessonView.contents||",
+								"headings": "{{state.||lessonView||.data.headings}}",
+								"storeAsVariable": "highlightedHeadingId"
+							},
+							{
+								"type": "setState",
+								"key": "highlightedHeadingId",
+								"value": "{{variable.highlightedHeadingId}}"
+							}
+						]
+					}
+				]
+			},
+			"wgts": [
+				{
+					"type": "label",
+					"prps": {
+						"cpt": "SECTIONS",
+						"fontSize": "17px",
+						"lineHeight": "30px",
+						"bold": true,
+						"marginBottom": "tinyPadding"
+					}
+				}
+			]
+		}
+	]
+}

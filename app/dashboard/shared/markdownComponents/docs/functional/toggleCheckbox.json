@@ -1,0 +1,48 @@
+{
+    "acceptPrps": {},
+    "prps": {
+        "scps": [
+            {
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "source": "||component.checkbox||",
+                        "key": "value"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "applyComparison",
+                        "operator": "isEqual",
+                        "compareValue": true,
+                        "value": "{{state.self.value}}",
+                        "branch": {
+                            "true": [
+                                {
+                                    "type": "concatArray",
+                                    "value": "{{state.||docs||.selectedDocData.propSpec}}",
+                                    "concatValue": "{{state.||docs||.baseProps}}",
+                                    "storeAsVariable": "newPropSpecs"
+                                },
+                                {
+                                    "type": "setState",
+                                    "target": "||docs||",
+                                    "key": "propSpecs",
+                                    "value": "{{variable.newPropSpecs}}"
+                                }
+                            ],
+                            "false": [
+                                {
+                                    "type": "setState",
+                                    "target": "||docs||",
+                                    "key": "propSpecs",
+                                    "value": "{{state.||docs||.selectedDocData.propSpec}}"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

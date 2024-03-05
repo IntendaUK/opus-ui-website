@@ -1,0 +1,83 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "object"
+		},
+		"color": {
+			"morph": true,
+			"morphVariable": "res",
+			"morphActions": [
+				{
+					"type": "setVariable",
+					"name": "res",
+					"value": [
+						"{{eval.",
+						"    let res = $value$;",
+						"    if (res.indexOf('|') !== -1 && res.indexOf('|') < res.indexOf(' ') )",
+						"        res = res.split('|')[0];",
+						"    else",
+						"        res = 'secondaryBackground';",
+						"    res;",
+						"}}"	
+					],
+					"inlineKeys": [
+						"value"
+					]
+				}
+			]
+		},
+		"text": {
+			"morph": true,
+			"morphVariable": "res",
+			"morphActions": [
+				{
+					"type": "setVariable",
+					"name": "res",
+					"value": [
+						"{{eval.",
+						"    let res = $value$;",
+						"    if (res.indexOf('|') !== -1 && res.indexOf('|') < res.indexOf(' '))",
+						"        res = res.split('|')[1];",
+						"    res;",
+						"}}"	
+					],
+					"inlineKeys": [
+						"value"
+					]
+				}
+			]
+		}
+	},
+	"type": "containerSimple",
+	"prps": {
+		"border": "2px solid {theme.colors.menuHighlighOutline}",
+		"backgroundColor": "%color%",
+		"padding": true,
+		"paddingSize": "smallPadding mediumPadding",
+		"borderRadius": "6px"
+	},
+	"wgts": [
+		{
+			"type": "markdownLabel",
+			"prps": {
+				"cpt": "%text%",
+				"style": {
+					".cpnMarkdownLabel": {
+						"p": {
+							"font-size": "17px",
+							"line-height": "30px",
+							"color": "var(--colors-footerText)",
+							"margin": "0px"
+						},
+						"p a": {
+							"font-size": "17px",
+							"line-height": "30px",
+							"color": "var(--colors-primaryOpusBlue)",
+							"margin": "1rem 0px"
+						}
+					}
+				}
+			}
+		}
+	]
+}

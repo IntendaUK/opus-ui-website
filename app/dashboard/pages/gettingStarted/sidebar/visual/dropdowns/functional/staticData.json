@@ -1,0 +1,112 @@
+{
+    "acceptPrps": {},
+    "prps": {
+        "staticData": [
+            {
+                "id": "getStarted",
+                "name": "GET STARTED",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "1.1",
+                        "name": "Introduction",
+                        "dataFile": "1-1-gettingStarted"
+                    },
+                    {
+                        "id": "1.2",
+                        "name": "Pure Apps",
+                        "dataFile": "1-2-pure"
+                    },
+                    {
+                        "id": "1.3",
+                        "name": "Hybrid Apps",
+                        "dataFile": "1-3-hybrid"
+                    }
+                ]
+            },
+            {
+                "id": "buildingAnApplication",
+                "name": "BUILDING AN APPLICATION",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "2.1",
+                        "name": "Component Libraries",
+                        "dataFile": "2-1-component-libraries"
+                    }
+                ]
+            },
+            {
+                "id": "howTo",
+                "name": "HOW TO",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "3.1",
+                        "name": "Scoped Id's",
+                        "dataFile": "3-1-scoped-ids"
+                    },
+                    {
+                        "id": "3.2",
+                        "name": "Nested Repeaters",
+                        "dataFile": "3-2-nested-repeaters"
+                    },
+                    {
+                        "id": "3.3",
+                        "name": "Conditionally Rendering Components",
+                        "dataFile": "3-3-conditionally-rendering-components"
+                    },
+                    {
+                        "id": "3.4",
+                        "name": "Composite Script Actions",
+                        "dataFile": "3-4-composite-script-actions"
+                    },
+                    {
+                        "id": "3.5",
+                        "name": "Building clickable containers that are inside hoverable containers",
+                        "dataFile": "3-5-building-clickable-containers-that-are-inside-hoverable-containers"
+                    }
+                ]
+            },
+            {
+                "id": "callingRestAPis",
+                "name": "CALLING REST APIs",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "4.1",
+                        "name": "Getting and Displaying Data",
+                        "dataFile": "4-1-getting-and-displaying-data"
+                    },
+                    {
+                        "id": "4.2",
+                        "name": "Obtaining a response's HTTP status",
+                        "dataFile": "4-2-obtaining-a-responses-http-status"
+                    }
+                ]
+            },
+            {
+                "id": "listsOfData",
+                "name": "Lists of Data",
+                "isParent": true,
+                "children": [
+                    {
+                        "id": "5.1",
+                        "name": "Grid with static data",
+                        "dataFile": "5-1-grid-with-static-data"
+                    },
+                    {
+                        "id": "5.2",
+                        "name": "Repeaters",
+                        "dataFile": "5-2-repeaters"
+                    },
+                    {
+                        "id": "5.3",
+                        "name": "Repeaters with thousands of entries",
+                        "dataFile": "5-3-repeaters-with-thousands-of-entries"
+                    }
+                ]
+            }
+        ]
+    }
+}

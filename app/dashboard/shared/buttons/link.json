@@ -1,0 +1,47 @@
+{
+    "acceptPrps": {
+        "cpt": {
+            "text": "string",
+            "desc": "text for the link"
+        },
+        "color": {
+            "type": "string",
+            "desc": "color for the link text",
+            "dft": "#000000"
+        },
+        "hoverColor": {
+            "text": "string",
+            "desc": "color for hovering effect",
+            "dft": "#3591af"
+        },
+        "onClickScript": {
+            "type": "object",
+            "desc": "fireScript action for the link click"
+        }
+    },
+    "scope": "link",
+    "type": "container",
+    "prps": {
+        "canClick": true,
+        "canHover": true,
+        "margin": "0",
+        "fireScript": "$onClickScript$"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "%cpt%",
+                "color": "%color%",
+                "flows": [
+                    {
+                        "from": "||link||",
+                        "fromKey": "hovered",
+                        "toKey": "color",
+                        "mapFunctionString": "v => v ? '%hoverColor%' : '%color%'"
+                    }
+                ]
+            }
+        }
+    ]
+}

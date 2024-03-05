@@ -1,0 +1,30 @@
+{
+    "acceptPrps":{},
+    "scope": "blogPosts",
+    "type": "repeater",
+    "prps": {
+        "staticData": [],
+        "flows": [
+            {
+                "from": "||blog||",
+                "fromKey": "blogPosts",
+                "toKey": "staticData"
+            }
+        ],
+        "rowMda": {
+            "traits": [
+                {
+                    "trait": "./blogCard",
+                    "traitPrps": {
+                        "rowData": "{{rowData}}",
+                        "blogIndex": "{{rowNumber}}"
+                    }
+                }
+            ],
+            "prps": {
+                "marginBottom": "mediumPadding",
+                "marginTop": "mediumPadding"
+            }
+        }
+    }
+}

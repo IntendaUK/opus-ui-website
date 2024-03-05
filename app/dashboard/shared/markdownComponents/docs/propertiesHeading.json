@@ -1,0 +1,79 @@
+{
+    "acceptPrps": {},
+    "scope": "component",
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "padding": true,
+        "paddingSize": "15px 0px",
+        "mainAxisAlign": "space-between",
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "dir": "horizontal",
+                "crossAxisAlign": "center"
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/note.svg",
+                        "imageWidth": "auto",
+                        "imageHeight": "42px"
+                    }
+                },
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Properties",
+                        "color": "#ffffff",
+                        "fontSize": "42px",
+                        "marginLeft": "mediumPadding"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "prps": {
+                "dir": "horizontal",
+                "crossAxisAlign": "center",
+                "padding": true,
+                "paddingSize": "8px",
+                "border": "1px solid {theme.colors.menuHighlighOutline}",
+                "borderRadius": "tinyPadding",
+                "backgroundColor": "secondaryBackground",
+                "gap": "10px"
+            },
+            "wgts": [
+                {
+                    "type": "label",
+                    "prps": {
+                        "cpt": "Show Base Props",
+                        "color": "#ffffff",
+                        "fontWight": 400,
+                        "fontSize": "18px"
+                    }
+                },
+                {
+                    "relId": "checkbox",
+                    "type": "checkbox",
+                    "prps": {
+                        "value": false,
+                        "prpsIcon": {
+                            "color": "#ffffff"
+                        }
+                    },
+                    "traits": [
+                        {
+                            "trait": "./functional/toggleCheckbox"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

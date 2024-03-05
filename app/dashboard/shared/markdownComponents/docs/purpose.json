@@ -1,0 +1,51 @@
+{
+    "acceptPrps": {
+        "type": {
+            "type": "string"
+        },
+        "flows": {
+            "type": "object"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "border": "2px solid {theme.colors.menuHighlighOutline}",
+        "backgroundColor": "secondaryBackground",
+        "padding": true,
+        "paddingSize": "smallPadding mediumPadding",
+        "borderRadius": "6px"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "What is the purpose of this %type%",
+                "color": "#ffffff",
+                "fontSize": "24px"
+            }
+        },
+        {
+            "type": "markdownLabel",
+            "prps": {
+                "cpt": "",
+                "style": {
+                    ".cpnMarkdownLabel": {
+                        "p": {
+                            "font-size": "17px",
+                            "line-height": "30px",
+                            "color": "var(--colors-footerText)",
+                            "margin": "0px"
+                        },
+                        "p a": {
+                            "font-size": "17px",
+                            "line-height": "30px",
+                            "color": "var(--colors-primaryOpusBlue)",
+                            "margin": "1rem 0px"
+                        }
+                    }
+                },
+                "flows": "$flows$"
+            }
+        }
+    ]
+}

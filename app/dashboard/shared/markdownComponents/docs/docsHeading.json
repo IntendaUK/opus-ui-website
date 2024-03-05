@@ -1,0 +1,19 @@
+{
+    "acceptPrps": {},
+    "traits": [
+        {
+            "trait": "./../mainHeading",
+            "traitPrps": {
+                "flows": [
+                    {
+                        "from": "||docs||",
+                        "fromKey": "selectedDocData",
+                        "fromSubKey": "name",
+                        "toKey": "cpt",
+                        "mapFunctionString": "v => `# ${v}`"
+                    }
+                ]
+            }
+        }
+    ]
+}

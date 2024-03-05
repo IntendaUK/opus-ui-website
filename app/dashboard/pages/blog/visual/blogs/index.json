@@ -1,0 +1,26 @@
+{
+    "acceptPrps": {},
+    "relId": "blogs",
+    "type": "containerSimple",
+    "prps": {},
+    "wgts": [
+        {
+            "traits": [
+                {
+                    "trait": "./visual/header"
+                }
+            ],
+            "prps": {
+                "margin": "smallPadding 0px padding 0px"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/blogPosts",
+                    "traitPrps": {}
+                }
+            ]
+        }
+    ]
+}

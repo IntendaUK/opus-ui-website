@@ -1,0 +1,36 @@
+{
+    "acceptPrps": {
+        "value": {
+            "type": "string"
+        },
+        "flows": {
+            "type": "string"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "gap": "16px"
+    },
+    "wgts": [
+        {
+            "type": "image",
+            "prps": {
+                "value": "{theme.system.mdaLocation}/images/note.svg",
+                "imageWidth": "auto",
+                "imageHeight": "42px"
+            }
+        },
+        {
+            "type": "markdownLabel",
+            "prps": {
+                "cpt": "%value%",
+                "assignIdsToHeadingTypes": [
+                    "h1"
+                ],
+                "flows": "$flows$"
+            }
+        }
+    ]
+}

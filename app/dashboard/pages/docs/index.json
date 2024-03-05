@@ -1,0 +1,94 @@
+{
+    "acceptPrps": {},
+    "scope": "docs",
+    "type": "containerSimple",
+    "prps": {
+        "singlePage": true,
+        "dir": "horizontal",
+        "selectedNode": {},
+        "mdType": null,
+        "selectedDocData": {},
+        "propSpecs": [],
+        "baseProps": [],
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "type": "setState",
+                        "key": "docsType",
+                        "value": "{theme.freeText.docs}"
+                    }
+                ]
+            },
+            {
+                "id": "sML",
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "source": "||docs||",
+                        "key": "selectedNode"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "setVariable",
+                        "name": "mdType",
+                        "value": [
+                            "{{eval.",
+                            "     let mdType; ",
+                            "     let data = {{state.||docs||.selectedNode}}; ",
+                            "     if (data.template === 'component') mdType = 'component';",
+                            "     if (data.template === 'trigger') mdType = 'trigger';",
+                            "     if (data.template === 'action') mdType = 'action';",
+                            "     mdType; ",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    },
+                    {
+                        "actionCondition": {
+                            "operator": "isNotEqual",
+                            "value": "{{sML.state.self.mdType}}",
+                            "compareValue": "{{sML.variable.mdType}}"
+                        },
+                        "type": "setState",
+                        "key": "mdType",
+                        "value": "{{variable.mdType}}"
+                    }
+                ]
+            }
+        ]
+    },
+    "traits": [
+        {
+            "trait": "./functional/getSelectedNodeData"
+        },
+        {
+            "trait": "./functional/getBaseProps"
+        }
+    ],
+    "wgts": [
+        {
+            "relId": "sidebar",
+            "traits": [
+                {
+                    "trait": "./sidebar/index"
+                }
+            ],
+            "prps": {
+                "backgroundColor": "#16171B",
+                "borderRight": "1px solid {theme.colors.menuHighlighOutline}"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./docsView/index",
+                    "traitPrps": {}
+                }
+            ]
+        }
+    ]
+}

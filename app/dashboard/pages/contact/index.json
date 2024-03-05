@@ -1,0 +1,23 @@
+{
+    "acceptPrps":{},
+    "type": "containerSimple",
+    "prps": {
+        "crossAxisAlign": "center"
+    },
+    "wgts": [
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "Contact",
+                "fontSize": "64px"
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/footer/index"
+                }
+            ]
+        }
+    ]
+}
