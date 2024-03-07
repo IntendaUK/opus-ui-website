@@ -1,10 +1,40 @@
 {
-    "acceptPrps": {},
+    "acceptPrps": {
+        "simple": {
+            "type": "boolan",
+            "desc": "When set to true, the footer will hae no background color or padding",
+            "dft": false
+        },
+        "backgroundColor": {
+            "type": "string",
+            "morph": true,
+            "morphVariable": "res",
+            "morphActions": [
+                {
+                    "type": "setVariable",
+                    "name": "res",
+                    "value": "{{eval.%simple% ? 'transparent' : 'secondaryBackground'"
+                }
+            ]
+        },
+        "padding": {
+            "type": "boolean",
+            "morph": true,
+            "morphVariable": "res",
+            "morphActions": [
+                {
+                    "type": "setVariable",
+                    "name": "res",
+                    "value": "{{eval.!%simple%}}"
+                }
+            ]
+        }
+    },
     "type": "containerSimple",
     "prps": {
-        "padding": true,
+        "padding": "$padding$",
         "paddingSize": "mediumPadding padding",
-        "backgroundColor": "#191D23",
+        "backgroundColor": "%backgroundColor%",
         "marginTop": "mediumPadding",
         "dir": "horizontal",
         "crossAxisAlign": "center",

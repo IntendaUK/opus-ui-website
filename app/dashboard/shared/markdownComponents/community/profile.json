@@ -62,7 +62,7 @@
                     }
                 },
                 {
-                    "type": "label",
+                    "type": "markdownLabel",
                     "prps": {
                         "cpt": "%description%",
                         "color": "footerText",

@@ -1,6 +1,5 @@
 ```mainHeading
 # Getting Started with Opus UI
-
 ```markdown
 You're on your way to making music! This page will teach you everything you need to plug Opus into your React application.
 
@@ -24,11 +23,90 @@ Once you have your React app set up, you can proceed to install Opus UI and the 
 ```codeBash
 npm install opus-ui opus-ui-components
 ```markdown
-## Hybrid vs. Pure
+# Basic usage
+At a minimum, you can simply render your own components and then render Opus JSON within them. 
 
-There are two ways in which you can use Opus UI:
+```info
+To learn how to write Opus JSON, refer to `{
+	"cpt": "the lessons",
+	"attributes": {
+		"href": "#"
+	},
+	"script": {
+		"actions": [{
+			"type": "setState",
+            "target": "systemViewport",
+            "key": "value",
+            "value": "pages/trainingMaterials/index"
+		}]
+	}
+}`
+```gap
+.
+```codeReact
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Opus, { Component } from 'opus-ui';
 
-* Pure: Your application will be mostly Opus UI JSON (components, scripts and flows) with a few React components and helper functions in between
-* Hybrid: This is an existing application that utilizes Opus UI within its own components (recommended if you already have an existing React application or if you will have very specialized components within your application)
+const Welcome = () => {
+	return (
+		<div>
+			<span>Opus UI</span>
+			<Component mda={{
+				type: 'label',
+				prps: {
+					cpt: 'Harmonizing Interfaces'
+				}
+			}} />
+		</div>
+	);
+};
 
-Don't worry, you can always change your mind later. Choosing Pure
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+	<Opus startupComponent={<Welcome />} />
+);
+```markdown
+# Registering component types
+You can also register your own React components as Opus component types
+```codeReact
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Opus, { Component } from './library';
+
+const Welcome = () => {
+	return (
+		<div>
+			<span>Opus UI</span>
+			<Component mda={{
+				type: 'slogan',
+				prps: {}
+			}} />
+		</div>
+	);
+};
+
+const Slogan = ({ state: { slogan } }) => {
+	return (
+		<span>{slogan}</span>
+	);
+};
+
+const root = createRoot(document.getElementById('root'));
+
+root.render(
+	<Opus
+		startupComponent={<Welcome />}
+		registerComponentTypes={[{
+			type: 'slogan',
+			component: Slogan,
+			propSpec: {
+				slogan: {
+					type: 'string',
+					dft: 'Harmonizing interfaces'
+				}
+			}
+		}]}
+	/>
+);

@@ -10,7 +10,7 @@
         "top": "0px",
         "width": "100vw",
         "height": "100vh",
-        "backgroundColor": "#191D23",
+        "backgroundColor": "secondaryBackground",
         "padding": true,
         "paddingSize": "mediumPadding",
         "mainAxisAlign": "center",

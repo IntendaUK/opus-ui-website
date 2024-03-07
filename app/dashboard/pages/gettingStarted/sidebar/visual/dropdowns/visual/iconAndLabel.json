@@ -22,7 +22,7 @@
             "prps": {
                 "cpt": "$rowData.name$",
                 "fontSize": "16px",
-                "color": "#ffffff",
+                "color": "footerText",
                 "scps": [
                     {
                         "actions": [
@@ -51,6 +51,14 @@
                                 }
                             }
                         ]
+                    }
+                ],
+                "flows": [
+                    {
+                        "from": "||treeview||",
+                        "fromKey": "expandedNodes",
+                        "toKey": "color",
+                        "mapFunctionString": "v => v.includes('%rowData.id%') ? 'primaryOpusBlue' : 'footerText'"
                     }
                 ]
             }

@@ -100,7 +100,7 @@
             "prps": {
                 "padding": true,
                 "paddingSize": "padding",
-                "backgroundColor": "#191D23",
+                "backgroundColor": "secondaryBackground",
                 "crossAxisAlign": "center",
                 "width": "100%"
             },

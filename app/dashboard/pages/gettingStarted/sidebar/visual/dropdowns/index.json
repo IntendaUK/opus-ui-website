@@ -14,8 +14,6 @@
 		"hideRootNode": true,
 		"autoExpand": true,
 		"renderExpander": false,
-		"autoExpandChildNodes": true,
-		"noPad": true,
 		"mdaLabel": {
 			"id": "((rowData.id))label",
 			"type": "container",
@@ -34,10 +32,12 @@
 				}
 			],
 			"prps": {
-				"canClick": true
+				"canClick": true,
+				"canHover": true
 			},
 			"wgts": [
 				{
+					"id": "((rowData.id))inner",
 					"traits": [
 						{
 							"trait": "./visual/iconAndLabel",
@@ -48,6 +48,17 @@
 					]
 				}
 			]
-		}
+		},
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "type": "setState",
+                        "key": "tToggleParent",
+                        "value": "{{state.self.staticData.0}}"
+                    }
+                ]
+            }
+        ]
 	}
 }

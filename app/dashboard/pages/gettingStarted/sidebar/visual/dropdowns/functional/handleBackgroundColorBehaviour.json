@@ -22,8 +22,8 @@
                     {
                         "type": "applyComparison",
                         "operator": "isEqual",
-                        "compareValue": "{{state.||gettingStarted||.selectedLessonId}}",
                         "value": "$rowData.dataFile$",
+                        "compareValue": "{{state.||gettingStarted||.selectedLessonId}}",
                         "branch": {
                             "true": [
                                 {
@@ -41,6 +41,36 @@
                             ]
                         }
                     }
+                ]
+            },
+            {
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+						"key": "hovered"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "stopScript",
+						"^condition": {
+							"operator": "isEqual",
+							"value": "$rowData.dataFile$",
+                        	"compareValue": "{{state.||gettingStarted||.selectedLessonId}}"
+						}
+                    },
+					{
+						"type": "setState",
+						"key": "backgroundColor",
+						"value": [
+							"{{eval.",
+							"    {{state.self.hovered}} ? '{theme.colors.primarySearch}66' : 'transparent'",
+							"}}"
+						],
+						"inlineKeys": [
+							"value"
+						]
+					}
                 ]
             }
         ]

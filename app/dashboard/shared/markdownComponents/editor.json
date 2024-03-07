@@ -1,0 +1,255 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "object"
+		},
+		"flows": {
+			"type": "array",
+			"dft": []
+		}
+	},
+	"scope": "editorContainer",
+	"type": "containerSimple",
+	"prps": {
+		"toggled": false
+	},
+	"wgts": [
+		{
+			"scope": "hoverArea",
+			"type": "container",
+			"prps": {
+				"canClick": true,
+				"canHover": true,
+				"dir": "horizontal",
+				"crossAxisAlign": "center",
+				"fireScript": {
+					"actions": [
+						{
+							"type": "setState",
+							"target": "||editorContainer||",
+							"key": "toggled",
+							"value": "{{eval.!{{state.||editorContainer||.toggled}}}}"
+						}
+					]
+				}
+			},
+			"wgts": [
+				{
+					"type": "label",
+					"prps": {
+						"color": "white",
+						"fontSize": "18px",
+						"underline": true,
+						"flows": [
+							{
+								"from": "||editorContainer||",
+								"fromKey": "toggled",
+								"toKey": "cpt",
+								"mapFunctionString": "v => v ? 'Hide example' : 'Show example'"
+							}
+						]
+					}
+				},
+				{
+					"type": "containerSimple",
+					"prps": {
+						"borderRadius": "50%",
+						"width": "28px",
+						"height": "28px",
+						"mainAxisAlign": "center",
+						"crossAxisAlign": "center",
+						"backgroundColor": "menuHighlighOutline",
+						"marginLeft": "smallPadding",
+						"flows": [
+							{
+								"from": "||hoverArea||",
+								"fromKey": "hovered",
+								"toKey": "backgroundColor",
+								"mapFunctionString": "v => v ? '{theme.colors.secondaryOpusBlue}' : '{theme.colors.menuHighlighOutline}'"
+							}
+						]
+					},
+					"wgts": [
+						{
+							"type": "icon",
+							"prps": {
+								"value": "arrow_forward",
+								"color": "white",
+								"fontSize": "18px",
+								"flows": [
+									{
+										"from": "||editorContainer||",
+										"fromKey": "toggled",
+										"mapFunctionString": "v => v ? 'visibility_off' : 'visibility'"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"scope": "editor",
+			"type": "containerSimple",
+			"prps": {
+				"border": "2px solid {theme.colors.menuHighlighOutline}",
+				"backgroundColor": "secondaryBackground",
+				"borderRadius": "6px",
+				"dir": "horizontal",
+				"maxHeight": "600px",
+				"marginTop": "smallPadding",
+				"flows": [
+					{
+						"from": "||editorContainer||",
+						"fromKey": "toggled",
+						"toKey": "vis"
+					}
+				]
+			},
+			"wgts": [
+				{
+					"type": "containerSimple",
+					"prps": {
+						"width": "80%",
+						"borderRight": "2px solid {theme.colors.menuHighlighOutline}"
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"paddingSize": "tinyPadding smallPadding",
+								"backgroundColor": "menuHighlighOutline",
+								"cpt": "Opus UI JSON"
+							}
+						},
+						{
+							"type": "containerSimple",
+							"prps": {
+								"flex": true,
+								"overflowY": "auto"
+							},
+							"wgts": [
+								{
+									"relId": "code",
+									"type": "codeEditor",
+									"prps": {
+										"paddingSize": "mediumPadding",
+										"fontSize": "24px",
+										"value": "%value%",
+										"language": "json"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"type": "containerSimple",
+					"prps": {
+						"flex": true
+					},
+					"wgts": [
+						{
+							"type": "label",
+							"prps": {
+								"paddingSize": "tinyPadding smallPadding",
+								"backgroundColor": "menuHighlighOutline",
+								"cpt": "Preview"
+							}
+						},
+						{
+							"relId": "preview",
+							"type": "container",
+							"prps": {
+								"padding": true,
+								"paddingSize": "mediumPadding",
+								"scps": [
+									{
+										"id": "sP",
+										"concurrency": {
+											"pool": "preview"
+										},
+										"triggers": [
+											{
+												"event": "onMount"
+											},
+											{
+												"event": "onMount",
+												"source": "||editor.code||"
+											},
+											{
+												"event": "onStateChange",
+												"source": "||editor.code||",
+												"match": [
+													{
+														"operator": "isNotEqual",
+														"value": "{{state.||editor.code||.value}}",
+														"compareValue": "{}"
+													}
+												]
+											}
+										],
+										"actions": [
+											{
+												"type": "stopScript",
+												"condition": {
+													"operator": "isFalsy",
+													"value": "{{sP.state.||editor.code||.value}}"
+												}
+											},
+											{
+												"type": "setVariable",
+												"name": "loadedObj",
+												"value": [
+													"{{eval.",
+													"    let res;",
+													"    try {",
+													"        res = JSON.parse({{state.||editor.code||.value}});",
+													"    } catch (e) {}",
+													"    res;",
+													"}}"
+												],
+												"inlineKeys": [
+													"value"
+												]
+											},
+											{
+												"type": "stopScript",
+												"condition": {
+													"operator": "isFalsy",
+													"value": "{{sP.variable.loadedObj}}"
+												}
+											},
+											{
+												"type": "setState",
+												"key": "deleteKeys",
+												"value": [
+													{
+														"key": "extraWgts",
+														"value": {
+															"all": true
+														}
+													}
+												]
+											},
+											{
+												"type": "wait",
+												"duration": 1
+											},
+											{
+												"type": "setState",
+												"key": "extraWgts",
+												"value": "{{variable.loadedObj}}"
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

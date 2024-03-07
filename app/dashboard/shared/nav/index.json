@@ -10,7 +10,7 @@
         "height": "83px",
         "padding": true,
         "paddingSize": "0px 36px",
-        "overflow": "hidden"
+        "borderBottom": "2px solid var(--colors-primaryBackground)"
     },
     "wgts": [
         {

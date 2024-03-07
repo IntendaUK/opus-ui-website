@@ -7,28 +7,53 @@
     },
     "prps": {
         "fireScript": {
+            "id": "sSN",
             "actions": [
                 {
-                    "actionCondition": {
-                        "operator": "isTruthy",
-                        "value": "$rowData.children$"
-                    },
-                    "type": "forLoop",
-                    "count": "{{state.||treeview||.expandedNodes.length}}",
-                    "actions": [
-                        {
-                            "type": "setState",
-                            "target": "||treeview||",
-                            "key": "tToggleParent",
-                            "value": "{{state.||treeview||.staticData.((variable.rowNumber))}}"
-                        }
-                    ]
-                },
-                {
-                    "type": "setState",
-                    "target": "||gettingStarted||",
-                    "key": "selectedLessonId",
-                    "value": "$rowData.dataFile$"
+                    "type": "applyComparison",
+                    "operator": "isTruthy",
+                    "value": "$rowData.children$",
+                    "branch": {
+                        "true": [
+                            {
+                                "id": "sEC",
+                                "type": "morphIterateArray",
+                                "value": "{{eval.JSON.parse(JSON.stringify({{state.||treeview||.expandedNodes}}) )}}",
+                                "chain": [
+                                    {
+                                        "actionCondition": {
+                                            "operator": "isNotEqual",
+                                            "value": "{{sEC.variable.record}}",
+                                            "compareValue": ""
+                                        },
+                                        "type": "setState",
+                                        "target": "||treeview||",
+                                        "key": "tToggleParent",
+                                        "value": "{{eval.{{state.||treeview||.staticData}}.find(f => f.id === {{variable.record}})}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||treeview||",
+                                "key": "tToggleParent",
+                                "value": "$rowData$"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "actionCondition": {
+                                    "operator": "isNotEqual",
+                                    "value": "$rowData.dataFile$",
+                                    "compareValue": "{{sSN.state.||gettingStarted||.selectedLessonId}}"
+                                },
+                                "type": "setState",
+                                "target": "||gettingStarted||",
+                                "key": "selectedLessonId",
+                                "value": "$rowData.dataFile$"
+                            }
+                        ]
+                    }
                 }
             ]
         }
