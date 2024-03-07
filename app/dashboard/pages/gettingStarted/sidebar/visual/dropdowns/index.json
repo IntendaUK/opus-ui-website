@@ -49,16 +49,71 @@
 				}
 			]
 		},
-        "scps": [
-            {
+		"scps": [
+			{
+                "id": "sS",
+                "triggers": [
+                    {
+                        "event": "onMount"
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||router||",
+                        "key": "onRoute",
+                        "match": [
+                            {
+                                "operator": "isTruthy",
+                                "value": "{{state.||router||.onRoute}}"
+                            }
+                        ]
+                    }
+                ],
                 "actions": [
                     {
-                        "type": "setState",
+                        "type": "setVariable",
+                        "name": "parentRecord",
+                        "value": [
+                            "{{eval.",
+                            "    const [, selectedArticleId] = window.location.search.substr(1).split('=');",
+                            "    let res = {{state.self.data.children}}.find(d => d.children.some(f => f.dataFile === selectedArticleId) );",
+                            "    if (!res)",
+                            "        res = {{state.self.data.children.0}};",
+                            "    res;",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    },
+                    {
+                        "id": "sSM",
+                        "type": "morphIterateArray",
+                        "value": "{{eval.JSON.parse(JSON.stringify({{state.self.expandedNodes}}) )}}",
+                        "chain": [
+                            {
+                                "actionCondition": {
+                                    "operator": "isNotEqual",
+                                    "value": "{{sSM.variable.record}}",
+                                    "compareValue": "{{sSM.scopedVariable.parentRecord.dataFile}}"
+                                },
+                                "type": "setState",
+                                "target": "||treeview||",
+                                "key": "tToggleParent",
+                                "value": "{{eval.{{state.self.staticData}}.find(f => f.id === {{variable.record}})}}"
+                            }
+                        ]
+                    },
+                    {
+                    	"actionCondition": {
+                            "operator": "isFalsy",
+                            "value": "{{sS.eval.{{sS.state.self.expandedNodes}}.includes({{sS.variable.parentRecord.id}})}}"
+                        },
+                    	"type": "setState",
                         "key": "tToggleParent",
-                        "value": "{{state.self.staticData.0}}"
+                        "value": "{{variable.parentRecord}}"
                     }
                 ]
             }
-        ]
+		]
 	}
 }

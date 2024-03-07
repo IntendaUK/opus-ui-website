@@ -10,6 +10,7 @@
             "id": "sSN",
             "actions": [
                 {
+                    "id": "sSNA",
                     "type": "applyComparison",
                     "operator": "isTruthy",
                     "value": "$rowData.children$",
@@ -42,15 +43,24 @@
                         ],
                         "false": [
                             {
-                                "actionCondition": {
-                                    "operator": "isNotEqual",
-                                    "value": "$rowData.dataFile$",
-                                    "compareValue": "{{sSN.state.||gettingStarted||.selectedLessonId}}"
-                                },
+                                "type": "stopScript",
+                                "condition": {
+                                    "operator": "isEqual",
+                                    "value": "%rowData.dataFile%",
+                                    "compareValue": "{{sSNA.state.||gettingStarted||.selectedLessonId}}"
+                                }
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||router||",
+                                "key": "tPerformRoute",
+                                "value": "learn?articleId=%rowData.dataFile%"
+                            },
+                            {
                                 "type": "setState",
                                 "target": "||gettingStarted||",
-                                "key": "selectedLessonId",
-                                "value": "$rowData.dataFile$"
+                                "key": "tReloadFromUrl",
+                                "value": true
                             }
                         ]
                     }

@@ -6,7 +6,7 @@
         "dir": "horizontal",
         "flex": true,
         "height": "100%",
-        "selectedLessonId": "1-1-gettingStarted",
+        "selectedLessonId": "1-1-introduction",
         "scps": [
             {
                 "actions": [

@@ -18,7 +18,7 @@
                                     "type": "setState",
                                     "target": "||router||",
                                     "key": "tPerformRoute",
-                                    "value": "learn"
+                                    "value": "learn?articleId=1-1-introduction"
                                 }
                             ]
                         }

@@ -7,6 +7,57 @@
 		"flex": true,
 		"scps": [
 			{
+                "id": "sE",
+                "triggers": [
+                    {
+                        "event": "onMount"
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||gettingStarted||",
+                        "key": "tReloadFromUrl",
+                        "match": [
+                            {
+                                "operator": "isTruthy",
+                                "value": "{{state.||gettingStarted||.tReloadFromUrl}}"
+                            }
+                        ]
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||router||",
+                        "key": "onRoute",
+                        "match": [
+                            {
+                                "operator": "isTruthy",
+                                "value": "{{state.||router||.onRoute}}"
+                            }
+                        ]
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "setVariable",
+                        "name": "selectedArticleId",
+                        "value": [
+                            "{{eval.",
+                            "    const [, selectedArticleId] = window.location.search.substr(1).split('=');",
+                            "    selectedArticleId;",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    },
+                    {
+                    	"type": "setState",
+                        "target": "||gettingStarted||",
+                        "key": "selectedLessonId",
+                        "value": "{{variable.selectedArticleId}}"
+                    }
+                ]
+            },
+			{
 				"id": "sL",
 				"triggers": [
 					{
