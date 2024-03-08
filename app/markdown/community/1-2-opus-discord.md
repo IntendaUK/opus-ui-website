@@ -1,3 +1,0 @@
-```mainHeading
-# Opus Discord
-```markdown

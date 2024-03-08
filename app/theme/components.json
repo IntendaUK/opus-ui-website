@@ -127,10 +127,10 @@
 							"color": "var(--colors-primaryOpusBlue)",
 							"margin": "1rem 0px"
 						},
-						"ul": {
+						"ul, ol": {
 							"margin": "18px 0px"
 						},
-						"ul li": {
+						"ul li, ol li": {
 							"font-size": "17px",
 							"line-height": "22px",
 							"color": "var(--colors-footerText)",

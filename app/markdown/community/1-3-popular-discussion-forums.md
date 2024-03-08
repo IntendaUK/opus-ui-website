@@ -1,2 +1,0 @@
-```mainHeading
-# Popular Discussion Forums

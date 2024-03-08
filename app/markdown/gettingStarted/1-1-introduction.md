@@ -23,6 +23,10 @@ Once you have your React app set up, you can proceed to install Opus UI and the 
 ```codeBash
 npm install opus-ui opus-ui-components
 ```markdown
+You'll also want to install the standard component library. This includes components like 'image', 'icon', and 'label'. You don't need to install it if you'll only be defining your own component types.
+```codeBash
+'npm i opus-ui-components'
+```markdown
 # Basic usage
 At a minimum, you can simply render your own components and then render Opus JSON within them. 
 
@@ -47,6 +51,8 @@ To learn how to write Opus JSON, refer to `{
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Opus, { Component } from 'opus-ui';
+
+import ''opus-ui-components';
 
 const Welcome = () => {
 	return (

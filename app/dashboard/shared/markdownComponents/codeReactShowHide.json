@@ -1,0 +1,148 @@
+{
+	"acceptPrps": {
+		"value": {
+			"type": "object"
+		},
+		"flows": {
+			"type": "array",
+			"dft": []
+		}
+	},
+	"scope": "editorContainer",
+	"type": "containerSimple",
+	"prps": {
+		"toggled": false
+	},
+	"wgts": [
+		{
+			"scope": "hoverArea",
+			"type": "container",
+			"prps": {
+				"canClick": true,
+				"canHover": true,
+				"dir": "horizontal",
+				"crossAxisAlign": "center",
+				"fireScript": {
+					"actions": [
+						{
+							"type": "setState",
+							"target": "||editorContainer||",
+							"key": "toggled",
+							"value": "{{eval.!{{state.||editorContainer||.toggled}}}}"
+						},
+						{
+							"type": "wait",
+							"duration": 1
+						},
+						{
+							"type": "scrollToComponent",
+							"target": "||editorContainer.heading||"
+						}
+					]
+				}
+			},
+			"wgts": [
+				{
+					"relId": "heading",
+					"type": "label",
+					"prps": {
+						"color": "white",
+						"fontSize": "18px",
+						"underline": true,
+						"flows": [
+							{
+								"from": "||editorContainer||",
+								"fromKey": "toggled",
+								"toKey": "cpt",
+								"mapFunctionString": "v => v ? 'Hide example' : 'Show example'"
+							}
+						]
+					}
+				},
+				{
+					"type": "containerSimple",
+					"prps": {
+						"borderRadius": "50%",
+						"width": "28px",
+						"height": "28px",
+						"mainAxisAlign": "center",
+						"crossAxisAlign": "center",
+						"backgroundColor": "menuHighlighOutline",
+						"marginLeft": "smallPadding",
+						"flows": [
+							{
+								"from": "||hoverArea||",
+								"fromKey": "hovered",
+								"toKey": "backgroundColor",
+								"mapFunctionString": "v => v ? '{theme.colors.secondaryOpusBlue}' : '{theme.colors.menuHighlighOutline}'"
+							}
+						]
+					},
+					"wgts": [
+						{
+							"type": "icon",
+							"prps": {
+								"value": "arrow_forward",
+								"color": "white",
+								"fontSize": "18px",
+								"flows": [
+									{
+										"from": "||editorContainer||",
+										"fromKey": "toggled",
+										"mapFunctionString": "v => v ? 'visibility_off' : 'visibility'"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"scope": "editor",
+			"type": "containerSimple",
+			"prps": {
+				"border": "2px solid {theme.colors.menuHighlighOutline}",
+				"backgroundColor": "secondaryBackground",
+				"borderRadius": "6px",
+				"marginTop": "smallPadding",
+				"flows": [
+					{
+						"from": "||editorContainer||",
+						"fromKey": "toggled",
+						"toKey": "vis"
+					}
+				]
+			},
+			"wgts": [
+				{
+					"type": "label",
+					"prps": {
+						"paddingSize": "tinyPadding smallPadding",
+						"backgroundColor": "menuHighlighOutline",
+						"cpt": "React Code"
+					}
+				},
+				{
+					"type": "containerSimple",
+					"prps": {
+						"flex": true,
+						"overflowY": "auto"
+					},
+					"wgts": [
+						{
+							"relId": "code",
+							"type": "codeEditor",
+							"prps": {
+								"paddingSize": "mediumPadding",
+								"fontSize": "24px",
+								"value": "%value%",
+								"language": "jsx"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

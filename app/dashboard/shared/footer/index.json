@@ -50,7 +50,7 @@
                 {
                     "type": "image",
                     "prps": {
-                        "value": "{theme.system.mdaLocation}/images/logo.png",
+                        "value": "{theme.system.mdaLocation}/images/logo.svg",
                         "imageHeight": "24px",
                         "imageWidth": "auto"
                     }
@@ -85,6 +85,31 @@
                     "type": "image",
                     "prps": {
                         "value": "{theme.system.mdaLocation}/images/discord.svg",
+                        "imageWidth": "24px",
+                        "imageHeight": "24px"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "container",
+            "prps": {
+                "marginLeft": "padding",
+                "canClick": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "openUrl",
+                            "url": "https://twitter.com/opus_ui"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/twitter.svg",
                         "imageWidth": "24px",
                         "imageHeight": "24px"
                     }

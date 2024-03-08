@@ -109,7 +109,22 @@
 						]
 					}
 				]
-			}
+			},
+			"wgts": [
+				{
+		            "traits": [
+		                {
+		                    "trait": "shared/footer/index",
+		                    "traitPrps": {
+		                    	"simple": true
+		                    }
+		                }
+		            ],
+		            "prps": {
+		            	"order": 1
+		            }
+		        }
+			]
 		}
 	]
 }
