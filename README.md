@@ -1,6 +1,3 @@
-# Opus Website
+# Opus UI Website
 
-## Docker info
-Image name: registry.fraxses.com/opus_website/REPOSITORY[:TAG]
-
-## To work locally
+The Opus UI website is built using the Opus UI library.

@@ -1,5 +1,5 @@
 {
-	"name": "opus-ui-website",
+	"name": "@intenda/opus-ui-website",
 	"private": true,
 	"version": "0.1.0",
 	"type": "module",
@@ -47,5 +47,8 @@
 	"opusComponentLibraries": [
 		"opus-ui-code-editor",
 		"opus-ui-components"
-	]
+	],
+	"publishConfig": {
+		"access": "public"
+	}
 }
