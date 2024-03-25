@@ -103,9 +103,9 @@ Now let's look at the same as built using Opus UI:
 .
 ```codeReactShowHide
 import { createRoot } from 'react-dom/client';
-import Opus, { registerExternalAction } from 'opus-ui';
+import Opus, { registerExternalAction } from '@intenda/opus-ui';
 
-import 'opus-ui-components';
+import '@intenda/opus-ui-components';
 
 const root = createRoot(document.getElementById('root'));
 

@@ -22,15 +22,33 @@
                                 "value": "{{eval.JSON.parse(JSON.stringify({{state.||treeview||.expandedNodes}}) )}}",
                                 "chain": [
                                     {
-                                        "actionCondition": {
-                                            "operator": "isNotEqual",
-                                            "value": "{{sEC.variable.record}}",
-                                            "compareValue": ""
-                                        },
+                                        "type": "depthFirstSearch",
+                                        "root": "{{eval.const res = { children: {{state.||treeview||.staticData}} }; res;}}",
+                                        "findId": "{{variable.record}}",
+                                        "storeAsVariable": "foundNode"
+                                    },
+                                    {
+                                        "type": "stopScript",
+                                        "condition": {
+                                            "operator": "some",
+                                            "comparisons": [
+                                                {
+                                                    "operator": "isFalsy",
+                                                    "value": "{{sEC.variable.foundNode}}"
+                                                },
+                                                {
+                                                    "operator": "isNotEqual",
+                                                    "value": "{{sEC.variable.foundNode.parentId}}",
+                                                    "compareValue": "%rowData.parentId%"
+                                                }                                                
+                                            ]
+                                        }
+                                    },
+                                    {
                                         "type": "setState",
                                         "target": "||treeview||",
                                         "key": "tToggleParent",
-                                        "value": "{{eval.{{state.||treeview||.staticData}}.find(f => f.id === {{variable.record}})}}"
+                                        "value": "{{variable.foundNode}}"
                                     }
                                 ]
                             },
@@ -54,7 +72,7 @@
                                 "type": "setState",
                                 "target": "||router||",
                                 "key": "tPerformRoute",
-                                "value": "learn?articleId=%rowData.dataFile%"
+                                "value": "docs?articleId=%rowData.dataFile%"
                             },
                             {
                                 "type": "setState",

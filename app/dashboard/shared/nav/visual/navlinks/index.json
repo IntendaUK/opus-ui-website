@@ -11,46 +11,6 @@
                 {
                     "trait": "shared/buttons/navLink",
                     "traitPrps": {
-                        "cpt": "Get Started",
-                        "onClickScript": {
-                            "actions": [
-                                {
-                                    "type": "setState",
-                                    "target": "||router||",
-                                    "key": "tPerformRoute",
-                                    "value": "learn?articleId=1-1-introduction"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "traits": [
-                {
-                    "trait": "shared/buttons/navLink",
-                    "traitPrps": {
-                        "cpt": "Learn",
-                        "onClickScript": {
-                            "actions": [
-                                {
-                                    "type": "setState",
-                                    "target": "||router||",
-                                    "key": "tPerformRoute",
-                                    "value": "lessons"
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "traits": [
-                {
-                    "trait": "shared/buttons/navLink",
-                    "traitPrps": {
                         "cpt": "Docs",
                         "onClickScript": {
                             "actions": [
@@ -58,7 +18,27 @@
                                     "type": "setState",
                                     "target": "||router||",
                                     "key": "tPerformRoute",
-                                    "value": "docs"
+                                    "value": "docs?articleId=1-1-introduction"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "Reference",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "reference"
                                 }
                             ]
                         }
@@ -79,6 +59,26 @@
                                     "target": "||router||",
                                     "key": "tPerformRoute",
                                     "value": "community"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        { 
+            "traits": [
+                {
+                    "trait": "shared/buttons/navLink",
+                    "traitPrps": {
+                        "cpt": "About Intenda",
+                        "onClickScript": {
+                            "actions": [
+                                {
+                                    "type": "setState",
+                                    "target": "||router||",
+                                    "key": "tPerformRoute",
+                                    "value": "about"
                                 }
                             ]
                         }

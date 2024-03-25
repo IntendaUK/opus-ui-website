@@ -51,7 +51,7 @@ This example dynamically builds 2000 items to be rendered as containers with lab
 						{
 							"type": "setVariable",
 							"name": "res",
-							"value": "eval- const res = []; for (let i = 0; i < 2000; i ++) { res.push({ number: i }); }; res"
+							"value": "{{eval.const res = []; for (let i = 0; i < 2000; i ++) { res.push({ number: i }); }; res}}"
 						}
 					]
 				},

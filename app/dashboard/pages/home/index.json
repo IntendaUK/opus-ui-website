@@ -102,7 +102,8 @@
                 "paddingSize": "padding",
                 "backgroundColor": "secondaryBackground",
                 "crossAxisAlign": "center",
-                "width": "100%"
+                "width": "100%",
+                "gap": "mediumPadding"
             },
             "wgts": [
                 {
@@ -117,12 +118,119 @@
                     "prps": {
                         "cpt": "Opus weaves melodies between the power of traditional code and the simplicity of low-code. Define simple components and interactions through JSON and watch as Opus breathes harmony into everything in between.",
                         "fontSize": "fontSizeBig",
-                        "marginTop": "mediumPadding",
                         "width": "850px",
                         "textOverflow": "wrap",
                         "justify": "center",
                         "lineHeight": "28px"
                     }
+                },
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "dir": "horizontal",
+                        "gap": "mediumPadding",
+                        "marginTop": "smallPadding"
+                    },
+                    "wgts": [
+                        {
+                            "type": "container",
+                            "prps": {
+                                "canClick": true,
+                                "canHover": true,
+                                "fireScript": {
+                                    "actions": []
+                                },
+                                "backgroundColor": "secondaryOpusBlue",
+                                "padding": true,
+                                "paddingSize": "smallPadding mediumPadding",
+                                "borderRadius": "50px",
+                                "hoverPrps": {
+                                    "on": {
+                                        "backgroundColor": "primaryOpusBlue"
+                                    },
+                                    "off": {
+                                        "backgroundColor": "secondaryOpusBlue"
+                                    }
+                                }
+                            },
+                            "wgts": [
+                                {
+                                    "type": "label",
+                                    "prps": {
+                                        "cpt": "GET STARTED",
+                                        "color": "footerText"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "scope": "hoverArea",
+                    "condition": {
+                        "operator": "isTruthy",
+                        "value": "$examples$"
+                    },
+                    "type": "container",
+                    "prps": {
+                        "canClick": true,
+                        "canHover": true,
+                        "marginTop": "mediumPadding",
+                        "dir": "horizontal",
+                        "crossAxisAlign": "center",
+                        "fireScript": {
+                            "actions": [
+                                {
+                                    "type": "setMultiState",
+                                    "target": "||home.codeModal||",
+                                    "value": {
+                                        "vis": true,
+                                        "examples": "$examples$"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "wgts": [
+                        {
+                            "type": "label",
+                            "prps": {
+                                "cpt": "More Examples",
+                                "color": "white",
+                                "fontSize": "18px"
+                            }
+                        },
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "borderRadius": "50%",
+                                "width": "28px",
+                                "height": "28px",
+                                "mainAxisAlign": "center",
+                                "crossAxisAlign": "center",
+                                "backgroundColor": "menuHighlighOutline",
+                                "marginLeft": "smallPadding",
+                                "flows": [
+                                    {
+                                        "from": "||hoverArea||",
+                                        "fromKey": "hovered",
+                                        "toKey": "backgroundColor",
+                                        "mapFunctionString": "v => v ? '{theme.colors.secondaryOpusBlue}' : '{theme.colors.menuHighlighOutline}'"
+                                    }
+                                ]
+                            },
+                            "wgts": [
+                                {
+                                    "type": "icon",
+                                    "prps": {
+                                        "value": "arrow_forward",
+                                        "color": "white",
+                                        "fontSize": "18px"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -140,28 +248,11 @@
                             "Centralize themes",
                             "Re-use components and behaviour"
                         ],
-                        "code": {
-                            "type": "containerSimple",
-                            "prps": {
-                                "backgroundColor": "#6E9BEA",
-                                "padding": true,
-                                "paddingSize": "4px 8px",
-                                "borderRadius": "4px"
-                            },
-                            "wgts": [
-                                {
-                                    "type": "label",
-                                    "prps": {
-                                        "cpt": "Hello world!",
-                                        "color": "black"
-                                    }
-                                }
-                            ]
-                        },
                         "examples": [
                             "1_hello_world",
                             "2_flowing_states"
-                        ]
+                        ],
+                        "height": "520px"
                     }
                 }
             ],
@@ -179,10 +270,15 @@
                         "body": "Opus provides you with the toolset to develop the way you want. No matter how simple or dynamic your needs, Opus empowers all genres.",
                         "details": [
                             "Unlike low-code platforms, Opus doesn't dictate how you should design or build",
-                            "Seamlessly blend Opus and React",
-                            "Opus takes care of all your state management"
+                            "Seamlessly blend Opus and JavaScript",
+                            "Opus takes care of all your state management",
+                            "Convert from design to implementation without constraints"
                         ],
-                        "reverse": true
+                        "examples": [
+                            "3_flowing_states_simple"
+                        ],
+                        "reverse": true,
+                        "height": "645px"
                     }
                 }
             ],

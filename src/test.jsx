@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import Opus, { registerExternalAction } from 'opus-ui';
+import Opus, { registerExternalAction } from '@intenda/opus-ui';
 
-import 'opus-ui-components';
+import '@intenda/opus-ui-components';
 
 const root = createRoot(document.getElementById('root'));
 

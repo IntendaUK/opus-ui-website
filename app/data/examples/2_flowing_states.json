@@ -1,22 +1,42 @@
-{
-	"scope": "main",
-	"type": "containerSimple",
-	"prps": {
-		"textForLabel": "New Text"
-	},
-	"wgts": [
-		{
-			"type": "label",
-			"prps": {
-				"color": "#ff0000",
-				"flows": [
-					{
-						"from": "||main||",
-						"fromKey": "textForLabel",
-						"toKey": "cpt"
-					}
-				]
+[
+	{
+		"scope": "main",
+		"type": "containerSimple",
+		"wgts": [
+			{
+				"relId": "text",
+				"type": "input",
+				"prps": {
+					"placeholder": "Type the label text..."
+				}
+			},
+			{
+				"relId": "color",
+				"type": "input",
+				"prps": {
+					"placeholder": "Type the label color..."
+				}
+			},
+			{
+				"type": "label",
+				"prps": {
+					"cpt": "No label specified",
+					"flows": [
+						{
+							"from": "||main.text||",
+							"fromKey": "value",
+							"toKey": "cpt",
+							"ignoreEmptyString": true
+						},
+						{
+							"from": "||main.color||",
+							"fromKey": "value",
+							"toKey": "color",
+							"ignoreEmptyString": true
+						}
+					]
+				}
 			}
-		}
-	]
-}
+		]
+	}
+]

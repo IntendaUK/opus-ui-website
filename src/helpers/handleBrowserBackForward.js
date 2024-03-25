@@ -1,4 +1,4 @@
-import { stateManager, getScopedId } from 'opus-ui';
+import { stateManager, getScopedId } from '@intenda/opus-ui';
 
 import { findEntry as findEntryInHistory } from './historyStack';
 

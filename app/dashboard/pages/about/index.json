@@ -1,21 +1,37 @@
 {
     "acceptPrps": {},
+    "scope": "about",
     "type": "containerSimple",
     "prps": {
-        "crossAxisAlign": "center"
+        "flex": true,
+        "height": "100%",
+        "selectedSectionId": "about",
+        "scps": [
+            {
+                "actions": [
+                    {
+                        "type": "setState",
+                        "key": "lessons",
+                        "value": "{theme.freeText.about}"
+                    }
+                ]
+            }
+        ]
     },
     "wgts": [
         {
-            "type": "label",
-            "prps": {
-                "cpt": "About",
-                "fontSize": "64px"
-            }
+            "traits": [
+                {
+                    "trait": "./sectionView/index",
+                    "traitPrps": {}
+                }
+            ]
         },
         {
             "traits": [
                 {
-                    "trait": "shared/footer/index"
+                    "trait": "shared/footer/index",
+                    "traitPrps": {}
                 }
             ]
         }

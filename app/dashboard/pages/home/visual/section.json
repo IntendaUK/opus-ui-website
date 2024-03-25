@@ -12,13 +12,13 @@
 		"details": {
 			"type": "array"
 		},
-		"code": {
-			"type": "object",
-			"dft": {}
-		},
 		"reverse": {
 			"type": "boolean",
 			"dft": false
+		},
+		"height": {
+			"type": "string",
+			"dft": "600px"
 		},
 		"examples": {
 			"type": "array",
@@ -53,6 +53,7 @@
 			]
 		}
 	},
+	"scope": "section",
 	"type": "containerSimple",
 	"prps": {
 		"flexDirection": "%containerDir%"
@@ -216,14 +217,13 @@
 			]
 		},
 		{
-			"scope": "editor",
 			"type": "containerSimple",
 			"prps": {
 				"border": "2px solid {theme.colors.menuHighlighOutline}",
 				"backgroundColor": "secondaryBackground",
 				"borderRadius": "6px",
 				"width": "650px",
-				"height": "600px"
+				"height": "%height%"
 			},
 			"wgts": [
 				{
@@ -237,18 +237,53 @@
 							"prps": {
 								"paddingSize": "tinyPadding smallPadding",
 								"backgroundColor": "menuHighlighOutline",
-								"cpt": "helloWorld.json"
+								"scps": [
+									{
+										"actions": [
+											{
+												"type": "getData",
+						                        "filters": [],
+												"dtaObj": "examples/exampleNames",
+						                        "offset": 0,
+						                        "pageSize": 100,
+						                        "storeAsVariable": "data"
+											},
+											{
+												"type": "setState",
+												"key": "cpt",
+												"value": "{{eval.{{variable.data.data}}.find(f => f.file === '%examples.0%').friendlyFile}}"
+											}
+										]
+									}
+								]
 							}
 						},
 						{
 							"relId": "code",
 							"type": "codeEditor",
 							"prps": {
-								"paddingSize": "mediumPadding",
+								"paddingSize": "18px",
 								"fontSize": "24px",
-								"value": "",
-								"valueObj": "$code$",
-								"language": "json"
+								"language": "json",
+								"scps": [
+									{
+										"actions": [
+											{
+												"type": "getData",
+						                        "filters": [],
+												"dtaObj": "examples/%examples.0%",
+						                        "offset": 0,
+						                        "pageSize": 1,
+						                        "storeAsVariable": "data"
+											},
+											{
+												"type": "setState",
+												"key": "valueObj",
+												"value": "{{variable.data.data.0}}"
+											}
+										]
+									}
+								]
 							}
 						}
 					]
@@ -266,21 +301,21 @@
 					"type": "container",
 					"prps": {
 						"padding": true,
-						"paddingSize": "mediumPadding",
+						"paddingSize": "18px",
 						"scps": [
 							{
-								"id": "sP",
+								"id": "sP-%title%",
 								"concurrency": {
 									"pool": "preview"
 								},
 								"triggers": [
 									{
 										"event": "onStateChange",
-										"source": "||editor.code||",
+										"source": "||section.code||",
 										"match": [
 											{
 												"operator": "isNotEqual",
-												"value": "{{state.||editor.code||.value}}",
+												"value": "{{state.||section.code||.value}}",
 												"compareValue": "{}"
 											}
 										]
@@ -307,7 +342,7 @@
 										"type": "stopScript",
 										"condition": {
 											"operator": "isFalsy",
-											"value": "{{sP.variable.loadedObj}}"
+											"value": "{{sP-%title%.variable.loadedObj}}"
 										}
 									},
 									{

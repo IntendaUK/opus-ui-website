@@ -6,7 +6,7 @@
 	},
 	"type": "url",
 	"prps": {
-		"value": "%value%?rel=0",
+		"value": "%value%",
 		"width": "100%",
 		"style": {
 			".cpnUrl": {

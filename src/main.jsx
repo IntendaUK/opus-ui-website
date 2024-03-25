@@ -1,13 +1,14 @@
 //Opus
-import { loadApp, registerExternalAction } from 'opus-ui';
+import { loadApp, registerExternalAction } from '@intenda/opus-ui';
 
 //Component Libraries
-import 'opus-ui-components';
-import 'opus-ui-code-editor';
+import '@intenda/opus-ui-components';
+import '@intenda/opus-ui-code-editor';
 
 //Script Actions
 import convertMarkdownToComponents from './scriptActions/convertMarkdownToComponents';
 import getDocSectionInView from './scriptActions/getDocSectionInView';
+import depthFirstSearch from './scriptActions/depthFirstSearch';
 import routeFromUrl from './scriptActions/routeFromUrl';
 import route from './scriptActions/route';
 
@@ -21,6 +22,7 @@ import './main.css';
 const externalActions = {
 	convertMarkdownToComponents,
 	getDocSectionInView,
+	depthFirstSearch,
 	routeFromUrl,
 	route
 };

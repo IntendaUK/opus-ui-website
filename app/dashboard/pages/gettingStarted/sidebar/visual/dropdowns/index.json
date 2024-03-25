@@ -10,6 +10,7 @@
 	"prps": {
 		"dtaAtr": "id",
 		"disAtr": "name",
+		"patAtr": "parentId",
 		"childAtr": "children",
 		"hideRootNode": true,
 		"autoExpand": true,

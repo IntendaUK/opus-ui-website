@@ -13,7 +13,7 @@
                 {
                     "type": "setVariable",
                     "name": "res",
-                    "value": "{{eval.%simple% ? 'transparent' : 'secondaryBackground'"
+                    "value": "{{eval.%simple% ? 'transparent' : 'secondaryBackground'}}"
                 }
             ]
         },

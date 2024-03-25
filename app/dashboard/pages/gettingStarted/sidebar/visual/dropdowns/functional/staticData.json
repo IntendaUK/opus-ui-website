@@ -5,6 +5,7 @@
             {
                 "id": "getStarted",
                 "name": "GET STARTED",
+                "parentId": "",
                 "isParent": true,
                 "children": [
                     {
@@ -27,6 +28,7 @@
             {
                 "id": "aboutOpusUI",
                 "name": "ABOUT OPUS UI",
+                "parentId": "",
                 "isParent": true,
                 "children": [
                     {
@@ -39,6 +41,7 @@
             {
                 "id": "buildingAnApplication",
                 "name": "BUILDING AN APPLICATION",
+                "parentId": "",
                 "isParent": true,
                 "children": [
                     {
@@ -51,71 +54,240 @@
             {
                 "id": "howTo",
                 "name": "HOW TO",
+                "parentId": "",
                 "isParent": true,
                 "children": [
                     {
-                        "id": "3.1",
-                        "name": "Scoped Id's",
-                        "dataFile": "3-1-scoped-ids"
+                        "id": "general",
+                        "name": "GENERAL",
+                        "parentId": "howTo",
+                        "isParent": true,
+                        "children": [
+                            {
+                                "id": "3.1",
+                                "name": "Scoped Id's",
+                                "dataFile": "3-1-scoped-ids"
+                            },
+                            {
+                                "id": "3.2",
+                                "name": "Nested Repeaters",
+                                "dataFile": "3-2-nested-repeaters"
+                            },
+                            {
+                                "id": "3.3",
+                                "name": "Conditionally Rendering Components",
+                                "dataFile": "3-3-conditionally-rendering-components"
+                            },
+                            {
+                                "id": "3.4",
+                                "name": "Composite Script Actions",
+                                "dataFile": "3-4-composite-script-actions"
+                            },
+                            {
+                                "id": "3.5",
+                                "name": "Building clickable containers that are inside hoverable containers",
+                                "dataFile": "3-5-building-clickable-containers-that-are-inside-hoverable-containers"
+                            }
+                        ]
                     },
                     {
-                        "id": "3.2",
-                        "name": "Nested Repeaters",
-                        "dataFile": "3-2-nested-repeaters"
+                        "id": "callingRestAPis",
+                        "name": "CALLING REST APIs",
+                        "parentId": "howTo",
+                        "isParent": true,
+                        "children": [
+                            {
+                                "id": "4.1",
+                                "name": "Getting and Displaying Data",
+                                "dataFile": "4-1-getting-and-displaying-data"
+                            },
+                            {
+                                "id": "4.2",
+                                "name": "Obtaining a response's HTTP status",
+                                "dataFile": "4-2-obtaining-a-responses-http-status"
+                            }
+                        ]
                     },
                     {
-                        "id": "3.3",
-                        "name": "Conditionally Rendering Components",
-                        "dataFile": "3-3-conditionally-rendering-components"
-                    },
-                    {
-                        "id": "3.4",
-                        "name": "Composite Script Actions",
-                        "dataFile": "3-4-composite-script-actions"
-                    },
-                    {
-                        "id": "3.5",
-                        "name": "Building clickable containers that are inside hoverable containers",
-                        "dataFile": "3-5-building-clickable-containers-that-are-inside-hoverable-containers"
+                        "id": "listsOfData",
+                        "name": "Lists of Data",
+                        "parentId": "howTo",
+                        "isParent": true,
+                        "children": [
+                            {
+                                "id": "5.1",
+                                "name": "Grid with static data",
+                                "dataFile": "5-1-grid-with-static-data"
+                            },
+                            {
+                                "id": "5.2",
+                                "name": "Repeaters",
+                                "dataFile": "5-2-repeaters"
+                            },
+                            {
+                                "id": "5.3",
+                                "name": "Repeaters with thousands of entries",
+                                "dataFile": "5-3-repeaters-with-thousands-of-entries"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "id": "callingRestAPis",
-                "name": "CALLING REST APIs",
+                "id": "learnDsl",
+                "name": "Learn Opus JSON",
+                "parentId": "",
                 "isParent": true,
                 "children": [
                     {
-                        "id": "4.1",
-                        "name": "Getting and Displaying Data",
-                        "dataFile": "4-1-getting-and-displaying-data"
+                        "id": "training-4",
+                        "name": "Anatomy of an application",
+                        "dataFile": "training-4"
                     },
                     {
-                        "id": "4.2",
-                        "name": "Obtaining a response's HTTP status",
-                        "dataFile": "4-2-obtaining-a-responses-http-status"
-                    }
-                ]
-            },
-            {
-                "id": "listsOfData",
-                "name": "Lists of Data",
-                "isParent": true,
-                "children": [
-                    {
-                        "id": "5.1",
-                        "name": "Grid with static data",
-                        "dataFile": "5-1-grid-with-static-data"
+                        "id": "training-5",
+                        "name": "Opening the first exercise",
+                        "dataFile": "training-5"
                     },
                     {
-                        "id": "5.2",
-                        "name": "Repeaters",
-                        "dataFile": "5-2-repeaters"
+                        "id": "training-6",
+                        "name": "Anatomy of an Opus JSON file",
+                        "dataFile": "training-6"
                     },
                     {
-                        "id": "5.3",
-                        "name": "Repeaters with thousands of entries",
-                        "dataFile": "5-3-repeaters-with-thousands-of-entries"
+                        "id": "training-7",
+                        "name": "Your first dashboard",
+                        "dataFile": "training-7"
+                    },
+                    {
+                        "id": "training-8",
+                        "name": "More component types",
+                        "dataFile": "training-8"
+                    },
+                    {
+                        "id": "training-9",
+                        "name": "Basic flows",
+                        "dataFile": "training-9"
+                    },
+                    {
+                        "id": "training-10",
+                        "name": "System properties vs custom properties",
+                        "dataFile": "training-10"
+                    },
+                    {
+                        "id": "training-11",
+                        "name": "Layout direction",
+                        "dataFile": "training-11"
+                    },
+                    {
+                        "id": "training-12",
+                        "name": "Building complex layouts",
+                        "dataFile": "training-12"
+                    },
+                    {
+                        "id": "training-13",
+                        "name": "Component size, scrolling and flexing",
+                        "dataFile": "training-13"
+                    },
+                    {
+                        "id": "training-14",
+                        "name": "Padding and margins",
+                        "dataFile": "training-14"
+                    },
+                    {
+                        "id": "training-15",
+                        "name": "Using theme values in components",
+                        "dataFile": "training-15"
+                    },
+                    {
+                        "id": "training-16",
+                        "name": "Building themes",
+                        "dataFile": "training-16"
+                    },
+                    {
+                        "id": "training-17",
+                        "name": "Dropdowns",
+                        "dataFile": "training-17"
+                    },
+                    {
+                        "id": "training-18",
+                        "name": "Basic scripts",
+                        "dataFile": "training-18"
+                    },
+                    {
+                        "id": "training-19",
+                        "name": "Navigation",
+                        "dataFile": "training-19"
+                    },
+                    {
+                        "id": "training-20",
+                        "name": "Folder and file name conventions",
+                        "dataFile": "training-20"
+                    },
+                    {
+                        "id": "training-21",
+                        "name": "Scoped id's",
+                        "dataFile": "training-21"
+                    },
+                    {
+                        "id": "training-22a",
+                        "name": "Trait basics",
+                        "dataFile": "training-22a"
+                    },
+                    {
+                        "id": "training-22b",
+                        "name": "More on traits",
+                        "dataFile": "training-22b"
+                    },
+                    {
+                        "id": "training-23",
+                        "name": "Static vs relative paths",
+                        "dataFile": "training-23"
+                    },
+                    {
+                        "id": "training-24",
+                        "name": "Click interactions",
+                        "dataFile": "training-24"
+                    },
+                    {
+                        "id": "training-25",
+                        "name": "Hover interactions",
+                        "dataFile": "training-25"
+                    },
+                    {
+                        "id": "training-26",
+                        "name": "Notifications",
+                        "dataFile": "training-26"
+                    },
+                    {
+                        "id": "training-27",
+                        "name": "Modals",
+                        "dataFile": "training-27"
+                    },
+                    {
+                        "id": "training-28",
+                        "name": "Adding conditions to scripts",
+                        "dataFile": "training-28"
+                    },
+                    {
+                        "id": "training-29",
+                        "name": "Variables and arrays in scripts",
+                        "dataFile": "training-29"
+                    },
+                    {
+                        "id": "training-30",
+                        "name": "Generating components",
+                        "dataFile": "training-30"
+                    },
+                    {
+                        "id": "training-31",
+                        "name": "Script accessor scope",
+                        "dataFile": "training-31"
+                    },
+                    {
+                        "id": "training-32",
+                        "name": "The queryUrl action",
+                        "dataFile": "training-32"
                     }
                 ]
             }

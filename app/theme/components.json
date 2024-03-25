@@ -69,6 +69,9 @@
 			},
 			"focusLineColor": {
 				"dft": "primary"
+			},
+			"colorPlaceholder": {
+				"dft": "white"
 			}
 		}
 	},
@@ -77,6 +80,9 @@
 		"propSpec": {
 			"userSelect": {
 				"dft": "text"
+			},
+			"color": {
+				"dft": "primaryText"
 			}
 		}
 	},

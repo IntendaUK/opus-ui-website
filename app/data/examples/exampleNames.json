@@ -1,10 +1,17 @@
 [
 	{
 		"file": "1_hello_world",
-		"name": "Hello World"
+		"name": "Hello World",
+		"friendlyFile": "helloWorld.json"
 	},
 	{
 		"file": "2_flowing_states",
-		"name": "Flowing States"
+		"name": "Flowing States",
+		"friendlyFile": "flowingStates.json"
+	},
+	{
+		"file": "3_flowing_states_simple",
+		"name": "Flowing States",
+		"friendlyFile": "flowingStates.json"
 	}
 ]

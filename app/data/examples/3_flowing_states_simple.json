@@ -1,0 +1,27 @@
+[
+	{
+		"type": "containerSimple",
+		"wgts": [
+			{
+				"id": "inputColor",
+				"type": "input",
+				"prps": {
+					"placeholder": "Type the label color...",
+					"value": "#6E9BEA"
+				}
+			},
+			{
+				"type": "label",
+				"prps": {
+					"cpt": "Use the input to change my color",
+					"flows": [
+						{
+							"from": "inputColor",
+							"toKey": "color"
+						}
+					]
+				}
+			}
+		]
+	}
+]

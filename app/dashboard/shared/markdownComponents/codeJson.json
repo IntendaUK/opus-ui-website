@@ -6,6 +6,23 @@
 		"flows": {
 			"type": "array",
 			"dft": []
+		},
+		"useValue": {
+			"type": "string",
+			"morph": true,
+			"morphVariable": "res",
+			"morphActions": [
+				{
+					"type": "setVariable",
+					"name": "obj",
+					"value": "$value$"
+				},
+				{
+					"type": "setVariable",
+					"name": "res",
+					"value": "{{eval.JSON.stringify({{variable.obj}}, null, '\t')}}"
+				}
+			]
 		}
 	},
 	"type": "containerSimple",
@@ -20,7 +37,7 @@
 		{
 			"type": "codeEditor",
 			"prps": {
-				"valueObj": "$value$",
+				"value": "$useValue$",
 				"flows": "$flows$"
 			}
 		}

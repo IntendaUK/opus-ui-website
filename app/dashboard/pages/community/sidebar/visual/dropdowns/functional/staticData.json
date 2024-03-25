@@ -9,14 +9,14 @@
                 "children": [
                     {
                         "id": "1.1",
-                        "name": "Meet the Team",
-                        "dataFile": "1-1-meet-the-team"
+                        "name": "Community Links",
+                        "dataFile": "1-1-community-links"
                     },
                     {
                         "id": "1.2",
-                        "name": "Community Links",
-                        "dataFile": "1-2-community-links"
-                    }
+                        "name": "Meet the Team",
+                        "dataFile": "1-2-meet-the-team"
+                    }                    
                 ]
             }
         ]

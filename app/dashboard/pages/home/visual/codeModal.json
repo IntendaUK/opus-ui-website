@@ -58,9 +58,7 @@
 			"prps": {
 				"borderRadius": "4px",
 				"border": "1px solid {theme.colors.menuHighlighOutline}",
-				"backgroundColor": "#16171B",
-				"padding": true,
-				"paddingSize": "mediumPadding",
+				"backgroundColor": "modalBackground",
 				"dir": "horizontal",
 				"width": "80%",
 				"height": "80%",
@@ -72,14 +70,17 @@
 					"prps": {
 						"paddingRight": "padding",
 						"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
-						"width": "20%"
+						"width": "20%",
+						"padding": true,
+						"paddingSize": "mediumPadding"
 					},
 					"wgts": [
 						{
 							"type": "label",
 							"prps": {
 								"cpt": "Examples",
-								"fontSize": "28px",
+								"fontSize": "24px",
+								"fontWeight": "bold",
 								"marginBottom": "mediumPadding"
 							}
 						},
@@ -130,6 +131,8 @@
 									"type": "container",
 									"prps": {
 										"canClick": true,
+										"mainAxisAlign": "center",
+										"height": "36px",
 										"fireScript": {
 											"actions": [
 												{
@@ -146,6 +149,7 @@
 											"type": "label",
 											"prps": {
 												"cpt": "((rowData.name))",
+												"fontSize": "16px",
 												"flows": [
 													{
 														"from": "||codeModal||",
@@ -165,27 +169,28 @@
 				{
 					"type": "containerSimple",
 					"prps": {
-						"paddingLeft": "smallPadding",
-						"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
 						"width": "40%"
 					},
 					"wgts": [
 						{
 							"type": "label",
 							"prps": {
-								"paddingSize": "tinyPadding smallPadding",
-								"cpt": "helloWorld.json"
+								"cpt": "helloWorld.json",
+								"borderBottom": "1px solid {theme.colors.menuHighlighOutline}",
+								"paddingSize": "mediumPadding"
 							}
 						},
 						{
 							"relId": "code",
 							"type": "codeEditor",
 							"prps": {
+								"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
 								"paddingSize": "mediumPadding",
 								"fontSize": "24px",
 								"value": "",
 								"valueObj": {},
 								"language": "json",
+								"flexSize": 1,
 								"scps": [
 									{
 										"triggers": [
@@ -215,11 +220,66 @@
 					},
 					"wgts": [
 						{
-							"type": "label",
+							"type": "containerSimple",
 							"prps": {
-								"paddingSize": "tinyPadding mediumPadding",
-								"cpt": "Preview"
-							}
+								"padding": true,
+								"paddingSize": "mediumPadding",
+								"borderBottom": "1px solid {theme.colors.menuHighlighOutline}"
+							},
+							"wgts": [
+								{
+									"type": "label",
+									"prps": {
+										"cpt": "Preview",
+										"fontSize": "18px"
+									}
+								},
+								{
+									"scope": "closeButton",
+									"type": "container",
+									"prps": {
+										"canClick": true,
+										"canHover": true,
+										"position": "absolute",
+										"top": "50%",
+										"transform": "translateY(-50%)",
+										"right": "mediumPadding",
+										"borderRadius": "50%",
+										"mainAxisAlign": "center",
+										"crossAxisAlign": "center",
+										"width": "28px",
+										"height": "28px",
+										"backgroundColor": "primarySearch",
+										"hoverPrps": {
+											"on": {
+												"backgroundColor": "primaryOpusBlue"
+											},
+											"off": {
+												"backgroundColor": "primarySearch"
+											}
+										},
+										"fireScript": {
+											"actions": [
+												{
+													"type": "setState",
+													"target": "||codeModal||",
+													"key": "vis",
+													"value": false
+												}
+											]
+										}
+									},
+									"wgts": [
+										{
+											"type": "icon",
+											"prps": {
+												"value": "close",
+												"color": "#ffffff"
+											}
+										}
+									]
+								}
+							]
 						},
 						{
 							"relId": "preview",
@@ -295,49 +355,6 @@
 										]
 									}
 								]
-							}
-						}
-					]
-				},
-				{
-					"scope": "closeButton",
-					"type": "container",
-					"prps": {
-						"canClick": true,
-						"canHover": true,
-						"position": "absolute",
-						"top": "mediumPadding",
-						"right": "mediumPadding",
-						"borderRadius": "50%",
-						"mainAxisAlign": "center",
-						"crossAxisAlign": "center",
-						"width": "28px",
-						"height": "28px",
-						"hoverPrps": {
-							"on": {
-								"backgroundColor": "primaryOpusBlue"
-							},
-							"off": {
-								"backgroundColor": "primarySearch"
-							}
-						},
-						"fireScript": {
-							"actions": [
-								{
-									"type": "setState",
-									"target": "||codeModal||",
-									"key": "vis",
-									"value": false
-								}
-							]
-						}
-					},
-					"wgts": [
-						{
-							"type": "icon",
-							"prps": {
-								"value": "close",
-								"color": "#ffffff"
 							}
 						}
 					]

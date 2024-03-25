@@ -9,20 +9,20 @@
 				"url": "pages/home/index",
 				"path": "/"
 			},
-			"learn": {
-				"title": "Opus UI - Learn",
-				"url": "pages/gettingStarted/index",
-				"path": "/learn"
-			},
-			"lessons": {
-				"title": "Opus UI - Lessons",
-				"url": "pages/trainingMaterials/index",
-				"path": "/lessons"
-			},
 			"docs": {
 				"title": "Opus UI - Docs",
-				"url": "pages/docs/index",
+				"url": "pages/gettingStarted/index",
 				"path": "/docs"
+			},
+			"about": {
+				"title": "Opus UI - About Intenda",
+				"url": "pages/about/index",
+				"path": "/about"
+			},
+			"reference": {
+				"title": "Opus UI - Reference",
+				"url": "pages/reference/index",
+				"path": "/reference"
 			},
 			"community": {
 				"title": "Opus UI - Community",
