@@ -5,6 +5,7 @@
 	"scripts": {
 		"start": "concurrently --kill-others \"npm run dev\" \"nodemon node_modules/@intenda/opus-ui-packager/src/packager.js\"",
 		"dev": "vite --port 3000",
+		"build-json": "node node_modules/@intenda/opus-ui-packager/src/packager.js",
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
