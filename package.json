@@ -15,6 +15,12 @@
 		"packagedDir": "public",
 		"packagedFileName": "app"
 	},
+	"keywords": [
+		"opus-ui",
+		"website",
+		"cms",
+		"opus"
+	],
 	"nodemonConfig": {
 		"ignore": [],
 		"watch": [
