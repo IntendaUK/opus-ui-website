@@ -18,7 +18,14 @@
             "prps": {
                 "minHeight": "calc(100vh - 207px)",
                 "maxWidth": "calc(100% - (var(--global-padding) * 2))",
-                "margin": "giantPadding auto"
+                "margin": "giantPadding auto",
+                "style": {
+                    ".cpnContainerSimple": {
+                        "@media only screen and (max-width: 900px)": {
+                            "maxWidth": "calc(100% - (var(--global-smallPadding) * 2))"
+                        }
+                    }
+                }
             },
             "wgts": [
                 {
