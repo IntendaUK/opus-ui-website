@@ -17,7 +17,15 @@
                     }
                 ]
             }
-        ]
+        ],
+        "style": {
+            ".cpnContainerSimple": {
+                "@media only screen and (max-width: 900px)": {
+                    "flex-direction": "column !important",
+                    "height": "auto !important"
+                }
+            }
+        }
     },
     "wgts": [
         {
@@ -28,7 +36,17 @@
                 }
             ],
             "prps": {
-                "borderRight": "1px solid {theme.colors.menuHighlighOutline}"
+                "borderRight": "1px solid {theme.colors.menuHighlighOutline}",
+                "width": "340px",
+                "style": {
+                    ".cpnContainerSimple": {
+                        "@media only screen and (max-width: 900px)": {
+                            "width": "auto !important",
+                            "border-right": "none !important",
+                            "border-bottom": "1px solid {theme.colors.menuHighlighOutline}"
+                        }
+                    }
+                }
             }
         },
         {

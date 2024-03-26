@@ -3,7 +3,14 @@
     "type": "containerSimple",
     "prps": {
         "singlePage": true,
-        "crossAxisAlign": "center"
+        "crossAxisAlign": "center",
+        "style": {
+            ".cpnContainerSimple": {
+                "@media only screen and (max-width: 600px)": {
+                    
+                }
+            }
+        }
     },
     "wgts": [
         {
@@ -88,7 +95,16 @@
                                 "position": "absolute",
                                 "left": "50%",
                                 "top": "50%",
-                                "transform": "translate(-50%, -50%)"
+                                "transform": "translate(-50%, -50%)",
+                                "style": {
+                                    ".cpnImage": {
+                                        "@media only screen and (max-width: 600px)": {
+                                            "img": {
+                                                "width": "100%"
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     ]
@@ -118,7 +134,7 @@
                     "prps": {
                         "cpt": "Opus weaves melodies between the power of traditional code and the simplicity of low-code. Define simple components and interactions through JSON and watch as Opus breathes harmony into everything in between.",
                         "fontSize": "fontSizeBig",
-                        "width": "850px",
+                        "maxWidth": "850px",
                         "textOverflow": "wrap",
                         "justify": "center",
                         "lineHeight": "28px"
@@ -138,7 +154,14 @@
                                 "canClick": true,
                                 "canHover": true,
                                 "fireScript": {
-                                    "actions": []
+                                    "actions": [
+                                        {
+                                            "type": "setState",
+                                            "target": "||router||",
+                                            "key": "tPerformRoute",
+                                            "value": "docs?articleId=1-1-introduction"
+                                        }
+                                    ]
                                 },
                                 "backgroundColor": "secondaryOpusBlue",
                                 "padding": true,
@@ -159,73 +182,6 @@
                                     "prps": {
                                         "cpt": "GET STARTED",
                                         "color": "footerText"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "scope": "hoverArea",
-                    "condition": {
-                        "operator": "isTruthy",
-                        "value": "$examples$"
-                    },
-                    "type": "container",
-                    "prps": {
-                        "canClick": true,
-                        "canHover": true,
-                        "marginTop": "mediumPadding",
-                        "dir": "horizontal",
-                        "crossAxisAlign": "center",
-                        "fireScript": {
-                            "actions": [
-                                {
-                                    "type": "setMultiState",
-                                    "target": "||home.codeModal||",
-                                    "value": {
-                                        "vis": true,
-                                        "examples": "$examples$"
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    "wgts": [
-                        {
-                            "type": "label",
-                            "prps": {
-                                "cpt": "More Examples",
-                                "color": "white",
-                                "fontSize": "18px"
-                            }
-                        },
-                        {
-                            "type": "containerSimple",
-                            "prps": {
-                                "borderRadius": "50%",
-                                "width": "28px",
-                                "height": "28px",
-                                "mainAxisAlign": "center",
-                                "crossAxisAlign": "center",
-                                "backgroundColor": "menuHighlighOutline",
-                                "marginLeft": "smallPadding",
-                                "flows": [
-                                    {
-                                        "from": "||hoverArea||",
-                                        "fromKey": "hovered",
-                                        "toKey": "backgroundColor",
-                                        "mapFunctionString": "v => v ? '{theme.colors.secondaryOpusBlue}' : '{theme.colors.menuHighlighOutline}'"
-                                    }
-                                ]
-                            },
-                            "wgts": [
-                                {
-                                    "type": "icon",
-                                    "prps": {
-                                        "value": "arrow_forward",
-                                        "color": "white",
-                                        "fontSize": "18px"
                                     }
                                 }
                             ]

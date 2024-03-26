@@ -5,7 +5,6 @@
     "prps": {
         "selectedNode": "",
         "backgroundColor": "primaryBackground",
-        "width": "340px",
         "paddingTop": "mediumPadding"
     },
     "wgts": [

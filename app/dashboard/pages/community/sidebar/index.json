@@ -4,7 +4,6 @@
     "type": "containerSimple",
     "prps": {
         "backgroundColor": "primaryBackground",
-        "width": "340px",
         "paddingTop": "mediumPadding"
     },
     "wgts": [

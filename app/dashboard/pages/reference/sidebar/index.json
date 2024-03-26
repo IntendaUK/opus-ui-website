@@ -5,7 +5,6 @@
     "prps": {
         "height": "calc(100% - var(--global-mediumPadding))",
         "backgroundColor": "primaryBackground",
-        "width": "340px",
         "marginTop": "mediumPadding"
     },
     "wgts": [

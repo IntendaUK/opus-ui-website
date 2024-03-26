@@ -9,8 +9,8 @@
         {
             "type": "containerSimple",
             "prps": {
-                "padding": true,
-                "paddingSize": "50px 300px"
+                "maxWidth": "calc(100% - (var(--global-padding) * 2))",
+                "margin": "giantPadding auto"
             },
             "wgts": [
                 {

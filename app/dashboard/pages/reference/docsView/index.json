@@ -79,10 +79,6 @@
                                 "duration": 1
                             },
                             {
-                                "type": "log",
-                                "msg": "{{state.||docsView||.data.components}}"
-                            },
-                            {
                                 "id": "sLCM",
                                 "type": "mapArray",
                                 "value": "{{state.||docsView||.data.components}}",
@@ -106,7 +102,32 @@
                         ]
                     }
                 ]
-            }
+            },
+            "wgts": [
+                {
+                    "traits": [
+                        {
+                            "trait": "shared/footer/index",
+                            "traitPrps": {
+                                "simple": true,
+                                "marginTop": "mediumPadding"
+                            }
+                        }
+                    ],
+                    "prps": {
+                        "vis": false,
+                        "order": 1,
+                        "flows": [
+                            {
+                                "from": "||docs||",
+                                "fromKey": "mdType",
+                                "toKey": "vis",
+                                "mapFunctionString": "v => !!v"
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     ]
 }

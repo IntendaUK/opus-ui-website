@@ -3,7 +3,18 @@
     "type": "containerSimple",
     "prps": {
         "dir": "horizontal",
-        "crossAxisAlign": "center"
+        "crossAxisAlign": "center",
+        "style": {
+            ".cpnContainerSimple": {
+                "@media only screen and (max-width: 700px)": {
+                    "flex-direction": "column !important",
+                    "padding": "var(--global-mediumPadding) var(--global-bigPadding) var(--global-mediumPadding) 0px",
+                    "> .cpnContainer + .cpnContainer:not(:last-child)": {
+                        "margin-top": "var(--global-tinyPadding)"
+                    }
+                }
+            }
+        }
     },
     "wgts": [
         {
@@ -120,6 +131,16 @@
                             "url": "https://github.com/IntendaUK/opus-ui"
                         }
                     ]
+                },
+                "style": {
+                    ".cpnContainer": {
+                        "@media only screen and (max-width: 700px)": {
+                            "position": "absolute !important",
+                            "right": "0px",
+                            "top": "50%",
+                            "transform": "translateY(-50%)"
+                        }
+                    }
                 }
             },
             "wgts": [
