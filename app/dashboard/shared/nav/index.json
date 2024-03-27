@@ -32,6 +32,12 @@
                             "target": "||router||",
                             "key": "tPerformRoute",
                             "value": "default"
+                        },
+                        {
+                            "type": "setState",
+                            "target": "||burgerMenu||",
+                            "key": "vis",
+                            "value": false
                         }
                     ]
                 }
@@ -52,7 +58,32 @@
                 {
                     "trait": "./visual/navlinks/index"
                 }
-            ]
+            ],
+            "prps": {
+                "style": {
+                    ".cpnContainerSimple": {
+                        "@media only screen and (max-width: 700px)": {
+                            "display": "none"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "./visual/burgerMenu/index"
+                }
+            ],
+            "prps": {
+                "style": {
+                    ".cpnContainerSimple": {
+                        "@media only screen and (min-width: 700px)": {
+                            "display": "none"
+                        }
+                    }
+                }
+            }
         }
     ]
 }

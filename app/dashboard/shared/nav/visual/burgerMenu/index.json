@@ -1,0 +1,227 @@
+{
+    "acceptPrps": {},
+    "type": "containerSimple",
+    "prps": {
+        "dir": "horizontal",
+        "crossAxisAlign": "center",
+        "gap": "mediumPadding"
+    },
+    "wgts": [
+        {
+            "type": "container",
+            "prps": {
+                "padding": true,
+                "paddingSize": "smallPadding 0px",
+                "canClick": true,
+                "marginRight": "bigPadding",
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "setState",
+                            "target": "||burgerMenu||",
+                            "key": "vis",
+                            "value": "{{eval.!((state.||burgerMenu||.vis))}}"
+                        }
+                    ]
+                }
+            },
+            "wgts": [
+                {
+                    "type": "icon",
+                    "prps": {
+                        "value": "menu",
+                        "color": "footerText",
+                        "fontSize": "42px"
+                    }
+                }
+            ]
+        },
+        {
+            "scope": "profileLink",
+            "type": "container",
+            "prps": {
+                "marginLeft": "padding",
+                "canClick": true,
+                "canHover": true,
+                "fireScript": {
+                    "actions": [
+                        {
+                            "type": "openUrl",
+                            "url": "https://github.com/IntendaUK/opus-ui"
+                        }
+                    ]
+                },
+                "style": {
+                    ".cpnContainer": {
+                        "@media only screen and (max-width: 700px)": {
+                            "position": "absolute !important",
+                            "right": "0px",
+                            "top": "50%",
+                            "transform": "translateY(-50%)"
+                        }
+                    }
+                }
+            },
+            "wgts": [
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/github.svg",
+                        "imageWidth": "24px",
+                        "imageHeight": "24px"
+                    }
+                }
+            ]
+        },
+        {
+            "scope": "burgerMenu",
+            "type": "containerSimple",
+            "container": "root",
+            "prps": {
+                "position": "absolute",
+                "left": "0px",
+                "top": "68px",
+                "bottom": "0px",
+                "width": "100vw",
+                "zIndex": 100,
+                "padding": true,
+                "paddingSize": "mediumPadding",
+                "backgroundColor": "secondaryBackground",
+                "vis": false,
+                "gap": "mediumPadding"
+            },
+            "wgts": [
+                {
+                    "traits": [
+                        {
+                            "trait": "shared/buttons/navLink",
+                            "traitPrps": {
+                                "cpt": "Docs",
+                                "onClickScript": {
+                                    "actions": [
+                                        {
+                                            "type": "setState",
+                                            "target": "||router||",
+                                            "key": "tPerformRoute",
+                                            "value": "docs?articleId=1-1-introduction"
+                                        },
+                                        {
+                                            "type": "setState",
+                                            "target": "||burgerMenu||",
+                                            "key": "vis",
+                                            "value": false
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "traits": [
+                        {
+                            "trait": "shared/buttons/navLink",
+                            "traitPrps": {
+                                "cpt": "Reference",
+                                "onClickScript": {
+                                    "actions": [
+                                        {
+                                            "type": "setState",
+                                            "target": "||router||",
+                                            "key": "tPerformRoute",
+                                            "value": "reference"
+                                        },
+                                        {
+                                            "type": "setState",
+                                            "target": "||burgerMenu||",
+                                            "key": "vis",
+                                            "value": false
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "traits": [
+                        {
+                            "trait": "shared/buttons/navLink",
+                            "traitPrps": {
+                                "cpt": "Community",
+                                "onClickScript": {
+                                    "actions": [
+                                        {
+                                            "type": "setState",
+                                            "target": "||router||",
+                                            "key": "tPerformRoute",
+                                            "value": "community"
+                                        },
+                                        {
+                                            "type": "setState",
+                                            "target": "||burgerMenu||",
+                                            "key": "vis",
+                                            "value": false
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "traits": [
+                        {
+                            "trait": "shared/buttons/navLink",
+                            "traitPrps": {
+                                "cpt": "About Intenda",
+                                "onClickScript": {
+                                    "actions": [
+                                        {
+                                            "type": "setState",
+                                            "target": "||router||",
+                                            "key": "tPerformRoute",
+                                            "value": "about"
+                                        },
+                                        {
+                                            "type": "setState",
+                                            "target": "||burgerMenu||",
+                                            "key": "vis",
+                                            "value": false
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "traits": [
+                        {
+                            "trait": "shared/buttons/navLink",
+                            "traitPrps": {
+                                "cpt": "Blog",
+                                "onClickScript": {
+                                    "actions": [
+                                        {
+                                            "type": "setState",
+                                            "target": "||router||",
+                                            "key": "tPerformRoute",
+                                            "value": "blog"
+                                        },
+                                        {
+                                            "type": "setState",
+                                            "target": "||burgerMenu||",
+                                            "key": "vis",
+                                            "value": false
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

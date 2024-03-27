@@ -21,11 +21,11 @@ If you don't have a React app set up yet, you can create a new one using any num
 Once you have your React app set up, you can proceed to install Opus UI and the standard component library.
 
 ```codeBash
-npm install opus-ui opus-ui-components
+npm install @intenda/opus-ui
 ```markdown
 You'll also want to install the standard component library. This includes components like 'image', 'icon', and 'label'. You don't need to install it if you'll only be defining your own component types.
 ```codeBash
-npm i opus-ui-components
+npm i @intenda/opus-ui-components
 ```markdown
 # Basic usage
 At a minimum, you can simply render your own components and then render Opus JSON within them. 

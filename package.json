@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"type": "module",
 	"scripts": {
-		"start": "concurrently --kill-others \"npm run dev\" \"nodemon node_modules/@intenda/opus-ui-packager/src/packager.js\"",
+		"start": "concurrently --kill-others \"npm run dev -- --host\" \"nodemon node_modules/@intenda/opus-ui-packager/src/packager.js\"",
 		"dev": "vite --port 3000",
 		"build-json": "node node_modules/@intenda/opus-ui-packager/src/packager.js",
 		"build": "vite build",

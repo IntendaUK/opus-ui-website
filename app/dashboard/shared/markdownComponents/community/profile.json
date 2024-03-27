@@ -8,7 +8,7 @@
             "type": "string",
             "desc": "Defines value for the name caption"
         },
-        "title": {
+        "jobTitle": {
             "type": "string",
             "desc": "Defines value for the itle's caption underneath the name's caption"
         },
@@ -21,7 +21,14 @@
     "prps": {
         "dir": "horizontal",
         "flex": true,
-        "gap": "bigPadding"
+        "gap": "bigPadding",
+        "style": {
+            ".cpnContainerSimple": {
+                "@media only screen and (max-width: 700px)": {
+                    "gap": "var(--global-mediumPadding) !important"
+                }
+            }
+        }
     },
     "wgts": [
         {
@@ -32,7 +39,11 @@
                 "imageHeight": "232px",
                 "style": {
                     ".cpnImage img": {
-                        "object-fit": "cover"
+                        "object-fit": "cover",
+                        "@media only screen and (max-width: 700px)": {
+                            "width": "93px",
+                            "height": "116px"
+                        }
                     }
                 }
             }
@@ -41,7 +52,14 @@
             "type": "containerSimple",
             "prps": {
                 "flex": true,
-                "height": "232px"
+                "height": "232px",
+                "style": {
+                    ".cpnContainerSimple": {
+                        "@media only screen and (max-width: 700px)": {
+                            "height": "auto !important"
+                        }
+                    }
+                }
             },
             "wgts": [
                 {
@@ -49,16 +67,30 @@
                     "prps": {
                         "cpt": "%name%",
                         "color": "primaryOpusBlue",
-                        "fontSize": "24px"
+                        "fontSize": "24px",
+                        "style": {
+                            ".cpnLabel": {
+                                "@media only screen and (max-width: 700px)": {
+                                    "font-size": "22px"
+                                }
+                            }
+                        }
                     }
                 },
                 {
                     "type": "label",
                     "prps": {
-                        "cpt": "%title%",
+                        "cpt": "%jobTitle%",
                         "color": "footerText",
                         "fontSize": "18px",
-                        "marginTop": "smallPadding"
+                        "marginTop": "smallPadding",
+                        "style": {
+                            ".cpnLabel": {
+                                "@media only screen and (max-width: 700px)": {
+                                    "font-size": "14px"
+                                }
+                            }
+                        }
                     }
                 },
                 {
@@ -70,7 +102,25 @@
                         "marginTop": "smallPadding",
                         "lineHeight": "30px",
                         "overflowY": "auto",
-                        "justify": "stretch"
+                        "justify": "stretch",
+                        "style": {
+                            ".cpnMarkdownLabel": {
+                                "p": {
+                                    "font-size": "18px !important",
+                                    "line-height": "30px",
+                                    "color": "var(--colors-footerText)",
+                                    "margin": "1rem 0px",
+                                    "strong": {
+                                        "font-size": "18px"
+                                    }
+                                },
+                                "@media only screen and (max-width: 700px)": {
+                                    "p": {
+                                        "font-size": "14px"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 {

@@ -2,29 +2,20 @@
     "acceptPrps": {
         "cpt": {
             "type": "string",
-            "desc": "Title for each navlink"
+            "desc": "Title for each burgerLink"
         },
         "onClickScript": {
             "type": "object",
             "desc": "fireScript action for a click action"
         }
     },
-    "scope": "navlink",
+    "scope": "burgerLink",
     "type": "container",
     "prps": {
         "canClick": true,
         "canHover": true,
-        "fireScript": "$onClickScript$",
-        "padding": true,
-        "paddingSize": "tinyPadding smallPadding",
-        "borderRadius": "8px",
-        "flows": [
-            {
-                "fromKey": "hovered",
-                "toKey": "backgroundColor",
-                "mapFunctionString": "v => v ? 'var(--colors-modalBackground)' : 'transparent'"
-            }
-        ]
+        "marginRight": "mediumPadding",
+        "fireScript": "$onClickScript$"
     },
     "wgts": [
         {
@@ -34,10 +25,16 @@
                 "fontSize": "16px",
                 "flows": [
                     {
-                        "from": "||navlink||",
+                        "from": "||burgerLink||",
                         "fromKey": "hovered",
-                        "toKea`y": "color",
+                        "toKey": "color",
                         "mapFunctionString": "v => v ? '#c1c1c1' : '#ffffff'"
+                    },
+                    {
+                        "from": "||burgerLink||",
+                        "fromKey": "hovered",
+                        "toKey": "borderBottom",
+                        "mapFunctionString": "v => v ? '3px solid {theme.colors.primaryOpusBlue}' : 'none'"
                     }
                 ]
             }

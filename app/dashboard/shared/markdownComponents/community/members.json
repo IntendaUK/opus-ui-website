@@ -24,7 +24,7 @@
                                     "            return {",
                                     "                imageUrl: split[0],",
                                     "                name: split[1],",
-                                    "                title: split[2],",
+                                    "                jobTitle: split[2],",
                                     "                description: split.slice(3, split.length - 1).join('\\n')",
                                     "            };",
                                     "        });",

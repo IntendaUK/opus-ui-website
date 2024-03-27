@@ -4,6 +4,7 @@
     "prps": {
         "dir": "horizontal",
         "crossAxisAlign": "center",
+        "gap": "{theme.global.smallPadding}",
         "style": {
             ".cpnContainerSimple": {
                 "@media only screen and (max-width: 700px)": {

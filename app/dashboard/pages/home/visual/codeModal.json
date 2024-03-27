@@ -62,7 +62,18 @@
 				"dir": "horizontal",
 				"width": "80%",
 				"height": "80%",
-				"canClick": true
+				"canClick": true,
+                "style": {
+                    ".cpnContainer": {
+                        "@media only screen and (max-width: 1300px)": {
+                            "width": "100% !important",
+                            "height": "100% !important"
+                        },
+                        "@media only screen and (max-width: 1000px)": {
+                            "flex-direction": "column !important"
+                        }
+                    }
+                }
 			},
 			"wgts": [
 				{
@@ -72,9 +83,68 @@
 						"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
 						"width": "20%",
 						"padding": true,
-						"paddingSize": "mediumPadding"
+						"paddingSize": "mediumPadding",
+		                "style": {
+		                    ".cpnContainerSimple": {
+		                        "@media only screen and (max-width: 1000px)": {
+		                            "width": "100% !important",
+									"border-bottom": "1px solid {theme.colors.menuHighlighOutline}"
+		                        }
+		                    }
+		                }
 					},
 					"wgts": [
+						{
+							"scope": "closeButton",
+							"type": "container",
+							"prps": {
+								"canClick": true,
+								"canHover": true,
+								"position": "absolute",
+								"top": "mediumPadding",
+								"right": "mediumPadding",
+								"borderRadius": "50%",
+								"mainAxisAlign": "center",
+								"crossAxisAlign": "center",
+								"width": "28px",
+								"height": "28px",
+								"backgroundColor": "primarySearch",
+								"hoverPrps": {
+									"on": {
+										"backgroundColor": "primaryOpusBlue"
+									},
+									"off": {
+										"backgroundColor": "primarySearch"
+									}
+								},
+								"fireScript": {
+									"actions": [
+										{
+											"type": "setState",
+											"target": "||codeModal||",
+											"key": "vis",
+											"value": false
+										}
+									]
+								},
+				                "style": {
+				                    ".cpnContainer": {
+				                        "@media only screen and (min-width: 1000px)": {
+				                            "display": "none"
+				                        }
+				                    }
+				                }
+							},
+							"wgts": [
+								{
+									"type": "icon",
+									"prps": {
+										"value": "close",
+										"color": "#ffffff"
+									}
+								}
+							]
+						},
 						{
 							"type": "label",
 							"prps": {
@@ -155,7 +225,7 @@
 														"from": "||codeModal||",
 														"fromKey": "selectedDataFile",
 														"toKey": "color",
-														"mapFunctionString": "v => v === {{rowData.dataFile}} ? '#6E9BEA' : 'white'"
+														"mapFunctionString": "v => v === {{rowData.dataFile}} ? '#6E9BEA' : 'var(--colors-footerText)'"
 													}
 												]
 											}
@@ -169,54 +239,94 @@
 				{
 					"type": "containerSimple",
 					"prps": {
-						"width": "40%"
+						"flex": true
 					},
 					"wgts": [
 						{
 							"type": "label",
 							"prps": {
-								"cpt": "helloWorld.json",
 								"borderBottom": "1px solid {theme.colors.menuHighlighOutline}",
-								"paddingSize": "mediumPadding"
-							}
-						},
-						{
-							"relId": "code",
-							"type": "codeEditor",
-							"prps": {
-								"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
 								"paddingSize": "mediumPadding",
-								"fontSize": "24px",
-								"value": "",
-								"valueObj": {},
-								"language": "json",
-								"flexSize": 1,
-								"scps": [
+								"fontSize": "18px",
+								"flows": [
 									{
-										"triggers": [
-											{
-												"event": "onStateChange",
-												"source": "||codeModal||",
-												"key": "selectedDataFile"
-											}
-										],
-										"actions": [
-											{
-												"type": "setState",
-												"key": "value",
-												"value": "{{state.||codeModal||.exampleData.((state.||codeModal||.selectedDataFile))}}"
-											}
-										]
+										"from": "||codeModal||",
+										"fromKey": "selectedDataFile",
+										"toKey": "cpt",
+										"mapFunctionString": "v => (v ?? '').substr(2) + '.json'"
 									}
 								]
 							}
+						},
+						{
+							"type": "container",
+							"prps": {
+								"flex": true,
+								"overflow": "auto",
+								"borderRight": "1px solid {theme.colors.menuHighlighOutline}",
+								"padding": true,
+								"paddingSize": "mediumPadding"
+							},
+							"wgts": [
+								{
+									"relId": "code",
+									"type": "codeEditor",
+									"prps": {
+										"fontSize": "24px",
+										"value": "",
+										"valueObj": {},
+										"language": "json",
+										"scps": [
+											{
+												"triggers": [
+													{
+														"event": "onStateChange",
+														"source": "||codeModal||",
+														"key": "selectedDataFile"
+													}
+												],
+												"actions": [
+													{
+														"type": "setState",
+														"key": "value",
+														"value": "{{state.||codeModal||.exampleData.((state.||codeModal||.selectedDataFile))}}"
+													}
+												]
+											}
+										],
+						                "style": {
+						                    ".cpnCodeEditor": {
+						                        "@media only screen and (max-width: 1300px)": {
+						                            "pre, pre *, textarea": {
+						                            	"font-size": "12px !important",
+						                            	"tab-size": "12px !important"
+						                            },
+						                            "textarea": {
+						                            	"outline": "transparent"
+						                            }
+						                        }
+						                    }
+						                }
+									}
+								}
+							]
 						}
 					]
 				},
 				{
 					"type": "containerSimple",
 					"prps": {
-						"width": "40%"
+						"width": "40%",
+		                "style": {
+		                    ".cpnContainerSimple": {
+		                        "@media only screen and (max-width: 1800px)": {
+		                            "width": "250px !important"
+		                        },
+		                        "@media only screen and (max-width: 1000px)": {
+		                            "width": "100% !important"
+		                        }
+		                    }
+		                }
 					},
 					"wgts": [
 						{

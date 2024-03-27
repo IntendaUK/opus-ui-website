@@ -11,7 +11,11 @@
             {
                 "type": "label",
                 "prps": {
-                    "cpt": "Try changing my color or my type to input",
+                    "readme": [
+                        "Change my color to red, or",
+                        "change my type to input"  
+                    ],
+                    "cpt": "Hello world!",
                     "color": "white"
                 }
             }

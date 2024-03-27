@@ -3,8 +3,11 @@
 	src: url("/fonts/CenturyGothic.ttf") format("truetype");
 }
 
-.cpnCodeEditor {
+body {
+	overscroll-behavior-y: contain;
+}
 
+.cpnCodeEditor {
 	pre,
 	textarea {
 		tab-size: 40px !important;
@@ -19,7 +22,6 @@
 	}
 
 	.token {
-
 		&.punctuation,
 		&.operator,
 		&.constant {

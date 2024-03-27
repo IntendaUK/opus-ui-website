@@ -52,7 +52,29 @@
                     "prps": {
                         "value": "{theme.system.mdaLocation}/images/logo.svg",
                         "imageHeight": "24px",
-                        "imageWidth": "auto"
+                        "imageWidth": "auto",
+                        "style": {
+                            ".cpnImage": {
+                                "@media only screen and (max-width: 700px)": {
+                                    "display": "none"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/logoSimple.svg",
+                        "imageHeight": "24px",
+                        "imageWidth": "auto",
+                        "style": {
+                            ".cpnImage": {
+                                "@media only screen and (min-width: 700px)": {
+                                    "display": "none"
+                                }
+                            }
+                        }
                     }
                 },
                 {

@@ -17,7 +17,7 @@
             "type": "containerSimple",
             "prps": {
                 "minHeight": "calc(100vh - 207px)",
-                "maxWidth": "calc(100% - (var(--global-padding) * 2))",
+                "maxWidth": "calc(100% - (var(--global-mediumPadding) * 2))",
                 "margin": "giantPadding auto",
                 "style": {
                     ".cpnContainerSimple": {
