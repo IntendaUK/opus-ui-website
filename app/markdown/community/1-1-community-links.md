@@ -9,7 +9,7 @@ We appreciate your interest in Opus UI. Whether you're a seasoned developer or n
 5px
 ```markdown
 # Links
-[Discord](https://opus-ui.com/discord)
+[Discord](http://discord.opus-ui.com)
 
 [GitHub Issues](https://github.com/IntendaUK/opus-ui/issues)
 

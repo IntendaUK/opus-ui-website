@@ -15,7 +15,6 @@
 		"autoExpand": true,
 		"renderExpander": false,
 		"autoExpandChildNodes": true,
-		"noPad": true,
 		"mdaLabel": {
 			"id": "((rowData.id))label",
 			"type": "container",
@@ -34,7 +33,8 @@
 				}
 			],
 			"prps": {
-				"canClick": true
+				"canClick": true,
+				"canHover": true
 			},
 			"wgts": [
 				{

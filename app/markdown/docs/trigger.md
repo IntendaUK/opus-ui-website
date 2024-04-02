@@ -7,19 +7,21 @@
 .
 ```gap
 .
-```mainHeading
-# Example Usage
-
-
-```gap
-.
+```markdown
+## Example Usage
 ```docs/codeJson
 .
 ```gap
 .
 ```markdown
-# ConFig Keys
+# Config Keys
 ```divider
 5px
+```gap
+.
 ```docs/configKeys
 .
+```gap
+.
+```divider
+1px

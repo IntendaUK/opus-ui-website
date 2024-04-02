@@ -10,12 +10,22 @@
             {
                 "triggers": [
                     {
+                        "event": "onMount"
+                    },
+                    {
                         "event": "onStateChange",
                         "source": "||docs||",
                         "key": "selectedNode"
                     }
                 ],
                 "actions": [
+                    {
+                        "type": "stopScript",
+                        "condition": {
+                            "operator": "isFalsy",
+                            "value": "$rowData.data.loadData$"
+                        }
+                    },
                     {
                         "type": "applyComparison",
                         "operator": "isEqual",
@@ -37,6 +47,36 @@
                                 }
                             ]
                         }
+                    }
+                ]
+            },
+            {
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "key": "hovered"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "stopScript",
+                        "^condition": {
+                            "operator": "isEqual",
+                            "compareValue": "{{state.||docs||.selectedNode.loadData}}",
+                            "value": "$rowData.data.loadData$"
+                        }
+                    },
+                    {
+                        "type": "setState",
+                        "key": "backgroundColor",
+                        "value": [
+                            "{{eval.",
+                            "    {{state.self.hovered}} ? '{theme.colors.primarySearch}66' : 'transparent'",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
                     }
                 ]
             }

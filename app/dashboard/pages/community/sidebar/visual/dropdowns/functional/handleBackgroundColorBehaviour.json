@@ -42,6 +42,36 @@
                         }
                     }
                 ]
+            },
+            {
+                "triggers": [
+                    {
+                        "event": "onStateChange",
+                        "key": "hovered"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "stopScript",
+                        "^condition": {
+                            "operator": "isEqual",
+                            "compareValue": "{{state.||community||.selectedSectionId}}",
+                            "value": "$rowData.dataFile$"
+                        }
+                    },
+                    {
+                        "type": "setState",
+                        "key": "backgroundColor",
+                        "value": [
+                            "{{eval.",
+                            "    {{state.self.hovered}} ? '{theme.colors.primarySearch}66' : 'transparent'",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    }
+                ]
             }
         ]
     }

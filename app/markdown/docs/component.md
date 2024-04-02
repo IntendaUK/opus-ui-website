@@ -6,8 +6,8 @@
 .
 ```gap
 .
-```mainHeading
-# Example Usage
+```markdown
+## Example Usage
 
 ```gap
 .

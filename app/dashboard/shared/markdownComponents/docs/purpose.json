@@ -9,18 +9,14 @@
     },
     "type": "containerSimple",
     "prps": {
-        "border": "2px solid {theme.colors.menuHighlighOutline}",
-        "backgroundColor": "secondaryBackground",
-        "padding": true,
-        "paddingSize": "smallPadding mediumPadding",
-        "borderRadius": "6px"
+        "gap": "mediumPadding"
     },
     "wgts": [
         {
             "type": "label",
             "prps": {
-                "cpt": "What is the purpose of this %type%",
-                "color": "#ffffff",
+                "cpt": "Purpose of %type%",
+                "color": "footerText",
                 "fontSize": "24px"
             }
         },

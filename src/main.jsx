@@ -44,6 +44,7 @@ window.addEventListener('popstate', handleBrowserBackForward);
 
 	loadApp({
 		mdaPackage,
+		loadUrlParameters: true,
 		config: {
 			env: 'development'
 		}

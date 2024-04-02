@@ -52,6 +52,14 @@
                             }
                         ]
                     }
+                ],
+                "flows": [
+                    {
+                        "from": "||treeview||",
+                        "fromKey": "expandedNodes",
+                        "toKey": "color",
+                        "mapFunctionString": "v => v.includes('%rowData.id%') ? 'primaryOpusBlue' : 'footerText'"
+                    }
                 ]
             }
         },
