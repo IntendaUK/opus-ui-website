@@ -37,8 +37,8 @@
                         "name": "selectedIndex",
                         "value": [
                             "{{eval.",
-                            "    const [, postIndex] = window.location.search.substr(1).split('=');",
-                            "    postIndex;",
+                            "    const urlParams = new URLSearchParams(window.location.search);",
+                            "    urlParams.get('postId');",
                             "}}"
                         ],
                         "inlineKeys": [

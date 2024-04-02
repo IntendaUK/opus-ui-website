@@ -75,7 +75,8 @@
                         "name": "parentRecord",
                         "value": [
                             "{{eval.",
-                            "    const [, selectedArticleId] = window.location.search.substr(1).split('=');",
+                            "    const urlParams = new URLSearchParams(window.location.search);",
+                            "    const selectedArticleId = urlParams.get('articleId');",
                             "    let res = {{state.self.data.children}}.find(d => d.children.some(f => f.dataFile === selectedArticleId) );",
                             "    if (!res)",
                             "        res = {{state.self.data.children.0}};",

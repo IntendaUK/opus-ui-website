@@ -41,7 +41,8 @@
                         "name": "selectedArticleId",
                         "value": [
                             "{{eval.",
-                            "    const [, selectedArticleId] = window.location.search.substr(1).split('=');",
+                            "    const urlParams = new URLSearchParams(window.location.search);",
+                            "    const selectedArticleId = urlParams.get('articleId');",
                             "    selectedArticleId;",
                             "}}"
                         ],
