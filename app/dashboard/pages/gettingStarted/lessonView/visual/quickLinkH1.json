@@ -29,7 +29,7 @@
 						"from": "||lessonView.quickLinks||",
 						"fromKey": "highlightedHeadingId",
 						"toKey": "color",
-						"mapFunctionString": "v => v === '%headingId%' ? 'primaryOpusBlue' : 'footerText'"
+						"mapFunctionString": "v => v === `%headingId%` ? 'primaryOpusBlue' : 'footerText'"
 					}
 				]
 			}

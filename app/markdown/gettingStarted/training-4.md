@@ -7,7 +7,6 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
 * The opus config file
   * The starting point of any application
 * index.json

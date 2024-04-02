@@ -140,6 +140,11 @@
                 "isParent": true,
                 "children": [
                     {
+                        "id": "training-1",
+                        "name": "Introduction: Read first",
+                        "dataFile": "training-1"
+                    },
+                    {
                         "id": "training-4",
                         "name": "Anatomy of an application",
                         "dataFile": "training-4"
