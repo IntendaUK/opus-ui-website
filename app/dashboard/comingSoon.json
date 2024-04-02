@@ -1,0 +1,113 @@
+{
+    "type": "containerSimple",
+    "prps": {
+        "singlePage": true,
+        "backgroundColor": "primaryBackground",
+        "mainAxisAlign": "center",
+        "crossAxisAlign": "center",
+        "gap": "padding"
+    },
+    "wgts": [
+        {
+            "type": "containerSimple",
+            "prps": {
+                "height": "273px",
+                "width": "100%"
+            },
+            "wgts": [
+                {
+                    "type": "containerSimple",
+                    "prps": {
+                        "height": "152px",
+                        "mainAxisAlign": "space-between",
+                        "opacity": 0.8,
+                        "style": {
+                            ".cpnContainerSimple": {
+                                "@media only screen and (max-width: 700px)": {
+                                    "margin-top": "72px"
+                                }
+                            }
+                        }
+                    },
+                    "wgts": [
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "width": "100%",
+                                "height": "2px",
+                                "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B5388 50%, #2E3B5300 80%)"
+                            }
+                        },
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "width": "100%",
+                                "height": "2px",
+                                "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B53FF 50%, #2E3B5300 80%)"
+                            }
+                        },
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "width": "100%",
+                                "height": "2px",
+                                "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B5388 50%, #2E3B5300 80%)"
+                            }
+                        },
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "width": "100%",
+                                "height": "2px",
+                                "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B53FF 50%, #2E3B5300 80%)"
+                            }
+                        },
+                        {
+                            "type": "containerSimple",
+                            "prps": {
+                                "width": "100%",
+                                "height": "2px",
+                                "background": "linear-gradient(90deg, #2E3B5300 20%, #2E3B5388 50%, #2E3B5300 80%)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "prps": {
+                        "value": "{theme.system.mdaLocation}/images/hero.svg",
+                        "imageHeight": "235px",
+                        "imageWidth": "auto",
+                        "position": "absolute",
+                        "left": "50%",
+                        "top": "50%",
+                        "transform": "translate(-50%, -50%)",
+                        "style": {
+                            ".cpnImage": {
+                                "@media only screen and (max-width: 600px)": {
+                                    "img": {
+                                        "width": "100%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "Coming Soon",
+                "fontSize": "fontSizeGiant",
+                "style": {
+                    ".cpnLabel": {
+                        "@media only screen and (max-width: 700px)": {
+                            "font-size": "32px !important"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
