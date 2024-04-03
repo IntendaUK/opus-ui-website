@@ -38,11 +38,17 @@ To learn how to write Opus JSON, refer to `{
 	},
 	"script": {
 		"actions": [{
-			"type": "setState",
-            "target": "systemViewport",
-            "key": "value",
-            "value": "pages/trainingMaterials/index"
-		}]
+            "type": "setState",
+            "target": "||router||",
+            "key": "tPerformRoute",
+            "value": "docs?articleId=training-1"
+        },
+        {
+            "type": "setState",
+            "target": "||gettingStarted||",
+            "key": "tReloadFromUrl",
+            "value": true
+        }]
 	}
 }`
 ```gap
