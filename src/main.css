@@ -7,6 +7,55 @@ body {
 	overscroll-behavior-y: contain;
 }
 
+.cpnMarkdownLabel * {
+	color: white;
+	user-select: text;
+}
+
+.cpnMarkdownLabel h1 {
+	font-size: 42px;
+	font-weight: 700;
+	color: var(--colors-footerText);
+}
+
+.cpnMarkdownLabel h2 {
+	font-weight: 700;
+	color: var(--colors-footerText);
+	margin: 1.5rem 0px;
+	line-height: 2.5rem;
+}
+
+.cpnMarkdownLabel p {
+	font-size: 17px;
+	line-height: 30px;
+	color: var(--colors-footerText);
+	margin: 1rem 0px;
+}
+
+.cpnMarkdownLabel p strong {
+	font-size: 17px;
+}
+
+.cpnMarkdownLabel p a {
+	font-size: 17px;
+	line-height: 30px;
+	color: var(--colors-footerText);
+	margin: 1rem 0px;
+}
+
+.cpnMarkdownLabel ul,
+.cpnMarkdownLabel ol {
+	margin: 18px 0px;
+}
+
+.cpnMarkdownLabel ul li,
+.cpnMarkdownLabel ol li {
+	font-size: 17px;
+	line-height: 30px;
+	color: var(--colors-footerText);
+	margin: 1rem 0px;
+}
+
 .cpnCodeEditor {
 	pre,
 	textarea {
