@@ -3,8 +3,8 @@
 
 ```info
 secondaryBackground|Composite script actions, or trait spreading, can be useful in many situations. e.g.
-> You need to perform a queryGateway action but the response should be logged every time
-> You need to perform a setState when a certain value is above 10 but show a notification when the value is below 10
+* You need to perform a queryGateway action but the response should be logged every time
+* You need to perform a setState when a certain value is above 10 but show a notification when the value is below 10
 
 Essentially, composite actions allow us to have complex logic defined in a central location which can then be used in multiple places.
 

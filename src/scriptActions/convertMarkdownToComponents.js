@@ -13,6 +13,9 @@ const convertMarkdownToComponents = ({ value }) => {
 			return;
 
 		buffer = buffer.substr(0, buffer.length - 1);
+		if (currentType === 'info')
+			buffer = buffer.replaceAll('||', '││');
+
 		components.push({
 			type: currentType,
 			value: (

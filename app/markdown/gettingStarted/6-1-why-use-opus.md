@@ -16,7 +16,7 @@ To illustrate this point, let's look at a simple Todo list built in pure React. 
 
 When a child component wants to do something, the developer must write extra code in the parent component to:
 1. Create structures in which to store state and through which to modify state
-2. Build handlers that utilize the aforementioned structures
+2. Build handlers that utilise the aforementioned structures
 3. Pass the handlers into the child component(s)
 ```gap
 .
@@ -200,7 +200,7 @@ Understanding the distinction highlighted by the previous two examples really en
 .
 ```markdown
 # Components are data
-When all components (or many components, in cases where you also render plain React components) within your application are stored as data, it paves the way for tools to be built to simplify things like prototyping, maintaining, debugging, and optimizing applications. This is an area in which we are investing a lot of effort.
+When all components (or many components, in cases where you also render plain React components) within your application are stored as data, it paves the way for tools to be built to simplify things like prototyping, maintaining, debugging, and optimising applications. This is an area in which we are investing a lot of effort.
 ```gap
 .
 ```markdown

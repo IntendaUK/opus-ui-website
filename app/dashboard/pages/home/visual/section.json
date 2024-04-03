@@ -180,8 +180,9 @@
 				{
 					"scope": "hoverArea",
 					"condition": {
-						"operator": "isTruthy",
-						"value": "$examples$"
+						"operator": "isGreaterThan",
+						"value": "$examples.length$",
+						"compareValue": 1
 					},
 					"type": "container",
 					"prps": {

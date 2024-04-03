@@ -14,7 +14,7 @@ Before you begin, ensure you have the following set up:
 
 ## Creating a New React App
 
-If you don't have a React app set up yet, you can create a new one using any number of tools. We recommend [Vite](https://vitejs.dev/guide/), but please use whatever works for you!
+If you don't have a React app set up yet, you can create a new one using any number of tools. We recommend [{ "cpt": "Vite", "attributes": { "target": "_blank" } }](https://vitejs.dev/guide/), but please use whatever works for you!
 
 ## Installing Opus UI
 

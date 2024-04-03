@@ -95,6 +95,9 @@
 			"allowScriptAnchors": {
 				"dft": true
 			},
+			"allowAnchorAttributes": {
+				"dft": true
+			},
 			"overrideStyles": {
 				"link": {
 					

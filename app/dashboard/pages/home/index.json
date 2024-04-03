@@ -226,8 +226,7 @@
                             "Re-use components and behaviour"
                         ],
                         "examples": [
-                            "1_hello_world",
-                            "2_flowing_states"
+                            "1_hello_world"
                         ],
                         "height": "565px"
                     }

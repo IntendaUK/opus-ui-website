@@ -2,7 +2,7 @@
 # Getting and Displaying Data
 
 ```info
-secondaryBackground|A pure application is characterized by the fact that almost all of its screens, components and scripting is defined through JSON.
+secondaryBackground|A pure application is characterised by the fact that almost all of its screens, components and scripting is defined through JSON.
 
 ```gap
 .

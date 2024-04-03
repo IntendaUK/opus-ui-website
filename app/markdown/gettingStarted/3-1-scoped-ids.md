@@ -74,7 +74,7 @@ In this example, rows have id’s: row-((rowNumber)) and buttons have id’s: ro
 ```markdown
 # Example with scopes
 
-In this example we assign a scope to the repeater row, namely: row through the scope keyword. Scoped id's can be access by any component inside the parent, regardless of how deeply nested it is. If you need to give a component inside a scope a scoped id (without defining a brand new scope), you can use the relId keyword. To access the scoped id, we use the ||scopeName|| format if we want to access the scope owner (the component which declared the scope) or the ||scopeName.relativeId|| accessor format if we want to access another component inside it
+In this example we assign a scope to the repeater row, namely: row through the scope keyword. Scoped id's can be accessed by any component inside the parent, regardless of how deeply nested it is. If you need to give a component inside a scope a scoped id (without defining a brand new scope), you can use the relId keyword. To access the scoped id, we use the ||scopeName|| format if we want to access the scope owner (the component which declared the scope) or the ||scopeName.relativeId|| accessor format if we want to access another component inside it
 
 ```codeJson
 {

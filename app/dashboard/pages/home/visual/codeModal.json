@@ -280,12 +280,22 @@
 											{
 												"triggers": [
 													{
+														"event": "onMount"
+													},
+													{
 														"event": "onStateChange",
 														"source": "||codeModal||",
 														"key": "selectedDataFile"
 													}
 												],
 												"actions": [
+													{
+														"type": "stopScript",
+														"^condition": {
+															"operator": "isFalsy",
+															"value": "{{state.||codeModal||.exampleData.((state.||codeModal||.selectedDataFile))}}"
+														}
+													},
 													{
 														"type": "setState",
 														"key": "value",

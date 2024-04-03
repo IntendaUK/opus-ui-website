@@ -9,15 +9,15 @@ We appreciate your interest in Opus UI. Whether you're a seasoned developer or n
 5px
 ```markdown
 # Links
-[Discord](http://discord.opus-ui.com)
+[{ "cpt": "Discord", "attributes": { "target": "_blank" } }](http://discord.opus-ui.com)
 
-[GitHub Issues](https://github.com/IntendaUK/opus-ui/issues)
+[{ "cpt": "GitHub Issues", "attributes": { "target": "_blank" } }](https://github.com/IntendaUK/opus-ui/issues)
 
-[Stack Overflow](https://stackoverflow.com/questions/tagged/opus-ui)
+[{ "cpt": "Stack Overflow", "attributes": { "target": "_blank" } }](https://stackoverflow.com/questions/tagged/opus-ui)
 
-[Subreddit](https://www.reddit.com/r/opusui)
+[{ "cpt": "Subreddit", "attributes": { "target": "_blank" } }](https://www.reddit.com/r/opusui)
 
-[Twitter / X](https://twitter.com/opus_ui)
+[{ "cpt": "Twitter / X", "attributes": { "target": "_blank" } }](https://twitter.com/opus_ui)
 ```gap
 .
 ```fillSpace

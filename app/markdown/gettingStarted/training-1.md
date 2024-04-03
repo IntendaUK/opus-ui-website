@@ -14,4 +14,4 @@ Please note that while lesson videos are available, each lesson's exercise has n
 Lastly, the first few lessons are only pertinent to Intenda employees and as such are not available on this here. Therefor the first lesson number is '4', not '1'.
 
 # How to access the lesson dashboards and solutions
-While the lessons haven't been added to this site yet, you can access the example dashboards and the lesson solutions [in this repo](https://github.com/IntendaUK/opus-ui-lessons).
+While the lessons haven't been added to this site yet, you can access the example dashboards and the lesson solutions [{ "cpt": "in this repo", "attributes": { "target": "_blank" } }](https://github.com/IntendaUK/opus-ui-lessons).

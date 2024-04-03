@@ -225,7 +225,7 @@ npm i @intenda/opus-ui-code-editor
 .
 ```markdown
 # Opus Grid
-Contains a single component type, namely "grid". This is a data table with some extensibility. However, if lots of customization is required, the grid ensemble should be used instead.
+Contains a single component type, namely "grid". This is a data table with some extensibility. However, if lots of customisation is required, the grid ensemble should be used instead.
 ```codeBash
 npm i @intenda/opus-ui-grid
 ```gap

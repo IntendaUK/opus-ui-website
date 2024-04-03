@@ -38,6 +38,7 @@
 						"    let res = $value$;",
 						"    if (res.indexOf('|') !== -1 && res.indexOf('|') < res.indexOf(' '))",
 						"        res = res.split('|')[1];",
+						"    res = res.replaceAll('││', '||');",
 						"    res;",
 						"}}"	
 					],
@@ -63,7 +64,7 @@
 				"cpt": "%text%",
 				"style": {
 					".cpnMarkdownLabel": {
-						"p": {
+						"p, ul li": {
 							"font-size": "17px",
 							"line-height": "30px",
 							"color": "var(--colors-footerText)",
