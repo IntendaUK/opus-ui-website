@@ -97,7 +97,7 @@
                     "actions": [
                         {
                             "type": "openUrl",
-                            "url": "https://opus-ui.com/discord"
+                            "url": "http://discord.opus-ui.com"
                         }
                     ]
                 }
