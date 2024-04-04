@@ -131,7 +131,7 @@
                     },
                     {
                         "id": "crumbTrail",
-                        "name": "crumbTrai",
+                        "name": "crumbTrail",
                         "data": {
                             "template": "component",
                             "loadData": "components/crumbTrail"

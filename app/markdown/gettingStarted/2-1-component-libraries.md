@@ -10,7 +10,7 @@ While Opus allows you to define all the custom components you might need in your
 # Opus UI
 The Opus Library contains a few core components you will need to build applications.
 ```codeBash
-npm i @intenda/opus-ui
+npm install @intenda/opus-ui
 ```gap
 .
 ```componentLibrarySection
@@ -57,7 +57,7 @@ npm i @intenda/opus-ui
 # Opus Components
 The standard component library contains most of the components you'll need to build a fully functional application.
 ```codeBash
-npm i @intenda/opus-ui-components
+npm install @intenda/opus-ui-components
 ```gap
 .
 ```componentLibrarySection
@@ -211,7 +211,7 @@ A code editor built on top of `{
 	}
 }`.
 ```codeBash
-npm i @intenda/opus-ui-code-editor
+npm install @intenda/opus-ui-code-editor
 ```gap
 .
 ```componentLibrarySection
@@ -227,14 +227,14 @@ npm i @intenda/opus-ui-code-editor
 # Opus Grid
 Contains a single component type, namely "grid". This is a data table with some extensibility. However, if lots of customisation is required, the grid ensemble should be used instead.
 ```codeBash
-npm i @intenda/opus-ui-grid
+npm install @intenda/opus-ui-grid
 ```gap
 .
 ```markdown
 # Opus Drag Move
 Contains various component types to assist in building applications in which components can be moved around (inside a container) and dragged between various containers.
 ```codeBash
-npm i @intenda/opus-ui-drag-move
+npm install @intenda/opus-ui-drag-move
 ```gap
 .
 ```componentLibrarySection
@@ -269,6 +269,6 @@ Contains a single component type, namely "zoomPanner". This is a component built
 	}
 }`. It acts as a container and allows the user to zoom, pan and pinch to change the view on the child components.
 ```codeBash
-npm i @intenda/opus-ui-zoom-panner
+npm install @intenda/opus-ui-zoom-panner
 ```gap
 .
