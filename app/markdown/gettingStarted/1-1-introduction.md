@@ -7,6 +7,11 @@ You're on your way to making music! This page will teach you everything you need
 5px
 
 ```markdown
+## Example Application
+```info
+To get started as soon as possible, you can simply have a look at our example application [{ "cpt": "in this repository", "attributes": { "target": "_blank" } }](https://github.com/IntendaUK/opus-ui-example).
+```
+```markdown
 ## Prerequisites
 Before you begin, ensure you have the following set up:
 - Node.js and npm
