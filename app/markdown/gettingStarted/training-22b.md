@@ -7,7 +7,9 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Required Component Libraries
+This lesson uses the Button, Icon, Input and Label components that are provided by [{ "cpt": "opus-ui-components", "attributes": { "target": "_blank" } }](/docs?articleId=2-1-component-libraries).
+## Discussed in this lesson
 * Passing wgts into traits
 * Traits that are rendered need noun names
 * Traits that do something need verb names

@@ -7,7 +7,7 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Discussed in this lesson
 * How to convert a visual design into an Opus JSON dashboard
 ```gap
 .

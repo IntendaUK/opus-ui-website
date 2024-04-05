@@ -7,7 +7,7 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Discussed in this lesson
 * Function themes vs style themes
 * Building themes
 * Inheriting from other themes

@@ -7,7 +7,7 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Discussed in this lesson
 * What can an Opus JSON file contain
 * Keywords: id, type, prps, wgts
 ```gap

@@ -7,7 +7,7 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Discussed in this lesson
 * How to give space to components with padding and margins
 * Shorthand properties for padding and margin
 ```gap

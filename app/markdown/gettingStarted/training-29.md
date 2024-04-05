@@ -7,7 +7,9 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Required Component Libraries
+This lesson uses the Label component that is provided by [{ "cpt": "opus-ui-components", "attributes": { "target": "_blank" } }](/docs?articleId=2-1-component-libraries).
+## Discussed in this lesson
 * Script actions:
   * setVariable
   * pushVariable

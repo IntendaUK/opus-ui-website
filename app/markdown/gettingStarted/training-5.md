@@ -7,7 +7,9 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Required Component Libraries
+This lesson uses the Label component that is provided by [{ "cpt": "opus-ui-components", "attributes": { "target": "_blank" } }](/docs?articleId=2-1-component-libraries).
+## Discussed in this lesson
 * Changing your startup dashboard
 * Debugging why it might not be working
 * Viewing the application in the browser

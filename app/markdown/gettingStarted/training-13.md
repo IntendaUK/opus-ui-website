@@ -7,7 +7,7 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Discussed in this lesson
 * Setting the size of a component
 * Making a component scroll when it needs to
 * Ensuring that components that should not scroll, don’t

@@ -13,6 +13,11 @@ The Opus Library contains a few core components you will need to build applicati
 npm install @intenda/opus-ui
 ```gap
 .
+```codeReact
+//Import in your main.jsx file for components to be registered
+import '@intenda/opus-ui';
+```gap
+.
 ```componentLibrarySection
 [
 	{
@@ -58,6 +63,11 @@ npm install @intenda/opus-ui
 The standard component library contains most of the components you'll need to build a fully functional application.
 ```codeBash
 npm install @intenda/opus-ui-components
+```gap
+.
+```codeReact
+//Import in your main.jsx file for components to be registered
+import '@intenda/opus-ui-components';
 ```gap
 .
 ```componentLibrarySection
@@ -214,6 +224,11 @@ A code editor built on top of `{
 npm install @intenda/opus-ui-code-editor
 ```gap
 .
+```codeReact
+//Import in your main.jsx file for components to be registered
+import '@intenda/opus-ui-code-editor';
+```gap
+.
 ```componentLibrarySection
 [
 	{
@@ -225,9 +240,14 @@ npm install @intenda/opus-ui-code-editor
 .
 ```markdown
 # Opus Grid
-Contains a single component type, namely "grid". This is a data table with some extensibility. However, if lots of customisation is required, the grid ensemble should be used instead.
+Contains a single component type, namely "grid". This is a data table with some extensibility. However, if lots of customisation is required, the grid ensemble should be used instead. This component is also needed when using dropdowns built with the input in opus-ui-components.
 ```codeBash
 npm install @intenda/opus-ui-grid
+```gap
+.
+```codeReact
+//Import in your main.jsx file for components to be registered
+import '@intenda/opus-ui-grid';
 ```gap
 .
 ```markdown
@@ -235,6 +255,11 @@ npm install @intenda/opus-ui-grid
 Contains various component types to assist in building applications in which components can be moved around (inside a container) and dragged between various containers.
 ```codeBash
 npm install @intenda/opus-ui-drag-move
+```gap
+.
+```codeReact
+//Import in your main.jsx file for components to be registered
+import '@intenda/opus-ui-drag-move';
 ```gap
 .
 ```componentLibrarySection
@@ -270,5 +295,10 @@ Contains a single component type, namely "zoomPanner". This is a component built
 }`. It acts as a container and allows the user to zoom, pan and pinch to change the view on the child components.
 ```codeBash
 npm install @intenda/opus-ui-zoom-panner
+```gap
+.
+```codeReact
+//Import in your main.jsx file for components to be registered
+import '@intenda/opus-ui-zoom-pan-pinch';
 ```gap
 .

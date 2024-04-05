@@ -7,7 +7,7 @@
 ```gap
 .
 ```markdown
-# Discussed in this lesson
+## Discussed in this lesson
 * camelCase for folder and file names
 * Dashboard case sensitivity
 * Logical branching within application folder structures
