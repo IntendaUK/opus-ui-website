@@ -34,6 +34,7 @@
 		"@intenda/opus-ui": "1.0.0",
 		"@intenda/opus-ui-code-editor": "^1.0.0",
 		"@intenda/opus-ui-components": "^1.0.0",
+		"@intenda/opus-ui-svg": "^1.1.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},

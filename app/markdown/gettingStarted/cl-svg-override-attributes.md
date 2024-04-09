@@ -7,37 +7,22 @@ When rendering SVG elements you can choose to temporarily or permanently overrid
 ```gap
 .
 ```codeReact
-//System
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-//Components
-import { Svg } from './components/svg';
-
-//PropSpecs
-import propsSvg from './components/svg/props';
-
-//Opus Lib
-import Opus, { registerComponentTypes } from '@intenda/opus-ui';
+import Opus from '@intenda/opus-ui';
 import '@intenda/opus-ui-svg';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-registerComponentTypes([{
-	type: 'label',
-	component: ({ state: { cpt } }) => {
-		return <span>{cpt}</span>;
-	},
-	propSpec: { cpt: { type: 'string' } }
-}]);
 
 root.render(
 	<Opus
 		options={{ env: 'development' }}
 		registerComponentTypes={[{
-			type: 'svg',
-			component: Svg,
-			propSpec: propsSvg
+			type: 'label',
+			component: ({ state: { cpt } }) => {
+				return <span>{cpt}</span>;
+			},
+			propSpec: { cpt: { type: 'string' } }
 		}]}
 		startupMda={{
 			type: 'containerSimple',
