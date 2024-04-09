@@ -15,7 +15,7 @@
                     },
                     {
                         "id": "1.2",
-                        "name": "Setting Opus State from React",
+                        "name": "Setting Opus state from React",
                         "dataFile": "1-2-setting-opus-state-from-react"
                     },
                     {
@@ -35,19 +35,33 @@
                         "id": "6.1",
                         "name": "Why use Opus UI",
                         "dataFile": "6-1-why-use-opus"
+                    },
+                    {
+                        "id": "2.1",
+                        "name": "Component Libraries",
+                        "dataFile": "6-2-component-libraries"
                     }
                 ]
             },
             {
-                "id": "buildingAnApplication",
-                "name": "BUILDING AN APPLICATION",
+                "id": "componentLibraries",
+                "name": "COMPONENT LIBRARIES",
                 "parentId": "",
                 "isParent": true,
                 "children": [
                     {
-                        "id": "2.1",
-                        "name": "Component Libraries",
-                        "dataFile": "2-1-component-libraries"
+                        "id": "cl-svg",
+                        "parentId": "componentLibraries",
+                        "isParent": true,
+                        "name": "@intenda/opus-ui-svg",
+                        "children": [
+                            {
+                                "id": "cl-svg-override-attributes",
+                                "name": "Overriding element attributes",
+                                "dataFile": "cl-svg-override-attributes"
+                            }   
+                        ]
+                        
                     }
                 ]
             },

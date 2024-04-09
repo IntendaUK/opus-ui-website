@@ -35,7 +35,6 @@
                                         {
                                             "type": "setMultiState",
                                             "value": {
-                                                "uppercase": true,
                                                 "fontWeight": 700
                                             }
                                         }
