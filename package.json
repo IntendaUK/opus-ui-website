@@ -1,6 +1,6 @@
 {
 	"name": "@intenda/opus-ui-website",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"start": "concurrently --kill-others \"npm run dev -- --host\" \"nodemon node_modules/@intenda/opus-ui-packager/src/packager.js\"",
@@ -31,7 +31,7 @@
 		"delay": 100
 	},
 	"dependencies": {
-		"@intenda/opus-ui": "1.0.0",
+		"@intenda/opus-ui": "1.1.8",
 		"@intenda/opus-ui-code-editor": "^1.1.0",
 		"@intenda/opus-ui-components": "^1.0.2",
 		"react": "^18.2.0",
