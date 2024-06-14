@@ -123,11 +123,6 @@ const generateEntry = ({ value }) => {
             prps: {
                 cpt: 'Delete',
                 fireScript: {
-                    actions: [{
-                        type: 'resolveScopedId',
-                        scopedId: 'entry',
-                        storeAsVariable: 'idToRecolor'
-                    },
                     {
                         /*
                             This action tells the parent component that we want to remove ourselves.
