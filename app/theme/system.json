@@ -2,5 +2,6 @@
   "themeConfig": {
     "isStyleTheme": false
   },
-  "mdaLocation": "http://localhost:3000"
+  "mdaLocation": "http://localhost:3000",
+  "appMode": "theme.system.appMode"
 }

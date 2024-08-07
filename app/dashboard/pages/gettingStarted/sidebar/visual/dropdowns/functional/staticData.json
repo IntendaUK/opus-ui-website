@@ -59,9 +59,8 @@
                                 "id": "cl-svg-override-attributes",
                                 "name": "Overriding element attributes",
                                 "dataFile": "cl-svg-override-attributes"
-                            }   
+                            }
                         ]
-                        
                     }
                 ]
             },
@@ -105,6 +104,24 @@
                         ]
                     },
                     {
+                        "id": "deployment",
+                        "name": "DEPLOYMENT",
+                        "parentId": "howTo",
+                        "isParent": true,
+                        "children": [
+                            {
+                                "id": "dep.1",
+                                "name": "Building",
+                                "dataFile": "dep-1-building"
+                            },
+                            {
+                                "id": "dep.2",
+                                "name": "Using environment variables",
+                                "dataFile": "dep-2-env-vars"
+                            }
+                        ]
+                    },
+                    {
                         "id": "callingRestAPis",
                         "name": "CALLING REST APIs",
                         "parentId": "howTo",
@@ -124,7 +141,7 @@
                     },
                     {
                         "id": "listsOfData",
-                        "name": "Lists of Data",
+                        "name": "LISTS OF DATA",
                         "parentId": "howTo",
                         "isParent": true,
                         "children": [
