@@ -40,7 +40,7 @@
                 "from": "||extendBlog||",
                 "fromKey": "nextBlog",
                 "toKey": "vis",
-                "mapFunctionString": "v => v.goto !== null"
+                "mapFunctionString": "v => v?.goto !== undefined && v?.goto !== null"
             }
         ]
     },

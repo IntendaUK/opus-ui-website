@@ -54,6 +54,13 @@
                         }
                     },
                     {
+                        "type": "stopScript",
+                        "condition": {
+                            "operator": "isFalsy",
+                            "value": "{{sE.state.self.freeTextTheme}}"
+                        }
+                    },
+                    {
                         "type": "setVariables",
                         "variables": {
                             "blogPosts": [
@@ -86,6 +93,7 @@
                         }
                     },
                     {
+                        "log": true,
                         "type": "setMultiState",
                         "target": "||extendBlog||",
                         "value": {

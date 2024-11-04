@@ -2,13 +2,19 @@
     "acceptPrps": {},
     "scope": "team",
     "type": "containerSimple",
-    "prps": {},
+    "prps": {
+        "dir": "horizontal",
+        "width": "100%",
+        "mainAxisAlign": "start",
+        "marginBottom": "bigPadding",
+        "marginTop": "bigPadding"
+    },
     "wgts": [
         {
             "type": "repeater",
             "prps": {
                 "staticData": [],
-                "freeTextTheme": "{theme.freeText.teamMemberInfo}",
+                "freeTextTheme": "{theme.freeText.pastTeamMemberInfo}",
                 "scps": [
                     {
                         "actions": [
@@ -23,9 +29,7 @@
                                     "            const split = m.split('\\n');",
                                     "            return {",
                                     "                imageUrl: split[0],",
-                                    "                name: split[1],",
-                                    "                jobTitle: split[2],",
-                                    "                description: split.slice(3, split.length - 1)",
+                                    "                name: split[1]",
                                     "            };",
                                     "        });",
                                     "    res;",
@@ -41,19 +45,13 @@
                 "rowMda": {
                     "traits": [
                         {
-                            "trait": "./visual/teamMemberProfile",
+                            "trait": "./tinyProfile",
                             "traitPrps": {
                                 "imageUrl": "{{rowData.imageUrl}}",
-                                "name": "{{rowData.name}}",
-                                "jobTitle": "{{rowData.jobTitle}}",
-                                "description": "{{rowData.description}}"
+                                "name": "{{rowData.name}}"
                             }
                         }
-                    ],
-                    "prps": {
-                        "marginBottom": "mediumPadding",
-                        "marginTop": "giantPadding"
-                    }
+                    ]
                 }
             }
         }

@@ -1,0 +1,61 @@
+{
+    "acceptPrps": {
+        "imageUrl": {
+            "type": "string",
+            "desc": "path to the teamMembers profileImage"
+        },
+        "name": {
+            "type": "string",
+            "desc": "Defines value for the name caption"
+        }
+    },
+    "type": "containerSimple",
+    "prps": {
+        "dir": "vertical",
+        "crossAxisAlign": "center",
+        "gap": "mediumPadding",
+        "width": "186px",
+        "style": {
+            ".cpnContainerSimple": {
+                "@media only screen and (max-width: 700px)": {
+                    "gap": "var(--global-mediumPadding) !important"
+                }
+            }
+        }
+    },
+    "wgts": [
+        {
+            "type": "image",
+            "prps": {
+                "value": "%imageUrl%",
+                "imageWidth": "186px",
+                "imageHeight": "232px",
+                "style": {
+                    ".cpnImage img": {
+                        "object-fit": "cover",
+                        "@media only screen and (max-width: 700px)": {
+                            "width": "93px",
+                            "height": "116px"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "label",
+            "prps": {
+                "cpt": "%name%",
+                "color": "primaryOpusBlue",
+                "fontSize": "24px",
+                "justify": "center",
+                "style": {
+                    ".cpnLabel": {
+                        "@media only screen and (max-width: 700px)": {
+                            "font-size": "22px"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

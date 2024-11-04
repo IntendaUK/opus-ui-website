@@ -4,6 +4,7 @@
 		"isFreeTextTheme": true
 	},
 	"teamMemberInfo": ">markdown/teamMemberInfo.md",
+	"pastTeamMemberInfo": ">markdown/pastTeamMemberInfo.md",
 	"gettingStarted": ">>markdown/gettingStarted",
 	"docs": ">>markdown/docs",
 	"community": ">>markdown/community",

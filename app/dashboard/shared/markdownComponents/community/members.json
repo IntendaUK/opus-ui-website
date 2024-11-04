@@ -24,8 +24,7 @@
                                     "            return {",
                                     "                imageUrl: split[0],",
                                     "                name: split[1],",
-                                    "                jobTitle: split[2],",
-                                    "                description: split.slice(3, split.length - 1).join('\\n')",
+                                    "                description: split.slice(2, split.length - 1).join('\\n')",
                                     "            };",
                                     "        });",
                                     "    res;",
@@ -51,8 +50,8 @@
                         }
                     ],
                     "prps": {
-                        "marginBottom": "mediumPadding",
-                        "marginTop": "giantPadding"
+                        "marginBottom": "bigPadding",
+                        "marginTop": "bigPadding"
                     }
                 }
             }
