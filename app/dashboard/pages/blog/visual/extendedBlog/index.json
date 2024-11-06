@@ -128,7 +128,10 @@
                             "trait": "./visual/nextBlog",
                             "traitPrps": {}
                         }
-                    ]
+                    ],
+                    "prps": {
+                        "marginLeft": "auto"
+                    }
                 }
             ]
         }

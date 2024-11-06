@@ -10,7 +10,6 @@
         "mainAxisAlign": "center",
         "crossAxisAlign": "center",
         "gap": "10px",
-        "marginLeft": "auto",
         "hoverPrps": {
             "on": {
                 "backgroundColor": "primarySearch"
@@ -20,18 +19,25 @@
             }
         },
         "fireScript": {
+            "id": "sNB",
             "actions": [
                 {
                     "type": "setState",
-                    "target": "||router||",
-                    "key": "tPerformRoute",
-                    "value": "{{eval.`blogPost?postId=${((state.||extendBlog||.selectedIndex)) + 1}`}}"
+                    "key": "hovered",
+                    "value": false
                 },
                 {
                     "type": "setState",
-                    "target": "||extendBlog||",
-                    "key": "tReloadFromUrl",
-                    "value": true
+                    "target": "||router||",
+                    "key": "tPerformRouteComplex",
+                    "value": {
+                        "routeTo": "{{sNB.eval.`blogPost?postId=${((sNB.state.||extendBlog||.selectedIndex)) + 1}`}}",
+                        "setStateAfterRoute": {
+                            "target": "||extendBlog||",
+                            "key": "tReloadFromUrl",
+                            "value": true
+                        }
+                    }
                 }
             ]
         },
@@ -40,7 +46,7 @@
                 "from": "||extendBlog||",
                 "fromKey": "nextBlog",
                 "toKey": "vis",
-                "mapFunctionString": "v => v?.goto !== undefined && v?.goto !== null"
+                "mapFunctionString": "v => v?.goto !== null"
             }
         ]
     },

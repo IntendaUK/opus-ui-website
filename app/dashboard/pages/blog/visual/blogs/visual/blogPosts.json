@@ -1,5 +1,5 @@
 {
-    "acceptPrps":{},
+    "acceptPrps": {},
     "scope": "blogPosts",
     "type": "repeater",
     "prps": {
@@ -16,8 +16,7 @@
                 {
                     "trait": "./blogCard",
                     "traitPrps": {
-                        "rowData": "{{rowData}}",
-                        "blogIndex": "{{rowNumber}}"
+                        "rowData": "{{rowData}}"
                     }
                 }
             ],

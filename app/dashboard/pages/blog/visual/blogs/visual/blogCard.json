@@ -3,10 +3,6 @@
         "rowData": {
             "type": "object",
             "desc": "used to display data on card sections for blogs"
-        },
-        "blogIndex": {
-            "type": "integer",
-            "desc": "The index of the blog post in the blog posts array"
         }
     },
     "type": "container",
@@ -52,7 +48,7 @@
                     "trait": "./../functional/expandBlog",
                     "traitPrps": {
                         "rowData": "$rowData$",
-                        "blogIndex": "$blogIndex$"
+                        "blogIndex": "$rowData.id$"
                     }
                 }
             ],
@@ -76,7 +72,6 @@
                 {
                     "type": "container",
                     "prps": {
-                        
                         "backgroundColor": "primarySearch",
                         "borderRadius": "50%",
                         "padding": true,

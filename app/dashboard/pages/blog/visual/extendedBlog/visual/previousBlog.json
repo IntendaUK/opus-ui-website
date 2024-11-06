@@ -21,6 +21,11 @@
         "fireScript": {
             "actions": [
                 {
+                    "type": "setState",
+                    "key": "hovered",
+                    "value": false
+                },
+                {
                     "type": "applyComparison",
                     "operator": "isEqual",
                     "value": "{{state.||extendBlog||.previousBlog.goto}}",
@@ -49,7 +54,6 @@
                             }
                         ]
                     }
-                    
                 }
             ]
         }

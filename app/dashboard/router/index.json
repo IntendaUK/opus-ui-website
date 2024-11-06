@@ -3,6 +3,7 @@
 	"type": "containerSimple",
 	"prps": {
 		"tPerformRoute": null,
+		"tPerformRouteComplex": null,
 		"config": {
 			"default": {
 				"title": "Opus UI",
@@ -86,6 +87,55 @@
 						"type": "setState",
 						"target": "systemViewport",
 						"value": "{{variable.loadDashboard}}"
+					},
+					{
+						"type": "setState",
+						"key": "deleteKeys",
+						"value": [
+							"tPerformRoute"
+						]
+					}
+				]
+			},
+			{
+				"id": "sPRC",
+				"triggers": [
+					{
+						"event": "onStateChange",
+						"key": "tPerformRouteComplex",
+						"match": [
+							{
+								"operator": "isNotFalsy",
+								"key": "tPerformRouteComplex"
+							}
+						]
+					}
+				],
+				"actions": [
+					{
+						"type": "route",
+						"config": "{{state.self.config}}",
+						"routeTo": "{{state.self.tPerformRouteComplex.routeTo}}"
+					},
+					{
+						"type": "stopScript",
+						"condition": {
+							"operator": "isFalsy",
+							"value": "{{sPRC.variable.loadDashboard}}1"
+						}
+					},
+					{
+						"type": "setState",
+						"target": "{{state.self.tPerformRouteComplex.setStateAfterRoute.target}}",
+						"key": "{{state.self.tPerformRouteComplex.setStateAfterRoute.key}}",
+						"value": "{{state.self.tPerformRouteComplex.setStateAfterRoute.value}}"
+					},
+					{
+						"type": "setState",
+						"key": "deleteKeys",
+						"value": [
+							"tPerformRouteComplex"
+						]
 					}
 				]
 			},

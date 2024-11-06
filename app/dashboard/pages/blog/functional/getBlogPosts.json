@@ -1,5 +1,5 @@
 {
-    "acceptPrps":{},
+    "acceptPrps": {},
     "prps": {
         "freeTextTheme": "{theme.freeText.blogPosts}",
         "scps": [
@@ -21,7 +21,7 @@
                             "                author: split[3],",
                             "                desc: split[4],",
                             "            };",
-                            "        });",
+                            "        }).reverse();",
                             "    res;",
                             "}}"
                         ],
