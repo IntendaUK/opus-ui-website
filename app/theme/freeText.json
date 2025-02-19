@@ -8,8 +8,6 @@
 	"gettingStarted": ">>markdown/gettingStarted",
 	"docs": ">>markdown/docs",
 	"community": ">>markdown/community",
-	"blogPosts": ">data/blogPosts.md",
-	"blogPostBodies": ">>data/blogPostBodies",
 	"examples": ">>data/examples",
 	"about": ">>markdown/about"
 }

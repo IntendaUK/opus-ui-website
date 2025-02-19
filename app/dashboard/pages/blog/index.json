@@ -3,22 +3,17 @@
     "scope": "blog",
     "type": "containerSimple",
     "prps": {
-        "selectedBlogIndex": [],
-        "blogPosts": []
+        "padding": true,
+        "paddingSize": "smallPadding bigPadding"
     },
-    "traits": [
-        {
-            "trait": "./functional/getBlogPosts",
-            "traitPrps": {}
-        }
-    ],
     "wgts": [
         {
             "type": "containerSimple",
             "prps": {
                 "minHeight": "calc(100vh - 207px)",
+                "padding": true,
+                "paddingSize": "7px 0px 0px 0px",
                 "maxWidth": "calc(100% - (var(--global-mediumPadding) * 2))",
-                "margin": "giantPadding auto",
                 "style": {
                     ".cpnContainerSimple": {
                         "@media only screen and (max-width: 900px)": {
@@ -37,7 +32,8 @@
                     ]
                 }
             ]
-        },{
+        },
+        {
             "traits": [
                 {
                     "trait": "shared/footer/index"

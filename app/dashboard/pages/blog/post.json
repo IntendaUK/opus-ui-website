@@ -3,14 +3,14 @@
     "scope": "post",
     "type": "containerSimple",
     "prps": {
-        
+        "padding": true,
+        "paddingSize": "smallPadding bigPadding"
     },
     "wgts": [
         {
             "type": "containerSimple",
             "prps": {
-                "maxWidth": "calc(100% - (var(--global-padding) * 2))",
-                "margin": "giantPadding auto"
+                "width": "calc(100% - (var(--global-padding) * 2))"
             },
             "wgts": [
                 {

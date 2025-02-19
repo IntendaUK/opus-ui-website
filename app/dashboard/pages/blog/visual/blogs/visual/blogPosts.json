@@ -3,12 +3,17 @@
     "scope": "blogPosts",
     "type": "repeater",
     "prps": {
-        "staticData": [],
-        "flows": [
+        "scps": [
             {
-                "from": "||blog||",
-                "fromKey": "blogPosts",
-                "toKey": "staticData"
+                "suite": {
+                    "suite": "blog",
+                    "method": "loadIndex",
+                    "args": {
+                        "set": {
+                            "key": "staticData"
+                        }
+                    }
+                }
             }
         ],
         "rowMda": {

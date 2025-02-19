@@ -15,6 +15,10 @@ import route from './scriptActions/route';
 //Helpers
 import handleBrowserBackForward from './helpers/handleBrowserBackForward';
 
+//Suites
+import './suites/markdown';
+import './suites/blog';
+
 //Styles
 import './main.css';
 

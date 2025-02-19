@@ -31,85 +31,22 @@
                         ]
                     }
                 ],
-                "actions": [
-                    {
-                        "type": "setVariable",
-                        "name": "selectedIndex",
-                        "value": [
+                "suite": {
+                    "suite": "blog",
+                    "method": "loadPostFromIndex",
+                    "args": {
+                        "index": [
                             "{{eval.",
                             "    const urlParams = new URLSearchParams(window.location.search);",
                             "    urlParams.get('postId');",
                             "}}"
                         ],
+                        "blogs": "{{state.||blog||.blogs}}",
                         "inlineKeys": [
-                            "value"
+                            "index"
                         ]
-                    },
-                    {
-                        "type": "stopScript",
-                        "condition": {
-                            "operator": "isEqual",
-                            "value": "((sE.variable.selectedIndex))",
-                            "compareValue": "undefined"
-                        }
-                    },
-                    {
-                        "type": "stopScript",
-                        "condition": {
-                            "operator": "isFalsy",
-                            "value": "{{sE.state.self.freeTextTheme}}"
-                        }
-                    },
-                    {
-                        "type": "setVariables",
-                        "variables": {
-                            "blogPosts": [
-                                "{{sE.eval.",
-                                "    const res = {{sE.state.self.freeTextTheme}}",
-                                "        .split('---\\n')",
-                                "        .map(m => {",
-                                "            const split = m.split('\\n');",
-                                "            return {",
-                                "                id: split[0],",
-                                "                title: split[1],",
-                                "                date: split[2],",
-                                "                author: split[3],",
-                                "                desc: split[4],",
-                                "            };",
-                                "        });",
-                                "    res;",
-                                "}}"
-                            ],
-                            "selectedBlogExpanded": [
-                                "{{sE.eval.",
-                                "    const selected = {{sE.state.self.freeTextThemeBody}}[{{sE.variable.selectedIndex}}];",
-                                "    selected;",
-                                "}}"
-                            ],
-                            "inlineKeys": [
-                                "blogPosts",
-                                "selectedBlogExpanded"
-                            ]
-                        }
-                    },
-                    {
-                        "type": "setMultiState",
-                        "target": "||extendBlog||",
-                        "value": {
-                            "selectedBlog": "{{sE.eval.{{sE.variable.blogPosts}}[((sE.variable.selectedIndex))]}}",
-                            "selectedBlogExpanded": "{{sE.variable.selectedBlogExpanded}}",
-                            "previousBlog": "{{sE.eval.{{sE.variable.blogPosts}}[((sE.variable.selectedIndex)) - 1] ?? { title: 'Blog', goto: 'blog' } }}",
-                            "nextBlog": "{{sE.eval.{{sE.variable.blogPosts}}[((sE.variable.selectedIndex)) + 1] ?? { title: '', goto: null } }}",
-                            "selectedIndex": "{{sE.variable.selectedIndex}}",
-                            "tReloadFromUrl": false
-                        }
-                    },
-                    {
-                        "type": "scrollComponent",
-                        "target": "systemViewport",
-                        "targetPositionY": 0
                     }
-                ]
+                }
             }
         ]
     }

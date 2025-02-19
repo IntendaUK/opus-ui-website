@@ -38,6 +38,19 @@
                 "color": "text",
                 "lineHeight": "30px"
             }
+        },
+        {
+            "traits": [
+                {
+                    "trait": "shared/markdownComponents/divider",
+                    "traitPrps": {
+                        "value": "5px"
+                    }
+                }
+            ],
+            "prps": {
+                "marginTop": "bigPadding"
+            }
         }
     ]
 }

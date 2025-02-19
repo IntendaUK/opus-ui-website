@@ -1,0 +1,44 @@
+[
+	{
+		"id": 0,
+		"title": "Opus UI is now open source",
+		"date": "Apr 3, 2024",
+		"author": "Shaun Kichenbrand",
+		"desc": "Discover the evolution of Opus UI, Intenda's new rapid development platform and library. For over 15 years, we've been passionately involved in low-code platform development, gaining deep insights into the challenges and complexities of the field. With this knowledge, we created Opus UI to address these issues head-on by prioritising rapid development, simplicity, and modularity. Having overcome initial hurdles and setbacks, Opus UI has matured into a powerful tool that empowers developers to effortlessly create complex applications. Join our open-source ensemble and let's compose a symphony of innovation together."
+	},
+	{
+		"id": 1,
+		"title": "Minor Release: v1.3.0",
+		"date": "Jun 26, 2024",
+		"author": "Shaun Kichenbrand",
+		"desc": "Added the cloneChildrenBeforeMount property to containers to circumvent situations in which child containers have extraWgts that need to be cleared when said container is remounted."
+	},
+	{
+		"id": 2,
+		"title": "Patch Release: v1.4.2",
+		"date": "Aug 12, 2024",
+		"author": "Shaun Kichenbrand",
+		"desc": "Introduced Local Scoped IDs to allow developers to indicate that they want scoped IDs to resolve to a parent component, not any component mounted elsewhere in the application."
+	},
+	{
+		"id": 3,
+		"title": "Minor Release: v1.5.0",
+		"date": "Aug 19, 2024",
+		"author": "Shaun Kichenbrand",
+		"desc": "Clickable containers can now access the mouse position (at the time of clicking) within their fireScript action arrays."
+	},
+	{
+		"id": 4,
+		"title": "Minor Release: v1.6.0",
+		"date": "Aug 19, 2024",
+		"author": "Shaun Kichenbrand",
+		"desc": "Opus UI now exposes the **loadEnsemble** and **setMdaAtPath** functions."
+	},
+	{
+		"id": 5,
+		"title": "Minor Release: v1.7.0",
+		"date": "Aug 19, 2024",
+		"author": "Shaun Kichenbrand",
+		"desc": "Developers can now access the full list of base properties that are available to components."
+	}
+]
