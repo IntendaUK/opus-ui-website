@@ -14,7 +14,7 @@ let blogs;
 
 //Methods
 const loadIndexFromSource = async () => {
-	const markdown = await fetch('./../../app/markdown/blogs/index.json');
+	const markdown = await fetch('../../app/markdown/blogs/index.json');
 
 	blogs = JSON.parse(await markdown.text());
 };
@@ -35,7 +35,7 @@ const loadPostFromIndex = async ({ setState }, { args: { index } }) => {
 	if (blogs === undefined)
 		await loadIndexFromSource();
 
-	const markdown = await fetch(`./../../app/markdown/blogs/posts/${iIndex}.md`);
+	const markdown = await fetch(`../../app/markdown/blogs/posts/${iIndex}.md`);
 
 	const selectedBlogExpanded = await markdown.text();
 	const previousBlog = blogs.find(f => f.id === iIndex - 1) ?? {
