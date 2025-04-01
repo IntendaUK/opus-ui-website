@@ -8,10 +8,6 @@
     "prps": {
         "fireScript": {
             "id": "sSN",
-            "diagnostics": {
-                "track": "a",
-                "subTrack": "b"
-            },
             "actions": [
                 {
                     "id": "sSNA",
