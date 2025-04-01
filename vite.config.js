@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-async function copyFolder (src, dest) {
+const copyFolder = async (src, dest) => {
 	await fs.mkdir(dest, { recursive: true });
 	const entries = await fs.readdir(src, { withFileTypes: true });
 	for (const entry of entries) {
@@ -14,9 +14,8 @@ async function copyFolder (src, dest) {
 		else
 			await fs.copyFile(srcPath, destPath);
 	}
-}
+};
 
-// Custom plugin to copy the /app folder into /dist/app after build
 const copyAppFolderPlugin = () => {
 	return {
 		name: 'copy-app-folder',
@@ -34,9 +33,18 @@ const copyAppFolderPlugin = () => {
 	};
 };
 
+const ReactCompilerConfig = { target: '19' };
+
 export default defineConfig({
 	plugins: [
-		react(),
+		react({
+			babel: {
+				compact: true,
+				plugins: [
+					['babel-plugin-react-compiler', ReactCompilerConfig]
+				]
+			}
+		}),
 		copyAppFolderPlugin()
 	]
 });

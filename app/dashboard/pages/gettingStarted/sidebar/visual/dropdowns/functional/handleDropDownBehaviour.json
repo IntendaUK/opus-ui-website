@@ -8,6 +8,10 @@
     "prps": {
         "fireScript": {
             "id": "sSN",
+            "diagnostics": {
+                "track": "a",
+                "subTrack": "b"
+            },
             "actions": [
                 {
                     "id": "sSNA",
@@ -40,7 +44,7 @@
                                                     "operator": "isNotEqual",
                                                     "value": "{{sEC.variable.foundNode.parentId}}",
                                                     "compareValue": "%rowData.parentId%"
-                                                }                                                
+                                                }
                                             ]
                                         }
                                     },
