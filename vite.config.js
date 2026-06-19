@@ -2,6 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const pluginHotReload = require('@intenda/vite-plugin-opus-hot-reload/src/plugin');
 
 const copyFolder = async (src, dest) => {
 	await fs.mkdir(dest, { recursive: true });
@@ -45,6 +49,7 @@ export default defineConfig({
 				]
 			}
 		}),
-		copyAppFolderPlugin()
+		copyAppFolderPlugin(),
+		pluginHotReload()
 	]
 });

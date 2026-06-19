@@ -1,9 +1,9 @@
 {
 	"name": "@intenda/opus-ui-website",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"type": "module",
 	"scripts": {
-		"start": "concurrently --kill-others \"npm run dev -- --host\" \"nodemon node_modules/@intenda/opus-ui-packager/src/packager.js\"",
+		"start": "concurrently --kill-others \"npm run dev -- --host\" \"node node_modules/@intenda/opus-ui-packager/src/packager.js --watch\"",
 		"dev": "vite --port 3000",
 		"build-json": "node node_modules/@intenda/opus-ui-packager/src/packager.js",
 		"build": "vite build",
@@ -21,37 +21,27 @@
 		"cms",
 		"opus"
 	],
-	"nodemonConfig": {
-		"ignore": [],
-		"watch": [
-			"app"
-		],
-		"ext": "js,json,md",
-		"ignoreRoot": [],
-		"delay": 100
-	},
 	"dependencies": {
-		"@intenda/opus-ui": ">=2.0.0 < 3.0.0",
-		"@intenda/opus-ui-code-editor": ">=2.0.0 < 3.0.0",
-		"@intenda/opus-ui-components": ">=2.0.0 < 3.0.0",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
-		"react-compiler-runtime": "^19.0.0-beta-e993439-20250328"
+		"@intenda/opus-ui": "^3.0.1",
+		"@intenda/opus-ui-code-editor": "^3.0.2",
+		"@intenda/opus-ui-components": "^3.2.1",
+		"react": "^19.2.7",
+		"react-dom": "^19.2.7",
+		"react-compiler-runtime": "^1.0.0"
 	},
 	"devDependencies": {
-		"@intenda/opus-ui-packager": ">=1.0.0 < 2.0.0",
-		"@types/react": "^19.0.12",
-		"@types/react-dom": "^19.0.4",
-		"@vitejs/plugin-react": "^4.3.4",
-		"concurrently": "^9.1.2",
-		"eslint": "^9.23.0",
+		"@intenda/opus-ui-packager": "^1.14.0",
+		"@types/react": "^19.2.17",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.2",
+		"concurrently": "^10.0.3",
+		"eslint": "^9.20.1",
 		"eslint-plugin-react": "^7.37.4",
-		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-react-hooks": "^5.1.0",
 		"eslint-plugin-react-refresh": "^0.4.19",
-		"nodemon": "^3.1.9",
-		"vite": "^6.2.4",
-		"babel-plugin-react-compiler": "^19.0.0-beta-e993439-20250328",
-		"eslint-plugin-react-compiler": "^19.0.0-beta-e993439-20250328"
+		"vite": "^8.0.16",
+		"babel-plugin-react-compiler": "^1.0.0",
+		"@intenda/vite-plugin-opus-hot-reload": "^2.2.1"
 	},
 	"opusComponentLibraries": [
 		"opus-ui-code-editor",
