@@ -10,6 +10,140 @@
         "hideRootNode": true,
         "autoExpand": true,
         "renderExpander": false,
+        "scps": [
+            {
+                "id": "sS",
+                "triggers": [
+                    {
+                        "event": "onMount"
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||treeview||",
+                        "key": "mdaChildren"
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||docs||",
+                        "key": "tReloadFromUrl",
+                        "match": [
+                            {
+                                "operator": "isTruthy",
+                                "value": "{{state.||docs||.tReloadFromUrl}}"
+                            }
+                        ]
+                    },
+                    {
+                        "event": "onStateChange",
+                        "source": "||router||",
+                        "key": "onRoute",
+                        "match": [
+                            {
+                                "operator": "isTruthy",
+                                "value": "{{state.||router||.onRoute}}"
+                            }
+                        ]
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "setVariable",
+                        "name": "selectedArticleId",
+                        "value": "{{eval.new URLSearchParams(window.location.search).get('articleId')}}"
+                    },
+                    {
+                        "type": "stopScript",
+                        "condition": {
+                            "operator": "isFalsy",
+                            "value": "{{sS.state.self.data.processed}}"
+                        }
+                    },
+                    {
+                        "type": "stopScript",
+                        "condition": {
+                            "operator": "isFalsy",
+                            "value": "{{sS.variable.selectedArticleId}}"
+                        }
+                    },
+                    {
+                        "type": "setVariable",
+                        "name": "match",
+                        "value": [
+                            "{{eval.",
+                            "    const selectedArticleId = {{variable.selectedArticleId}};",
+                            "    const roots = {{state.self.staticData}} ?? [];",
+                            "    let found = null;",
+                            "    let pathIds = [];",
+                            "    const dfs = (nodes, trail) => {",
+                            "        for (const n of nodes) {",
+                            "            if (n.id === selectedArticleId) { found = n; pathIds = trail.map(t => t.id); return true; }",
+                            "            if (n.children && dfs(n.children, [ ...trail, n ])) return true;",
+                            "        }",
+                            "        return false;",
+                            "    };",
+                            "    dfs(roots, []);",
+                            "    ({ node: found, pathIds: pathIds });",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    },
+                    {
+                        "type": "stopScript",
+                        "condition": {
+                            "operator": "isFalsy",
+                            "value": "{{sS.variable.match.node}}"
+                        }
+                    },
+                    {
+                        "actionCondition": {
+                            "operator": "isNotEqual",
+                            "value": "{{sS.state.||docs||.selectedNode.loadData}}",
+                            "compareValue": "{{sS.variable.match.node.data.loadData}}"
+                        },
+                        "type": "setState",
+                        "target": "||docs||",
+                        "key": "selectedNode",
+                        "value": "{{variable.match.node.data}}"
+                    },
+                    {
+                        "type": "stopScript",
+                        "condition": {
+                            "operator": "isEqual",
+                            "value": "{{sS.state.self.autoExpandedFor}}",
+                            "compareValue": "{{sS.variable.selectedArticleId}}"
+                        }
+                    },
+                    {
+                        "type": "setVariable",
+                        "name": "newExpanded",
+                        "value": [
+                            "{{eval.",
+                            "    const target = ( {{variable.match.pathIds}} ?? [] );",
+                            "    const current = {{state.self.expandedNodes}} ?? [];",
+                            "    [ ...new Set( [ ...current, ...target ] ) ];",
+                            "}}"
+                        ],
+                        "inlineKeys": [
+                            "value"
+                        ]
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||treeview||",
+                        "key": "expandedNodes",
+                        "value": "{{variable.newExpanded}}"
+                    },
+                    {
+                        "type": "setState",
+                        "target": "||treeview||",
+                        "key": "autoExpandedFor",
+                        "value": "{{variable.selectedArticleId}}"
+                    }
+                ]
+            }
+        ],
         "staticData": [
             {
                 "id": "components",

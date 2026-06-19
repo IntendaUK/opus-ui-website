@@ -52,70 +52,101 @@
 		},
 		"scps": [
 			{
-                "id": "sS",
-                "triggers": [
-                    {
-                        "event": "onMount"
-                    },
-                    {
-                        "event": "onStateChange",
-                        "source": "||router||",
-                        "key": "onRoute",
-                        "match": [
-                            {
-                                "operator": "isTruthy",
-                                "value": "{{state.||router||.onRoute}}"
-                            }
-                        ]
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "setVariable",
-                        "name": "parentRecord",
-                        "value": [
-                            "{{eval.",
-                            "    const urlParams = new URLSearchParams(window.location.search);",
-                            "    const selectedArticleId = urlParams.get('articleId');",
-                            "    let res = ({{state.self.data.children}} ?? []).find(d => d.children.some(f => f.dataFile === selectedArticleId) );",
-                            "    if (!res)",
-                            "        res = {{state.self.data.children.0}};",
-                            "    res;",
-                            "}}"
-                        ],
-                        "inlineKeys": [
-                            "value"
-                        ]
-                    },
-                    {
-                        "id": "sSM",
-                        "type": "morphIterateArray",
-                        "value": "{{eval.JSON.parse(JSON.stringify({{state.self.expandedNodes}}) )}}",
-                        "chain": [
-                            {
-                                "actionCondition": {
-                                    "operator": "isNotEqual",
-                                    "value": "{{sSM.variable.record}}",
-                                    "compareValue": "{{sSM.scopedVariable.parentRecord.dataFile}}"
-                                },
-                                "type": "setState",
-                                "target": "||treeview||",
-                                "key": "tToggleParent",
-                                "value": "{{eval.{{state.self.staticData}}.find(f => f.id === {{variable.record}})}}"
-                            }
-                        ]
-                    },
-                    {
-                    	"actionCondition": {
-                            "operator": "isFalsy",
-                            "value": "{{sS.eval.{{sS.state.self.expandedNodes}}.includes({{sS.variable.parentRecord.id}})}}"
-                        },
-                    	"type": "setState",
-                        "key": "tToggleParent",
-                        "value": "{{variable.parentRecord}}"
-                    }
-                ]
-            }
+				"id": "sS",
+				"triggers": [
+					{
+						"event": "onMount"
+					},
+					{
+						"event": "onStateChange",
+						"source": "||treeview||",
+						"key": "mdaChildren"
+					},
+					{
+						"event": "onStateChange",
+						"source": "||gettingStarted||",
+						"key": "selectedLessonId"
+					}
+				],
+				"actions": [
+					{
+						"type": "setVariable",
+						"name": "selectedArticleId",
+						"value": "{{eval.{{state.||gettingStarted||.selectedLessonId}} }}"
+					},
+					{
+						"type": "stopScript",
+						"condition": {
+							"operator": "isFalsy",
+							"value": "{{sS.state.self.data.processed}}"
+						}
+					},
+					{
+						"type": "stopScript",
+						"condition": {
+							"operator": "isFalsy",
+							"value": "{{sS.variable.selectedArticleId}}"
+						}
+					},
+					{
+						"type": "stopScript",
+						"condition": {
+							"operator": "isEqual",
+							"value": "{{sS.state.self.autoExpandedFor}}",
+							"compareValue": "{{sS.variable.selectedArticleId}}"
+						}
+					},
+					{
+						"type": "setVariable",
+						"name": "targetPath",
+						"value": [
+							"{{eval.",
+							"    const selectedArticleId = {{variable.selectedArticleId}};",
+							"    const roots = {{state.self.staticData}} ?? [];",
+							"    let path = [];",
+							"    const dfs = (nodes, trail) => {",
+							"        for (const n of nodes) {",
+							"            if (n.dataFile === selectedArticleId) { path = trail; return true; }",
+							"            if (n.children && dfs(n.children, [ ...trail, n ])) return true;",
+							"        }",
+							"        return false;",
+							"    };",
+							"    dfs(roots, []);",
+							"    path.filter(Boolean).map(n => n.id);",
+							"}}"
+						],
+						"inlineKeys": [
+							"value"
+						]
+					},
+					{
+						"type": "setVariable",
+						"name": "newExpanded",
+						"value": [
+							"{{eval.",
+							"    const target = {{variable.targetPath}} ?? [];",
+							"    const current = {{state.self.expandedNodes}} ?? [];",
+							"    [ ...new Set( [ ...current, ...target ] ) ];",
+							"}}"
+						],
+						"inlineKeys": [
+							"value"
+						]
+					},
+					{
+						"type": "setState",
+						"target": "||treeview||",
+						"key": "expandedNodes",
+						"value": "{{variable.newExpanded}}"
+					},
+					{
+						"type": "setState",
+						"target": "||treeview||",
+						"key": "autoExpandedFor",
+						"value": "{{variable.selectedArticleId}}"
+					}
+				]
+			}
 		]
 	}
 }

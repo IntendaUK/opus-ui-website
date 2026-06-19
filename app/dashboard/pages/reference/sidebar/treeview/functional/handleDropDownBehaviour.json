@@ -7,22 +7,45 @@
     },
     "prps": {
         "fireScript": {
+            "id": "sSN",
             "actions": [
                 {
-                    "actionCondition": {
-                        "operator": "isTruthy",
-                        "value": "$rowData.children$"
-                    },
-                    "type": "setState",
-                    "target": "||treeview||",
-                    "key": "tToggleParent",
-                    "value": "$rowData$"
-                },
-                {
-                    "type": "setState",
-                    "target": "||docs||",
-                    "key": "selectedNode",
-                    "value": "$rowData.data$"
+                    "id": "sSNA",
+                    "type": "applyComparison",
+                    "operator": "isTruthy",
+                    "value": "$rowData.children$",
+                    "branch": {
+                        "true": [
+                            {
+                                "type": "setState",
+                                "target": "||treeview||",
+                                "key": "tToggleParent",
+                                "value": "$rowData$"
+                            }
+                        ],
+                        "false": [
+                            {
+                                "type": "stopScript",
+                                "condition": {
+                                    "operator": "isEqual",
+                                    "value": "%rowData.data.loadData%",
+                                    "compareValue": "{{sSNA.state.||docs||.selectedNode.loadData}}"
+                                }
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||router||",
+                                "key": "tPerformRoute",
+                                "value": "reference?articleId=%rowData.id%"
+                            },
+                            {
+                                "type": "setState",
+                                "target": "||docs||",
+                                "key": "tReloadFromUrl",
+                                "value": true
+                            }
+                        ]
+                    }
                 }
             ]
         }

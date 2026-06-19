@@ -8,6 +8,56 @@
 		"overflow": "show",
 		"scps": [
 			{
+				"id": "sE",
+				"triggers": [
+					{
+						"event": "onMount"
+					},
+					{
+						"event": "onStateChange",
+						"source": "||community||",
+						"key": "tReloadFromUrl",
+						"match": [
+							{
+								"operator": "isTruthy",
+								"value": "{{state.||community||.tReloadFromUrl}}"
+							}
+						]
+					},
+					{
+						"event": "onStateChange",
+						"source": "||router||",
+						"key": "onRoute",
+						"match": [
+							{
+								"operator": "isTruthy",
+								"value": "{{state.||router||.onRoute}}"
+							}
+						]
+					}
+				],
+				"actions": [
+					{
+						"type": "setVariable",
+						"name": "selectedArticleId",
+						"value": "{{eval.new URLSearchParams(window.location.search).get('articleId')}}"
+					},
+					{
+						"type": "stopScript",
+						"condition": {
+							"operator": "isFalsy",
+							"value": "{{sE.variable.selectedArticleId}}"
+						}
+					},
+					{
+						"type": "setState",
+						"target": "||community||",
+						"key": "selectedSectionId",
+						"value": "{{variable.selectedArticleId}}"
+					}
+				]
+			},
+			{
 				"id": "sL",
 				"triggers": [
 					{
